@@ -918,22 +918,95 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              "Greater Toronto Area (GTA)",
-              "High-rise condos",
-              "Office buildings",
-              "Schools and universities",
-              "Public buildings",
-              "Residential properties",
-              "Commercial complexes",
-              "Industrial facilities"
-            ].map((area, index) => (
-              <div key={index} className="flex items-center p-4 bg-gray-50 rounded-xl">
-                <div className="w-2 h-2 bg-brand-primary rounded-full mr-3"></div>
-                <span className="text-gray-700 font-medium">{area}</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Large Image on the Left */}
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/assets/city-background.jpeg"
+                  alt="Toronto skyline and surrounding areas"
+                  width={600}
+                  height={400}
+                  className="w-full h-80 lg:h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Greater Toronto Area</h3>
+                  <p className="text-lg opacity-90">Professional HVAC services across the region</p>
+                </div>
               </div>
-            ))}
+            </div>
+            
+            {/* Locations List on the Right */}
+            <div className="order-1 lg:order-2">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold text-brand-ink mb-6">
+                  Areas We Serve
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { name: "Downtown Toronto", distance: "0km" },
+                    { name: "North York", distance: "15km" },
+                    { name: "Scarborough", distance: "20km" },
+                    { name: "Etobicoke", distance: "18km" },
+                    { name: "Mississauga", distance: "25km" },
+                    { name: "Markham", distance: "22km" },
+                    { name: "Richmond Hill", distance: "28km" },
+                    { name: "Vaughan", distance: "25km" },
+                    { name: "Brampton", distance: "30km" },
+                    { name: "Pickering", distance: "25km" }
+                  ].map((location, index) => (
+                    <div key={index} className="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-brand-primary rounded-full mr-3"></div>
+                        <span className="text-gray-800 font-medium">{location.name}</span>
+                      </div>
+                      <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                        {location.distance}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-6 p-4 bg-brand-primary/10 rounded-xl">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center mr-3">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-brand-ink">30km Service Radius</h4>
+                      <p className="text-sm text-gray-600">Fast response times across the GTA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Property Types */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-brand-ink text-center mb-8">
+              Property Types We Serve
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { type: "High-rise condos", icon: "🏢" },
+                { type: "Office buildings", icon: "🏬" },
+                { type: "Schools & universities", icon: "🎓" },
+                { type: "Public buildings", icon: "🏛️" },
+                { type: "Residential properties", icon: "🏠" },
+                { type: "Commercial complexes", icon: "🏪" },
+                { type: "Industrial facilities", icon: "🏭" },
+                { type: "Healthcare facilities", icon: "🏥" }
+              ].map((property, index) => (
+                <div key={index} className="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-primary/20 transition-all duration-200">
+                  <span className="text-2xl mr-3">{property.icon}</span>
+                  <span className="text-gray-700 font-medium">{property.type}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
