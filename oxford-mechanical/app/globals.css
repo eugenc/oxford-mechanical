@@ -1096,3 +1096,221 @@
     opacity: 0.5;
   }
 }
+
+/* Why Choose Us Section Enhancements */
+.why-choose-card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+  position: relative;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.why-choose-card:nth-child(1) { animation-delay: 0.1s; }
+.why-choose-card:nth-child(2) { animation-delay: 0.2s; }
+.why-choose-card:nth-child(3) { animation-delay: 0.3s; }
+.why-choose-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Enhanced hover effects for why choose cards */
+.why-choose-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 55, 255, 0.3);
+}
+
+/* Image section styling */
+.why-choose-card .h-32 {
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-card .h-32 img {
+  transition: transform 0.5s ease;
+}
+
+.why-choose-card:hover .h-32 img {
+  transform: scale(1.05);
+}
+
+/* Enhanced text styling */
+.why-choose-card h3 {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.why-choose-card:hover h3 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Section Enhancements */
+.stats-section {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.stats-item {
+  animation: slideInUp 0.6s ease-out;
+  animation-fill-mode: both;
+  transition: all 0.3s ease;
+}
+
+.stats-item:nth-child(1) { animation-delay: 0.1s; }
+.stats-item:nth-child(2) { animation-delay: 0.2s; }
+.stats-item:nth-child(3) { animation-delay: 0.3s; }
+.stats-item:nth-child(4) { animation-delay: 0.4s; }
+
+.stats-item:hover {
+  transform: translateY(-2px);
+}
+
+.stats-number {
+  transition: all 0.3s ease;
+}
+
+.stats-item:hover .stats-number {
+  transform: scale(1.05);
+  text-shadow: 0 2px 4px rgba(0, 55, 255, 0.2);
+}
+
+.stats-description {
+  transition: color 0.3s ease;
+}
+
+.stats-item:hover .stats-description {
+  color: #374151;
+}
+
+/* Divider line styling */
+.stats-divider {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.stats-item:hover + .stats-divider {
+  opacity: 0.6;
+}
+
+/* Responsive adjustments for why choose section */
+@media (max-width: 1024px) {
+  .why-choose-card {
+    animation-delay: 0s;
+  }
+  
+  .why-choose-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .stats-item {
+    animation-delay: 0s;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose-card {
+    border-radius: 20px;
+  }
+  
+  .why-choose-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .why-choose-card .h-32 {
+    height: 7rem;
+  }
+  
+  .why-choose-card .h-48 {
+    height: 10rem;
+  }
+  
+  .stats-number {
+    font-size: 2.5rem;
+  }
+  
+  .stats-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-choose-card {
+    border-radius: 16px;
+  }
+  
+  .why-choose-card h3 {
+    font-size: 1.125rem;
+  }
+  
+  .why-choose-card p {
+    font-size: 0.875rem;
+  }
+  
+  .why-choose-card .h-32 {
+    height: 6rem;
+  }
+  
+  .why-choose-card .h-48 {
+    height: 9rem;
+  }
+  
+  .stats-number {
+    font-size: 2rem;
+  }
+  
+  .stats-description {
+    font-size: 0.75rem;
+  }
+  
+  /* Stack stats vertically on mobile */
+  .stats-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .stats-divider {
+    display: none;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .why-choose-card,
+  .stats-item,
+  .floating-bg {
+    animation: none;
+  }
+  
+  .why-choose-card:hover {
+    transform: none;
+  }
+  
+  .stats-item:hover {
+    transform: none;
+  }
+  
+  .stats-item:hover .stats-number {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .why-choose-card {
+    border: 2px solid #000;
+  }
+  
+  .why-choose-card:hover {
+    border-color: #0037ff;
+  }
+  
+  .stats-number {
+    color: #000;
+  }
+  
+  .stats-description {
+    color: #000;
+  }
+  
+  .stats-divider {
+    background-color: #000;
+  }
+}

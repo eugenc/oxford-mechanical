@@ -787,14 +787,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
+      {/* Why Choose Us Section - Enhanced */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl floating-bg"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-brand-accent rounded-full blur-2xl floating-bg"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+              <span className="text-brand-primary">⭐</span>
+              <span className="text-sm font-medium text-brand-ink">Why Choose Us</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
               Why Choose Oxford Mechanical?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               With over a decade of experience, we've built a reputation for reliability, quality, and customer satisfaction.
             </p>
           </div>
@@ -803,33 +813,95 @@ export default function Home() {
             {[
               {
                 title: "24/7 Emergency Response",
-                description: "Round-the-clock availability for urgent plumbing needs"
+                description: "Round-the-clock availability for urgent plumbing needs",
+                image: "/app/public/assets/emergency-plumbing.jpg",
+                fallbackBg: "bg-gradient-to-br from-gray-800 to-gray-900"
               },
               {
                 title: "Licensed & Insured",
-                description: "Fully licensed since 2013 with comprehensive insurance coverage"
+                description: "Fully licensed since 2013 with comprehensive insurance coverage",
+                image: "/app/public/assets/licensed-plumber.jpg",
+                fallbackBg: "bg-gradient-to-br from-gray-700 to-gray-800"
               },
               {
                 title: "100% Satisfaction Guarantee",
-                description: "We stand behind our work with a complete satisfaction guarantee"
+                description: "We stand behind our work with a complete satisfaction guarantee",
+                image: "/app/public/assets/satisfaction-guarantee.jpg",
+                fallbackBg: "bg-gradient-to-br from-gray-800 to-gray-900"
               },
               {
                 title: "Free Building Inspections",
-                description: "Complimentary property inspections to identify potential issues"
+                description: "Complimentary property inspections to identify potential issues",
+                image: "/app/public/assets/building-inspection.jpg",
+                fallbackBg: "bg-gradient-to-br from-gray-700 to-gray-800"
               }
             ].map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl font-bold">{index + 1}</span>
+              <div 
+                key={index} 
+                className="why-choose-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20 overflow-hidden"
+              >
+                {/* Image section - 25% of card height */}
+                <div 
+                  className="h-32 w-full relative overflow-hidden"
+                  style={{
+                    backgroundImage: `url(${feature.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
+                  {/* Fallback background */}
+                  <div className={`absolute inset-0 ${feature.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  
+                  {/* Dark overlay for better text contrast */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                  
+                  {/* Hover effect */}
+                  <div className="absolute inset-0 bg-brand-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <h3 className="text-lg font-semibold text-brand-ink mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
+                
+                {/* Content section - 75% of card height */}
+                <div className="p-6 flex flex-col justify-center h-48">
+                  <h3 className="text-xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300 leading-tight">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {feature.description}
+                  </p>
+                </div>
+                
+                {/* Subtle top accent line */}
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-brand-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
+          </div>
+          
+          {/* Stats Section */}
+          <div className="mt-20">
+            <div className="bg-white rounded-2xl p-12 shadow-lg max-w-4xl mx-auto">
+              <div className="flex items-center justify-center gap-16">
+                <div className="flex-1 text-center">
+                  <div className="text-4xl font-bold text-brand-primary mb-2">11+</div>
+                  <div className="text-gray-700 font-medium">Years Experience</div>
+                </div>
+                <div className="w-px h-16 bg-gray-200"></div>
+                <div className="flex-1 text-center">
+                  <div className="text-4xl font-bold text-brand-primary mb-2">500+</div>
+                  <div className="text-gray-700 font-medium">Properties Served</div>
+                </div>
+                <div className="w-px h-16 bg-gray-200"></div>
+                <div className="flex-1 text-center">
+                  <div className="text-4xl font-bold text-brand-primary mb-2">15,000+</div>
+                  <div className="text-gray-700 font-medium">Service Calls</div>
+                </div>
+                <div className="w-px h-16 bg-gray-200"></div>
+                <div className="flex-1 text-center">
+                  <div className="text-4xl font-bold text-brand-primary mb-2">99.8%</div>
+                  <div className="text-gray-700 font-medium">Customer Satisfaction</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
