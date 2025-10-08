@@ -283,59 +283,97 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-6">
-                About Oxford Mechanical
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Since 2013, Oxford Mechanical has been providing comprehensive plumbing services 
-                for condos, high-rise buildings, and commercial properties across the Greater Toronto Area.
-              </p>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                We specialize in minimizing disruptions while delivering superior service using 
-                the latest tools and technology. Our commitment to excellence has made us the 
-                trusted choice for property managers and building owners.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+      <section className="py-24 bg-white relative overflow-hidden about-section">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl floating-bg"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-brand-accent rounded-full blur-2xl floating-bg"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <div className="text-reveal">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-8 leading-tight">
+                  About Oxford Mechanical
+                </h2>
+                <div className="w-20 h-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full mb-8"></div>
+              </div>
+              
+              <div className="space-y-6 text-reveal">
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Since 2013, Oxford Mechanical has been providing comprehensive plumbing services 
+                  for condos, high-rise buildings, and commercial properties across the Greater Toronto Area.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  We specialize in minimizing disruptions while delivering superior service using 
+                  the latest tools and technology. Our commitment to excellence has made us the 
+                  trusted choice for property managers and building owners.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link
                   href="/about"
-                  className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-xl"
+                  className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 btn-enhanced"
                 >
-                  Learn More About Us
+                  <span className="mr-3">Learn More About Us</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </Link>
                 <Link
                   href="/projects"
-                  className="bg-gray-100 text-brand-ink hover:bg-gray-200 inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-xl transition-all duration-200"
+                  className="group bg-gray-100 hover:bg-gray-200 text-brand-ink inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 transform hover:-translate-y-1 btn-enhanced"
                 >
-                  View Our Projects
+                  <span className="mr-3">View Our Projects</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </Link>
               </div>
             </div>
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold text-brand-ink mb-6">Our Expertise</h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-brand-primary rounded-full mr-3"></div>
-                  <span className="text-gray-700">High-rise condos and commercial buildings</span>
+            
+            {/* Right Content - Enhanced Expertise Box */}
+            <div className="relative">
+              <div className="expertise-box bg-gradient-to-br from-gray-50 to-blue-50/30 rounded-3xl p-10 shadow-xl border border-gray-100 relative overflow-hidden">
+                {/* Subtle background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-4 right-4 w-24 h-24 bg-brand-primary rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-brand-accent rounded-full blur-xl"></div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-brand-primary rounded-full mr-3"></div>
-                  <span className="text-gray-700">Emergency plumbing services</span>
+                
+                <div className="relative z-10">
+                  <h3 className="text-3xl font-display font-bold text-brand-ink mb-8 text-reveal">Our Expertise</h3>
+                  
+                  <div className="space-y-6">
+                    {[
+                      "High-rise condos and commercial buildings",
+                      "Emergency plumbing services", 
+                      "Preventative maintenance programs",
+                      "Water saving solutions",
+                      "Advanced camera inspection technology"
+                    ].map((expertise, index) => (
+                      <div key={index} className="flex items-center group expertise-item expertise-bullet">
+                        <div className="w-3 h-3 bg-brand-primary rounded-full mr-4 group-hover:scale-125 transition-transform duration-200"></div>
+                        <span className="text-lg text-gray-700 font-medium group-hover:text-brand-ink transition-colors duration-200">
+                          {expertise}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Bottom accent line */}
+                  <div className="mt-8 w-16 h-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full"></div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-brand-primary rounded-full mr-3"></div>
-                  <span className="text-gray-700">Preventative maintenance programs</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-brand-primary rounded-full mr-3"></div>
-                  <span className="text-gray-700">Water saving solutions</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-brand-primary rounded-full mr-3"></div>
-                  <span className="text-gray-700">Advanced camera inspection technology</span>
+              </div>
+              
+              {/* Floating badge */}
+              <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg border border-gray-100 px-4 py-2 floating-badge">
+                <div className="flex items-center gap-2">
+                  <span className="text-brand-primary text-xl">🏅</span>
+                  <span className="text-sm font-semibold text-brand-ink">Trusted Since 2013</span>
                 </div>
               </div>
             </div>
