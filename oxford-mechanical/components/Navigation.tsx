@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,43 +18,133 @@ export default function Navigation() {
   ]
 
   const serviceItems = [
-    { name: 'Emergency Services', href: '/services/emergency' },
-    { name: 'Drain Cleaning', href: '/drain-cleaning' },
-    { name: 'Camera Inspection', href: '/services/camera-inspection' },
-    { name: 'Leak Repair', href: '/services/leak-repair' },
-    { name: 'Maintenance', href: '/services/maintenance' },
-    { name: 'Water Saving Solutions', href: '/services/water-saving' },
+    { 
+      name: 'Emergency Services', 
+      href: '/services/emergency',
+      description: '24/7 emergency response for urgent plumbing issues',
+      icon: '🚨'
+    },
+    { 
+      name: 'Drain Cleaning', 
+      href: '/drain-cleaning',
+      description: 'Professional drain cleaning and sewer maintenance',
+      icon: '🚿'
+    },
+    { 
+      name: 'Camera Inspection', 
+      href: '/services/camera-inspection',
+      description: 'Advanced diagnostic technology for accurate problem identification',
+      icon: '📹'
+    },
+    { 
+      name: 'Leak Repair', 
+      href: '/services/leak-repair',
+      description: 'Comprehensive leak investigation and precision repair',
+      icon: '🔧'
+    },
+    { 
+      name: 'Maintenance', 
+      href: '/services/maintenance',
+      description: 'Preventative maintenance programs to avoid costly repairs',
+      icon: '🛠️'
+    },
+    { 
+      name: 'Water Saving Solutions', 
+      href: '/services/water-saving',
+      description: 'Eco-friendly upgrades and water conservation solutions',
+      icon: '💧'
+    },
   ]
 
   const industryItems = [
-    { name: 'High-Rise Condos', href: '/industries/condos' },
-    { name: 'Office Buildings', href: '/industries/office' },
-    { name: 'Schools & Universities', href: '/industries/education' },
-    { name: 'Healthcare Facilities', href: '/industries/healthcare' },
-    { name: 'Retail & Commercial', href: '/industries/retail' },
-    { name: 'Industrial Facilities', href: '/industries/industrial' },
+    { 
+      name: 'High-Rise Condos', 
+      href: '/industries/condos',
+      description: 'Minimal disruption maintenance for high-density residential properties',
+      icon: '🏢'
+    },
+    { 
+      name: 'Office Buildings', 
+      href: '/industries/office',
+      description: 'Commercial-grade solutions for corporate environments',
+      icon: '🏢'
+    },
+    { 
+      name: 'Schools & Universities', 
+      href: '/industries/education',
+      description: 'Educational institution plumbing maintenance and upgrades',
+      icon: '🎓'
+    },
+    { 
+      name: 'Healthcare Facilities', 
+      href: '/industries/healthcare',
+      description: 'Specialized plumbing for hospitals and medical centers',
+      icon: '🏥'
+    },
+    { 
+      name: 'Retail & Commercial', 
+      href: '/industries/retail',
+      description: 'Shopping centers and retail space plumbing solutions',
+      icon: '🛍️'
+    },
+    { 
+      name: 'Industrial Facilities', 
+      href: '/industries/industrial',
+      description: 'Heavy-duty plumbing for manufacturing and industrial sites',
+      icon: '🏭'
+    },
   ]
 
   const resourceItems = [
-    { name: 'Blog & Insights', href: '/blog' },
-    { name: 'Maintenance Guides', href: '/resources/maintenance-guides' },
-    { name: 'Emergency Procedures', href: '/resources/emergency-procedures' },
-    { name: 'Water Saving Tips', href: '/resources/water-saving' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Certifications', href: '/certifications' },
+    { 
+      name: 'Blog & Insights', 
+      href: '/blog',
+      description: 'Expert advice and industry insights',
+      icon: '📝'
+    },
+    { 
+      name: 'Maintenance Guides', 
+      href: '/resources/maintenance-guides',
+      description: 'Step-by-step maintenance instructions',
+      icon: '📋'
+    },
+    { 
+      name: 'Emergency Procedures', 
+      href: '/resources/emergency-procedures',
+      description: 'What to do during plumbing emergencies',
+      icon: '🚨'
+    },
+    { 
+      name: 'Water Saving Tips', 
+      href: '/resources/water-saving',
+      description: 'Eco-friendly water conservation strategies',
+      icon: '💧'
+    },
+    { 
+      name: 'Case Studies', 
+      href: '/case-studies',
+      description: 'Real solutions for real challenges',
+      icon: '📊'
+    },
+    { 
+      name: 'Certifications', 
+      href: '/certifications',
+      description: 'Our professional credentials and licenses',
+      icon: '🏅'
+    },
   ]
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-white/95 backdrop-blur-lg border-b border-gray-200/80 sticky top-0 z-50 shadow-sm">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-18">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">OM</span>
+            <Link href="/" className="flex items-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <span className="text-white font-bold text-lg">OM</span>
               </div>
-              <span className="ml-2 text-xl font-display font-semibold text-brand-ink">
+              <span className="ml-4 text-2xl font-display font-bold text-brand-ink group-hover:text-brand-primary transition-colors duration-300">
                 Oxford Mechanical
               </span>
             </Link>
@@ -61,126 +152,172 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-6">
+            <div className="ml-12 flex items-center space-x-8">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-blue-50 relative group"
               >
                 Home
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
               
               {/* Services Dropdown */}
               <div className="relative group">
-                <button className="text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
                   Services
-                  <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-2">
-                    {serviceItems.map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-primary transition-colors duration-200"
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
+                <div className="absolute left-0 mt-3 w-[75vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="py-4">
+                    <div className="px-6 py-3 border-b border-gray-100">
+                      <h3 className="text-sm font-bold text-gray-900">Our Services</h3>
+                      <p className="text-xs text-gray-500 mt-1">Professional plumbing solutions for every need</p>
+                    </div>
+                    <div className="grid grid-cols-6 gap-2 p-4">
+                      {serviceItems.map((service) => (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
+                        >
+                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                            {service.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                              {service.name}
+                            </h4>
+                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                              {service.description}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Industries Dropdown */}
               <div className="relative group">
-                <button className="text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
                   Industries
-                  <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-2">
-                    {industryItems.map((industry) => (
-                      <Link
-                        key={industry.name}
-                        href={industry.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-primary transition-colors duration-200"
-                      >
-                        {industry.name}
-                      </Link>
-                    ))}
+                <div className="absolute left-0 mt-3 w-[75vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="py-4">
+                    <div className="px-6 py-3 border-b border-gray-100">
+                      <h3 className="text-sm font-bold text-gray-900">Industries We Serve</h3>
+                      <p className="text-xs text-gray-500 mt-1">Specialized solutions for every industry</p>
+                    </div>
+                    <div className="grid grid-cols-6 gap-2 p-4">
+                      {industryItems.map((industry) => (
+                        <Link
+                          key={industry.name}
+                          href={industry.href}
+                          className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
+                        >
+                          <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                            {industry.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                              {industry.name}
+                            </h4>
+                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                              {industry.description}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
               <Link
                 href="/projects"
-                className="text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-blue-50 relative group"
               >
                 Projects
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
 
               {/* Resources Dropdown */}
               <div className="relative group">
-                <button className="text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
                   Resources
-                  <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-2">
-                    {resourceItems.map((resource) => (
-                      <Link
-                        key={resource.name}
-                        href={resource.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-primary transition-colors duration-200"
-                      >
-                        {resource.name}
-                      </Link>
-                    ))}
+                <div className="absolute left-0 mt-3 w-[75vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="py-4">
+                    <div className="px-6 py-3 border-b border-gray-100">
+                      <h3 className="text-sm font-bold text-gray-900">Resources & Tools</h3>
+                      <p className="text-xs text-gray-500 mt-1">Expert guidance and helpful resources</p>
+                    </div>
+                    <div className="grid grid-cols-6 gap-2 p-4">
+                      {resourceItems.map((resource) => (
+                        <Link
+                          key={resource.name}
+                          href={resource.href}
+                          className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
+                        >
+                          <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                            {resource.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                              {resource.name}
+                            </h4>
+                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                              {resource.description}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-blue-50 relative group"
               >
                 About
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
 
               <Link
                 href="/contact"
-                className="text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-blue-50 relative group"
               >
                 Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="btn-primary inline-flex items-center px-4 py-2 text-sm font-medium rounded-xl transition-all duration-200 hover:shadow-lg"
-            >
-              Get Free Quote
-            </Link>
-          </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-brand-primary p-2 rounded-md"
+              className="text-gray-700 hover:text-brand-primary p-3 rounded-xl hover:bg-blue-50 transition-all duration-300"
             >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-6 w-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -194,10 +331,10 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-white border-t border-gray-200 shadow-lg">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-700 hover:text-brand-primary block px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
@@ -205,37 +342,61 @@ export default function Navigation() {
               
               {/* Mobile Services */}
               <div className="pt-2">
-                <div className="text-gray-500 text-sm font-medium px-3 py-2">Services</div>
-                {serviceItems.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="text-gray-600 hover:text-brand-primary block px-6 py-2 text-sm"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {service.name}
-                  </Link>
-                ))}
+                <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Services</div>
+                <div className="grid grid-cols-2 gap-3 px-4">
+                  {serviceItems.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                        {service.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                          {service.name}
+                        </h4>
+                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                          {service.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               {/* Mobile Industries */}
               <div className="pt-2">
-                <div className="text-gray-500 text-sm font-medium px-3 py-2">Industries</div>
-                {industryItems.map((industry) => (
-                  <Link
-                    key={industry.name}
-                    href={industry.href}
-                    className="text-gray-600 hover:text-brand-primary block px-6 py-2 text-sm"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {industry.name}
-                  </Link>
-                ))}
+                <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Industries</div>
+                <div className="grid grid-cols-2 gap-3 px-4">
+                  {industryItems.map((industry) => (
+                    <Link
+                      key={industry.name}
+                      href={industry.href}
+                      className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                        {industry.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                          {industry.name}
+                        </h4>
+                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                          {industry.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <Link
                 href="/projects"
-                className="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-700 hover:text-brand-primary block px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projects
@@ -243,22 +404,34 @@ export default function Navigation() {
 
               {/* Mobile Resources */}
               <div className="pt-2">
-                <div className="text-gray-500 text-sm font-medium px-3 py-2">Resources</div>
-                {resourceItems.map((resource) => (
-                  <Link
-                    key={resource.name}
-                    href={resource.href}
-                    className="text-gray-600 hover:text-brand-primary block px-6 py-2 text-sm"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {resource.name}
-                  </Link>
-                ))}
+                <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Resources</div>
+                <div className="grid grid-cols-2 gap-3 px-4">
+                  {resourceItems.map((resource) => (
+                    <Link
+                      key={resource.name}
+                      href={resource.href}
+                      className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                        {resource.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                          {resource.name}
+                        </h4>
+                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                          {resource.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-700 hover:text-brand-primary block px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
@@ -266,21 +439,12 @@ export default function Navigation() {
 
               <Link
                 href="/contact"
-                className="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-700 hover:text-brand-primary block px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
               
-              <div className="pt-4">
-                <Link
-                  href="/contact"
-                  className="btn-primary block text-center px-4 py-2 text-sm font-medium rounded-xl"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Get Free Quote
-                </Link>
-              </div>
             </div>
           </div>
         )}

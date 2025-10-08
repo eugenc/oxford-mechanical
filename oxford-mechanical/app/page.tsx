@@ -1,5 +1,7 @@
 import Navigation from '@/components/Navigation'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -94,24 +96,6 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="mt-12 text-center">
-            <div className="inline-flex items-center space-x-8 bg-gray-50 rounded-2xl px-8 py-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-primary">500+</div>
-                <div className="text-sm text-gray-600">Properties Served</div>
-              </div>
-              <div className="w-px h-12 bg-gray-300"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-primary">15,000+</div>
-                <div className="text-sm text-gray-600">Service Calls</div>
-              </div>
-              <div className="w-px h-12 bg-gray-300"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-primary">99.8%</div>
-                <div className="text-sm text-gray-600">Customer Satisfaction</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -341,59 +325,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
-              What Our Clients Say
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real experiences from property managers and building owners who trust Oxford Mechanical.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "Oxford Mechanical has been our go-to plumbing service for over 5 years. Their emergency response is unmatched and their preventative maintenance has saved us thousands in repairs.",
-                author: "Sarah Johnson",
-                title: "Property Manager, Downtown Condo Complex",
-                rating: 5
-              },
-              {
-                quote: "The free building inspection was incredibly thorough. They identified several potential issues before they became costly problems. Highly recommend their services.",
-                author: "Michael Chen",
-                title: "Building Owner, North York",
-                rating: 5
-              },
-              {
-                quote: "Professional, reliable, and always on time. Their team understands the unique challenges of high-rise buildings and works efficiently to minimize disruptions.",
-                author: "Lisa Rodriguez",
-                title: "Facilities Director, Corporate Tower",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="card">
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed italic">
-                  "{testimonial.quote}"
-                </p>
-                <div>
-                  <p className="font-semibold text-brand-ink">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Client Testimonials Section - 3D Carousel */}
+      <TestimonialsCarousel />
 
       {/* Case Studies Section */}
       <section className="py-20 bg-white">
@@ -856,10 +789,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div className="lg:col-span-1">
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-md">
                   <span className="text-white font-bold text-lg">OM</span>
                 </div>
-                <span className="ml-3 text-2xl font-display font-semibold">
+                <span className="ml-4 text-2xl font-display font-semibold">
                   Oxford Mechanical
                 </span>
               </div>
