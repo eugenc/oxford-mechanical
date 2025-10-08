@@ -91,83 +91,193 @@ export default function Home() {
       </section>
 
       {/* Trust & Certifications Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-brand-ink mb-4">
-              Trusted & Certified
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-brand-primary rounded-full blur-3xl floating-bg"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-brand-accent rounded-full blur-2xl floating-bg"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-trust rounded-full px-4 py-2 border border-brand-primary/20 mb-6 trust-badge-pulse">
+              <span className="text-brand-primary">✓</span>
+              <span className="text-sm font-medium text-brand-ink">Trusted & Certified</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
+              Licensed, Insured & 
+              <span className="text-brand-primary block">Certified Excellence</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Licensed, insured, and certified to serve the Greater Toronto Area with the highest standards of professionalism and safety.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Serving the Greater Toronto Area with the highest standards of professionalism and safety since 2013.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
               {
                 title: "Licensed Since 2013",
-                description: "Fully licensed by the Ontario College of Trades",
-                icon: "🏅",
-                highlight: "11+ Years"
+                description: "Fully licensed by the Ontario College of Trades with continuous education and certification",
+                highlight: "11+ Years",
+                bgImage: "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
               },
               {
                 title: "Fully Insured",
-                description: "Comprehensive liability and workers' compensation coverage",
-                icon: "🛡️",
-                highlight: "Up to $2M"
+                description: "Comprehensive liability and workers' compensation coverage up to $2M",
+                highlight: "Up to $2M",
+                bgImage: "bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900"
               },
               {
                 title: "24/7 Emergency Response",
-                description: "Round-the-clock availability for urgent plumbing needs",
-                icon: "🚨",
-                highlight: "Always Available"
+                description: "Round-the-clock availability for urgent plumbing needs across the GTA",
+                highlight: "Always Available",
+                bgImage: "bg-gradient-to-br from-red-900 via-red-800 to-red-900"
               },
               {
                 title: "100% Satisfaction",
                 description: "We stand behind our work with a complete satisfaction guarantee",
-                icon: "⭐",
-                highlight: "Guaranteed"
+                highlight: "Guaranteed",
+                bgImage: "bg-gradient-to-br from-green-900 via-green-800 to-green-900"
               }
             ].map((trust, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300">
-                <div className="text-4xl mb-4">{trust.icon}</div>
-                <div className="text-sm font-semibold text-brand-primary mb-2">{trust.highlight}</div>
-                <h3 className="text-lg font-semibold text-brand-ink mb-2">
-                  {trust.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {trust.description}
-                </p>
+              <div 
+                key={index} 
+                className="trust-card group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20"
+              >
+                {/* Background Image */}
+                <div className={`absolute inset-0 ${trust.bgImage}`}>
+                  {/* Overlay for better text readability */}
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500"></div>
+                  {/* Subtle pattern overlay */}
+                  <div className="absolute inset-0 opacity-10" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                  }}></div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="text-xs font-bold text-brand-accent mb-3 uppercase tracking-wider">
+                      {trust.highlight}
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-4 leading-tight group-hover:text-brand-accent transition-colors duration-300">
+                      {trust.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-200 leading-relaxed text-sm">
+                    {trust.description}
+                  </p>
+                </div>
+                
+                {/* Subtle bottom accent */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>
           
+          {/* Bottom trust indicators */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex flex-wrap items-center justify-center gap-8 bg-white/60 backdrop-blur-trust rounded-2xl px-8 py-6 border border-gray-200">
+              <div className="trust-indicator flex items-center gap-3">
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-green-600 text-sm">✓</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">Ontario Licensed</span>
+              </div>
+              <div className="trust-indicator flex items-center gap-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 text-sm">🛡️</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">Fully Insured</span>
+              </div>
+              <div className="trust-indicator flex items-center gap-3">
+                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                  <span className="text-purple-600 text-sm">⭐</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">5-Star Rated</span>
+              </div>
+              <div className="trust-indicator flex items-center gap-3">
+                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                  <span className="text-orange-600 text-sm">🚨</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">24/7 Emergency</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Free Property Inspection Section */}
-      <section className="py-20 bg-brand-primary">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-            Free Building Inspections
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Get a comprehensive property inspection for condos and high-rise buildings in the GTA. 
-            Our detailed assessment includes property-wide inspection, detailed reports, and complete cost estimation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/inspection"
-              className="bg-white text-brand-primary hover:bg-gray-100 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-200"
-            >
-              Schedule Free Inspection
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-brand-primary-600 text-white hover:bg-brand-primary-600/90 border border-white/20 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-200"
-            >
-              Contact Us Today
-            </Link>
+      {/* Free Plumbing Inspection Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-48 h-48 bg-brand-accent rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-brand-primary rounded-3xl p-12 lg:p-16 relative overflow-hidden">
+            {/* Background decorative elements inside the blue box */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+              <div className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-white rounded-full blur-xl"></div>
+            </div>
+            
+            <div className="relative">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left Side - Text Content */}
+                <div className="text-left">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 leading-tight">
+                    Free Plumbing Inspections
+                  </h2>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-blue-100 mb-6 leading-tight">
+                    for Condos, Commercial, and High-Rise Buildings
+                  </h3>
+                  <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
+                    Prevent costly water damage and get peace of mind with a detailed plumbing report — at no cost.
+                  </p>
+                  
+                  <div className="flex justify-start">
+                    <Link
+                      href="/inspection"
+                      className="bg-white text-brand-primary hover:bg-gray-100 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-white/25"
+                    >
+                      <span className="mr-3">📅</span>
+                      Book Your Free Inspection
+                    </Link>
+                  </div>
+                </div>
+                
+                {/* Right Side - Supporting Points */}
+                <div className="grid grid-cols-2 gap-10">
+                  {/* Row 1 */}
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Detailed inspection & report</h3>
+                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
+                    <p className="text-blue-100 text-base">Comprehensive assessment of all plumbing systems</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Photos, findings, and recommendations</h3>
+                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
+                    <p className="text-blue-100 text-base">Visual documentation with expert analysis</p>
+                  </div>
+                  
+                  {/* Row 2 */}
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Budget recommendations</h3>
+                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
+                    <p className="text-blue-100 text-base">Cost estimates and priority-based repair planning</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Zero obligations or hidden fees</h3>
+                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
+                    <p className="text-blue-100 text-base">Completely free with no strings attached</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
