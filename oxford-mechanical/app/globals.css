@@ -43,8 +43,32 @@
   background: #fff;
   border: 1px solid #e7e9eb;
   border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  border-color: rgba(0, 55, 255, 0.1);
 }
 
 .container {
@@ -52,4 +76,46 @@
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+/* Enhanced button styles */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-ink);
+  border: 1px solid rgba(0, 55, 255, 0.2);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: 0.75rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 55, 255, 0.05);
+  border-color: rgba(0, 55, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 55, 255, 0.15);
+}
+
+/* Trust indicator styles */
+.trust-badge {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-600));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Enhanced section spacing */
+.section-padding {
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 0;
+  }
 }

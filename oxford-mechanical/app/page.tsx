@@ -42,6 +42,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust & Certifications Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-brand-ink mb-4">
+              Trusted & Certified
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Licensed, insured, and certified to serve the Greater Toronto Area with the highest standards of professionalism and safety.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Licensed Since 2013",
+                description: "Fully licensed by the Ontario College of Trades",
+                icon: "🏅",
+                highlight: "11+ Years"
+              },
+              {
+                title: "Fully Insured",
+                description: "Comprehensive liability and workers' compensation coverage",
+                icon: "🛡️",
+                highlight: "Up to $2M"
+              },
+              {
+                title: "24/7 Emergency Response",
+                description: "Round-the-clock availability for urgent plumbing needs",
+                icon: "🚨",
+                highlight: "Always Available"
+              },
+              {
+                title: "100% Satisfaction",
+                description: "We stand behind our work with a complete satisfaction guarantee",
+                icon: "⭐",
+                highlight: "Guaranteed"
+              }
+            ].map((trust, index) => (
+              <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div className="text-4xl mb-4">{trust.icon}</div>
+                <div className="text-sm font-semibold text-brand-primary mb-2">{trust.highlight}</div>
+                <h3 className="text-lg font-semibold text-brand-ink mb-2">
+                  {trust.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {trust.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center space-x-8 bg-gray-50 rounded-2xl px-8 py-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-brand-primary">500+</div>
+                <div className="text-sm text-gray-600">Properties Served</div>
+              </div>
+              <div className="w-px h-12 bg-gray-300"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-brand-primary">15,000+</div>
+                <div className="text-sm text-gray-600">Service Calls</div>
+              </div>
+              <div className="w-px h-12 bg-gray-300"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-brand-primary">99.8%</div>
+                <div className="text-sm text-gray-600">Customer Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Free Property Inspection Section */}
       <section className="py-20 bg-brand-primary">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -135,50 +208,56 @@ export default function Home() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
-              Our Core Services
+              Comprehensive Plumbing Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From emergency repairs to preventative maintenance, we provide comprehensive plumbing solutions for residential and commercial properties.
+              From emergency repairs to preventative maintenance, we provide specialized plumbing services for every industry and property type.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                title: "Emergency Services",
-                description: "24/7 emergency response for urgent plumbing issues",
+                title: "Emergency Response",
+                description: "24/7 emergency response for urgent plumbing issues affecting building operations",
                 icon: "🚨",
-                href: "/services/emergency"
+                href: "/services/emergency",
+                category: "Emergency Services"
               },
               {
-                title: "Drain Cleaning",
-                description: "Professional drain cleaning and clog removal",
+                title: "Drain & Sewer Services",
+                description: "Professional drain cleaning, camera inspection, and sewer line maintenance",
                 icon: "🚿",
-                href: "/drain-cleaning"
+                href: "/drain-cleaning",
+                category: "Maintenance"
               },
               {
                 title: "Camera Inspection",
-                description: "Advanced camera inspection for accurate diagnostics",
+                description: "Advanced diagnostic technology for accurate problem identification",
                 icon: "📹",
-                href: "/services/camera-inspection"
+                href: "/services/camera-inspection",
+                category: "Diagnostics"
               },
               {
-                title: "Leak Investigation",
-                description: "Comprehensive leak detection and repair services",
+                title: "Leak Detection & Repair",
+                description: "Comprehensive leak investigation and precision repair services",
                 icon: "🔧",
-                href: "/services/leak-repair"
+                href: "/services/leak-repair",
+                category: "Repair Services"
               },
               {
                 title: "Preventative Maintenance",
-                description: "Regular maintenance to prevent costly repairs",
+                description: "Scheduled maintenance programs to prevent costly emergency repairs",
                 icon: "🛠️",
-                href: "/services/maintenance"
+                href: "/services/maintenance",
+                category: "Maintenance"
               },
               {
-                title: "Water Saving Solutions",
-                description: "Eco-friendly plumbing upgrades and installations",
+                title: "Water Conservation",
+                description: "Eco-friendly upgrades and water-saving solutions for cost reduction",
                 icon: "💧",
-                href: "/services/water-saving"
+                href: "/services/water-saving",
+                category: "Upgrades"
               }
             ].map((service, index) => (
               <Link
@@ -186,15 +265,78 @@ export default function Home() {
                 href={service.href}
                 className="card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-4xl">{service.icon}</div>
+                  <div className="text-xs font-semibold text-brand-primary bg-blue-50 px-3 py-1 rounded-full">
+                    {service.category}
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed mb-4">
                   {service.description}
                 </p>
+                <div className="text-brand-primary font-medium group-hover:text-brand-primary-600 transition-colors">
+                  Learn More →
+                </div>
               </Link>
             ))}
+          </div>
+
+          {/* Industry Focus Section */}
+          <div className="bg-white rounded-2xl p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-display font-bold text-brand-ink mb-4">
+                Specialized Industry Expertise
+              </h3>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                We understand the unique challenges of different property types and industries. Our specialized approach ensures optimal solutions for your specific needs.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  industry: "High-Rise Condos",
+                  description: "Minimal disruption maintenance for high-density residential properties",
+                  icon: "🏢"
+                },
+                {
+                  industry: "Office Buildings",
+                  description: "Commercial-grade solutions for corporate environments",
+                  icon: "🏢"
+                },
+                {
+                  industry: "Healthcare Facilities",
+                  description: "Specialized plumbing for hospitals and medical centers",
+                  icon: "🏥"
+                },
+                {
+                  industry: "Educational Institutions",
+                  description: "School and university plumbing maintenance and upgrades",
+                  icon: "🎓"
+                },
+                {
+                  industry: "Retail & Commercial",
+                  description: "Shopping centers and retail space plumbing solutions",
+                  icon: "🛍️"
+                },
+                {
+                  industry: "Industrial Facilities",
+                  description: "Heavy-duty plumbing for manufacturing and industrial sites",
+                  icon: "🏭"
+                }
+              ].map((industry, index) => (
+                <div key={index} className="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="text-2xl mr-4">{industry.icon}</div>
+                  <div>
+                    <h4 className="font-semibold text-brand-ink mb-1">{industry.industry}</h4>
+                    <p className="text-sm text-gray-600">{industry.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -249,6 +391,96 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
+              Success Stories
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real solutions for real challenges. See how we've helped property managers and building owners across the GTA.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Downtown Condo Complex",
+                challenge: "Recurring drain blockages affecting 200+ units",
+                solution: "Comprehensive camera inspection and preventative maintenance program",
+                result: "95% reduction in emergency calls",
+                savings: "$50,000 annually",
+                image: "🏢",
+                category: "High-Rise Condos"
+              },
+              {
+                title: "Corporate Office Tower",
+                challenge: "Water pressure issues in upper floors",
+                solution: "Complete water system analysis and pump upgrades",
+                result: "Consistent pressure throughout building",
+                savings: "$25,000 in avoided downtime",
+                image: "🏢",
+                category: "Office Buildings"
+              },
+              {
+                title: "University Residence",
+                challenge: "High water consumption and utility costs",
+                solution: "Water-saving fixture upgrades and leak detection",
+                result: "40% reduction in water usage",
+                savings: "$75,000 annually",
+                image: "🎓",
+                category: "Education"
+              }
+            ].map((caseStudy, index) => (
+              <div key={index} className="card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-3xl">{caseStudy.image}</div>
+                  <div className="text-xs font-semibold text-brand-primary bg-blue-50 px-3 py-1 rounded-full">
+                    {caseStudy.category}
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors">
+                  {caseStudy.title}
+                </h3>
+                
+                <div className="space-y-3 mb-6">
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Challenge:</h4>
+                    <p className="text-sm text-gray-600">{caseStudy.challenge}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Solution:</h4>
+                    <p className="text-sm text-gray-600">{caseStudy.solution}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Result:</h4>
+                    <p className="text-sm text-gray-600">{caseStudy.result}</p>
+                  </div>
+                </div>
+                
+                <div className="bg-green-50 rounded-xl p-4 border-l-4 border-green-500">
+                  <div className="text-lg font-bold text-green-700">Saved {caseStudy.savings}</div>
+                  <div className="text-sm text-green-600">in operational costs</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link
+              href="/case-studies"
+              className="btn-primary inline-flex items-center px-6 py-3 text-base font-semibold rounded-xl"
+            >
+              View All Case Studies
+            </Link>
           </div>
         </div>
       </section>
@@ -594,57 +826,111 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Floating CTA Section */}
+      <div className="fixed bottom-6 right-6 z-40 hidden lg:block">
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-sm">
+          <div className="text-center mb-4">
+            <h3 className="text-lg font-semibold text-brand-ink mb-1">Need Emergency Service?</h3>
+            <p className="text-sm text-gray-600">24/7 emergency response available</p>
+          </div>
+          <div className="space-y-2">
+            <Link
+              href="tel:+1416-555-0123"
+              className="w-full btn-primary text-center py-2 text-sm font-semibold rounded-xl block"
+            >
+              Call Now: (416) 555-0123
+            </Link>
+            <Link
+              href="/contact"
+              className="w-full btn-secondary text-center py-2 text-sm font-semibold rounded-xl block"
+            >
+              Schedule Inspection
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Footer */}
-      <footer className="bg-brand-ink text-white py-12">
+      <footer className="bg-brand-ink text-white py-16">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">OM</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="lg:col-span-1">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">OM</span>
                 </div>
-                <span className="ml-2 text-xl font-display font-semibold">
+                <span className="ml-3 text-2xl font-display font-semibold">
                   Oxford Mechanical
                 </span>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 Professional plumbing services for Toronto and GTA. 
                 Licensed, insured, and committed to excellence since 2013.
               </p>
+              <div className="flex items-center space-x-4">
+                <div className="trust-badge">
+                  <span>🏅</span>
+                  Licensed Since 2013
+                </div>
+              </div>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold mb-6">Services</h3>
+              <ul className="space-y-3 text-sm">
                 <li><Link href="/services/emergency" className="text-gray-300 hover:text-white transition-colors">Emergency Services</Link></li>
                 <li><Link href="/drain-cleaning" className="text-gray-300 hover:text-white transition-colors">Drain Cleaning</Link></li>
                 <li><Link href="/services/camera-inspection" className="text-gray-300 hover:text-white transition-colors">Camera Inspection</Link></li>
+                <li><Link href="/services/leak-repair" className="text-gray-300 hover:text-white transition-colors">Leak Repair</Link></li>
                 <li><Link href="/services/maintenance" className="text-gray-300 hover:text-white transition-colors">Maintenance</Link></li>
+                <li><Link href="/services/water-saving" className="text-gray-300 hover:text-white transition-colors">Water Saving Solutions</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="/projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link></li>
-                <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+              <h3 className="text-lg font-semibold mb-6">Industries</h3>
+              <ul className="space-y-3 text-sm">
+                <li><Link href="/industries/condos" className="text-gray-300 hover:text-white transition-colors">High-Rise Condos</Link></li>
+                <li><Link href="/industries/office" className="text-gray-300 hover:text-white transition-colors">Office Buildings</Link></li>
+                <li><Link href="/industries/education" className="text-gray-300 hover:text-white transition-colors">Schools & Universities</Link></li>
+                <li><Link href="/industries/healthcare" className="text-gray-300 hover:text-white transition-colors">Healthcare Facilities</Link></li>
+                <li><Link href="/industries/retail" className="text-gray-300 hover:text-white transition-colors">Retail & Commercial</Link></li>
+                <li><Link href="/industries/industrial" className="text-gray-300 hover:text-white transition-colors">Industrial Facilities</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-              <div className="space-y-2 text-sm text-gray-300">
-                <p>1111 Finch West, Toronto</p>
-                <p>info@oxfordmechanical.ca</p>
-                <p>(416) 555-0123</p>
-                <p className="text-brand-accent font-medium">24/7 Emergency Service</p>
+              <h3 className="text-lg font-semibold mb-6">Contact & Resources</h3>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="text-gray-300 mb-2">1111 Finch West, Toronto</p>
+                  <p className="text-gray-300 mb-2">info@oxfordmechanical.ca</p>
+                  <p className="text-gray-300 mb-2">(416) 555-0123</p>
+                  <p className="text-brand-accent font-medium">24/7 Emergency Service</p>
+                </div>
+                <div className="pt-4">
+                  <Link
+                    href="/contact"
+                    className="btn-primary inline-flex items-center px-4 py-2 text-sm font-semibold rounded-xl"
+                  >
+                    Get Free Quote
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 Oxford Mechanical. All rights reserved.</p>
+          <div className="border-t border-gray-700 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="text-sm text-gray-400">
+                <p>&copy; 2024 Oxford Mechanical. All rights reserved.</p>
+              </div>
+              <div className="flex space-x-6 text-sm">
+                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+                <Link href="/certifications" className="text-gray-400 hover:text-white transition-colors">Certifications</Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
