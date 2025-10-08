@@ -3,14 +3,19 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Suspense } from 'react'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 pb-20 lg:pb-0">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-ink via-brand-ink to-gray-900 text-white overflow-hidden min-h-[90vh] flex items-center">
+      {/* Hero Section - Enhanced for Performance & Accessibility */}
+      <section 
+        className="relative bg-gradient-to-br from-brand-ink via-brand-ink to-gray-900 text-white overflow-hidden min-h-[90vh] flex items-center"
+        role="banner"
+        aria-label="Hero section with main call-to-action"
+      >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-brand-ink via-brand-ink/95 to-transparent"></div>
@@ -40,10 +45,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.9] mb-8">
+            {/* Main Headline - Optimized for SEO and Accessibility */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] mb-8">
               <span className="block text-white mb-2">Commercial Plumbing</span>
-              <span className="block text-brand-accent text-4xl md:text-5xl lg:text-6xl font-medium">Services for Toronto & GTA</span>
+              <span className="block text-brand-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium">Services for Toronto & GTA</span>
             </h1>
             
             {/* Description */}
@@ -56,23 +61,25 @@ export default function Home() {
               </p>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Enhanced for Better UX and Accessibility */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
                 href="/contact"
-                className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-10 py-5 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-brand-primary/25 transition-all duration-300 transform hover:-translate-y-1"
+                className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-brand-primary/25 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-primary/50"
+                aria-label="Get free plumbing inspection for your property"
               >
                 <span className="mr-3">Get Free Inspection</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
               <Link
                 href="/services"
-                className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-10 py-5 text-xl font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
+                aria-label="View our comprehensive plumbing services"
               >
                 <span className="mr-3">View Services</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
@@ -91,8 +98,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust & Certifications Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden">
+      {/* Trust & Certifications Section - Enhanced for Performance */}
+      <section 
+        className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden"
+        role="region"
+        aria-label="Trust and certifications"
+      >
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-brand-primary rounded-full blur-3xl floating-bg"></div>
@@ -382,8 +393,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
+      {/* Services Section - Optimized for Performance */}
+      <section 
+        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden"
+        role="region"
+        aria-label="Our services"
+      >
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl floating-bg"></div>
@@ -404,7 +419,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 lg:mb-20">
             {[
               {
                 title: "Emergency Response",
@@ -458,7 +473,7 @@ export default function Home() {
               <Link
                 key={index}
                 href={service.href}
-                className="service-card group relative rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 hover:border-brand-primary/30 overflow-hidden will-change-transform min-h-[400px] flex flex-col"
+                className="service-card group relative rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 hover:border-brand-primary/30 overflow-hidden will-change-transform min-h-[350px] sm:min-h-[400px] flex flex-col"
                 aria-label={`Learn more about ${service.title} - ${service.description}`}
                 style={{
                   backgroundImage: `url(${service.backgroundImage})`,
@@ -604,11 +619,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Testimonials Section - 3D Carousel */}
-      <TestimonialsCarousel />
+      {/* Client Testimonials Section - 3D Carousel with Performance Optimization */}
+      <Suspense fallback={<div className="py-16 bg-gray-50"><div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center"><div className="animate-pulse">Loading testimonials...</div></div></div>}>
+        <TestimonialsCarousel />
+      </Suspense>
 
-      {/* Success Stories Section - Enhanced */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+      {/* Success Stories Section - Enhanced for Performance */}
+      <section 
+        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden"
+        role="region"
+        aria-label="Success stories and case studies"
+      >
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 bg-brand-primary rounded-full blur-3xl"></div>
@@ -1229,8 +1250,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 bg-white">
+      {/* Contact Form Section - Enhanced for Accessibility */}
+      <section 
+        className="py-16 sm:py-20 bg-white"
+        role="region"
+        aria-label="Contact form for free inspection"
+      >
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
@@ -1276,14 +1301,19 @@ export default function Home() {
             </div>
             
             <div className="card">
-              <form className="space-y-6">
+              <form className="space-y-6" role="form" aria-label="Free inspection request form">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Organization</label>
+                  <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-2">Organization</label>
                   <input
+                    id="organization"
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                    name="organization"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-colors"
                     placeholder="Your organization name"
+                    required
+                    aria-describedby="organization-help"
                   />
+                  <div id="organization-help" className="sr-only">Enter your organization or company name</div>
                 </div>
                 
                 <div>

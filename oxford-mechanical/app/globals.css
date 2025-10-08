@@ -855,6 +855,35 @@
   will-change: opacity;
 }
 
+/* Enhanced performance with GPU acceleration */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimized animations for better performance */
+@media (prefers-reduced-motion: no-preference) {
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Critical CSS for above-the-fold content */
+.hero-section {
+  contain: layout style paint;
+}
+
+/* Optimized image loading */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .floating-bg,
@@ -1520,5 +1549,136 @@
   
   .property-type-card p {
     color: #000;
+  }
+}
+
+/* Modern CSS optimizations for 2024 */
+:root {
+  /* Enhanced color system */
+  --color-primary-rgb: 0, 55, 255;
+  --color-accent-rgb: 156, 197, 158;
+  
+  /* Improved spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Enhanced typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  
+  /* Performance-focused shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Container queries for responsive design */
+@container (min-width: 768px) {
+  .service-card {
+    min-height: 400px;
+  }
+}
+
+/* Modern focus styles */
+.focus-visible:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Enhanced button states */
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* Optimized grid layouts */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Modern aspect ratios */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Enhanced scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Modern backdrop filters */
+.backdrop-blur-modern {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Enhanced text rendering */
+.text-optimized {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern CSS Grid with subgrid support */
+.grid-subgrid {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+/* Enhanced media queries for modern devices */
+@media (min-width: 320px) and (max-width: 480px) {
+  .mobile-optimized {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .tablet-optimized {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .desktop-small-optimized {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .desktop-large-optimized {
+    padding: 2.5rem;
   }
 }
