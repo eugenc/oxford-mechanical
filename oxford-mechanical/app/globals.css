@@ -1314,3 +1314,211 @@
     background-color: #000;
   }
 }
+
+/* Property Types Section Enhancements */
+.property-type-card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+  position: relative;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.property-type-card:nth-child(1) { animation-delay: 0.1s; }
+.property-type-card:nth-child(2) { animation-delay: 0.2s; }
+.property-type-card:nth-child(3) { animation-delay: 0.3s; }
+.property-type-card:nth-child(4) { animation-delay: 0.4s; }
+.property-type-card:nth-child(5) { animation-delay: 0.5s; }
+.property-type-card:nth-child(6) { animation-delay: 0.6s; }
+.property-type-card:nth-child(7) { animation-delay: 0.7s; }
+.property-type-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Enhanced hover effects for property type cards */
+.property-type-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 55, 255, 0.15);
+  border-color: rgba(0, 55, 255, 0.3);
+}
+
+/* Icon container styling */
+.property-type-card .w-16 {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.property-type-card:hover .w-16 {
+  background: linear-gradient(135deg, rgba(0, 55, 255, 0.15), rgba(156, 197, 158, 0.15));
+  box-shadow: 0 8px 25px rgba(0, 55, 255, 0.1);
+}
+
+/* Icon animation */
+.property-type-card .text-3xl {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.property-type-card:hover .text-3xl {
+  filter: drop-shadow(0 4px 8px rgba(0, 55, 255, 0.2));
+}
+
+/* Background decorative element animation */
+.property-type-card .absolute.top-0.right-0 {
+  transition: all 0.3s ease;
+}
+
+.property-type-card:hover .absolute.top-0.right-0 {
+  opacity: 0.1;
+  transform: scale(1.2);
+}
+
+/* Text styling enhancements */
+.property-type-card h4 {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.property-type-card:hover h4 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Description text styling */
+.property-type-card p {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.property-type-card:hover p {
+  transform: translateX(2px);
+}
+
+/* Hover accent line animation */
+.property-type-card .absolute.bottom-0 {
+  transition: all 0.3s ease;
+}
+
+.property-type-card:hover .absolute.bottom-0 {
+  width: 24px;
+}
+
+/* Subtle hover glow animation */
+.property-type-card .bg-gradient-to-br {
+  transition: all 0.3s ease;
+}
+
+.property-type-card:hover .bg-gradient-to-br {
+  background: linear-gradient(135deg, rgba(0, 55, 255, 0.08), rgba(156, 197, 158, 0.08));
+}
+
+/* Responsive adjustments for property type cards */
+@media (max-width: 1024px) {
+  .property-type-card {
+    animation-delay: 0s;
+  }
+  
+  .property-type-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .property-type-card .w-16 {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .property-type-card .text-3xl {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .property-type-card {
+    border-radius: 20px;
+    padding: 1.5rem;
+  }
+  
+  .property-type-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .property-type-card .w-16 {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .property-type-card .text-3xl {
+    font-size: 1.25rem;
+  }
+  
+  .property-type-card h4 {
+    font-size: 1rem;
+  }
+  
+  .property-type-card p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .property-type-card {
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+  
+  .property-type-card .w-16 {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .property-type-card .text-3xl {
+    font-size: 1rem;
+  }
+  
+  .property-type-card h4 {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .property-type-card p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Accessibility improvements for property type cards */
+@media (prefers-reduced-motion: reduce) {
+  .property-type-card {
+    animation: none;
+  }
+  
+  .property-type-card:hover {
+    transform: none;
+  }
+  
+  .property-type-card .text-3xl,
+  .property-type-card .w-16,
+  .property-type-card h4,
+  .property-type-card p {
+    transition: none;
+  }
+}
+
+/* High contrast mode support for property type cards */
+@media (prefers-contrast: high) {
+  .property-type-card {
+    border: 2px solid #000;
+  }
+  
+  .property-type-card:hover {
+    border-color: #0037ff;
+  }
+  
+  .property-type-card h4 {
+    color: #000;
+  }
+  
+  .property-type-card p {
+    color: #000;
+  }
+}

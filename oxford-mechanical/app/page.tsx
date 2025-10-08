@@ -985,27 +985,126 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Property Types */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-brand-ink text-center mb-8">
-              Property Types We Serve
-            </h3>
+          {/* Property Types - Enhanced */}
+          <div className="mt-20">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+                <span className="text-brand-primary">🏢</span>
+                <span className="text-sm font-medium text-brand-ink">Property Types We Serve</span>
+              </div>
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
+                Comprehensive Property Coverage
+              </h3>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                From high-rise condos to industrial facilities, we provide specialized plumbing services for every property type across the GTA.
+              </p>
+            </div>
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { type: "High-rise condos", icon: "🏢" },
-                { type: "Office buildings", icon: "🏬" },
-                { type: "Schools & universities", icon: "🎓" },
-                { type: "Public buildings", icon: "🏛️" },
-                { type: "Residential properties", icon: "🏠" },
-                { type: "Commercial complexes", icon: "🏪" },
-                { type: "Industrial facilities", icon: "🏭" },
-                { type: "Healthcare facilities", icon: "🏥" }
+                { 
+                  type: "High-rise condos", 
+                  icon: "🏢", 
+                  description: "Minimal disruption solutions for high-density residential properties",
+                  gradient: "from-blue-500 to-blue-600"
+                },
+                { 
+                  type: "Office buildings", 
+                  icon: "🏬", 
+                  description: "Commercial-grade plumbing for corporate environments",
+                  gradient: "from-gray-500 to-gray-600"
+                },
+                { 
+                  type: "Schools & universities", 
+                  icon: "🎓", 
+                  description: "Educational institution maintenance and upgrades",
+                  gradient: "from-green-500 to-green-600"
+                },
+                { 
+                  type: "Public buildings", 
+                  icon: "🏛️", 
+                  description: "Government and municipal building services",
+                  gradient: "from-purple-500 to-purple-600"
+                },
+                { 
+                  type: "Residential properties", 
+                  icon: "🏠", 
+                  description: "Multi-unit and single-family home solutions",
+                  gradient: "from-orange-500 to-orange-600"
+                },
+                { 
+                  type: "Commercial complexes", 
+                  icon: "🏪", 
+                  description: "Shopping centers and retail space maintenance",
+                  gradient: "from-cyan-500 to-cyan-600"
+                },
+                { 
+                  type: "Industrial facilities", 
+                  icon: "🏭", 
+                  description: "Heavy-duty plumbing for manufacturing sites",
+                  gradient: "from-red-500 to-red-600"
+                },
+                { 
+                  type: "Healthcare facilities", 
+                  icon: "🏥", 
+                  description: "Specialized plumbing for hospitals and medical centers",
+                  gradient: "from-pink-500 to-pink-600"
+                }
               ].map((property, index) => (
-                <div key={index} className="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-primary/20 transition-all duration-200">
-                  <span className="text-2xl mr-3">{property.icon}</span>
-                  <span className="text-gray-700 font-medium">{property.type}</span>
+                <div 
+                  key={index} 
+                  className="property-type-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20 overflow-hidden"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Background decorative element */}
+                  <div className="absolute top-0 right-0 w-20 h-20 opacity-5">
+                    <div className={`w-full h-full bg-gradient-to-br ${property.gradient} rounded-full blur-xl`}></div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 p-6">
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{property.icon}</span>
+                    </div>
+                    
+                    {/* Title */}
+                    <h4 className="text-lg font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300 leading-tight">
+                      {property.type}
+                    </h4>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {property.description}
+                    </p>
+                  </div>
+                  
+                  {/* Hover accent line */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Subtle hover glow */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               ))}
+            </div>
+            
+            {/* Bottom CTA */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="text-left">
+                  <h4 className="text-lg font-bold text-brand-ink mb-1">Need specialized service for your property type?</h4>
+                  <p className="text-gray-600 text-sm">Get a customized solution tailored to your building's unique requirements.</p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                >
+                  <span className="mr-2">Get Custom Quote</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
