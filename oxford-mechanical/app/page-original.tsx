@@ -1,3 +1,5 @@
+'use client'
+
 import Navigation from '@/components/Navigation'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Link from 'next/link'
@@ -512,15 +514,26 @@ export default function Home() {
           </div>
 
           {/* Industry Focus Section */}
-          <div className="bg-white rounded-2xl p-8">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-display font-bold text-brand-ink mb-4">
-                Specialized Industry Expertise
-              </h3>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                We understand the unique challenges of different property types and industries. Our specialized approach ensures optimal solutions for your specific needs.
-              </p>
+          <div className="industry-section-bg bg-gradient-to-br from-white via-blue-50/30 to-white rounded-3xl p-10 shadow-xl border border-gray-100 relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-primary rounded-full blur-3xl"></div>
+              <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-brand-accent rounded-full blur-2xl"></div>
             </div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+                  <span className="text-brand-primary">🏢</span>
+                  <span className="text-sm font-medium text-brand-ink">Industry Expertise</span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-6 leading-tight">
+                  Specialized Industry Expertise
+                </h3>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  We understand the unique challenges of different property types and industries. Our specialized approach ensures optimal solutions for your specific needs.
+                </p>
+              </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -561,8 +574,11 @@ export default function Home() {
                   fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
                 }
               ].map((industry, index) => (
-                <div key={index} className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
-                  <div className="flex h-full">
+                <div key={index} className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 relative">
+                  {/* Subtle top accent line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-primary to-brand-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="flex h-full min-h-[200px]">
                     {/* Image section - 35% width */}
                     <div 
                       className="image-section w-[35%] relative overflow-hidden"
@@ -584,18 +600,46 @@ export default function Home() {
                       
                       {/* Hover effect */}
                       <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Industry icon overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="industry-icon w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                          <span className="text-white text-xl font-bold">
+                            {industry.industry.charAt(0)}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                     
                     {/* Content section - 65% width */}
-                    <div className="content-section flex-1 p-6 flex flex-col justify-center">
-                      <h4 className="text-lg font-bold text-brand-ink mb-2 group-hover:text-brand-primary transition-colors duration-300">
-                        {industry.industry}
-                      </h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        {industry.description}
-                      </p>
+                    <div className="content-section flex-1 p-6 flex flex-col justify-center relative">
+                      {/* Subtle background pattern */}
+                      <div className="absolute inset-0 opacity-5">
+                        <div className="absolute top-2 right-2 w-8 h-8 bg-brand-primary rounded-full blur-sm"></div>
+                        <div className="absolute bottom-2 left-2 w-6 h-6 bg-brand-accent rounded-full blur-sm"></div>
+                      </div>
+                      
+                      <div className="relative z-10">
+                        <h4 className="text-xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
+                          {industry.industry}
+                        </h4>
+                        <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                          {industry.description}
+                        </p>
+                        
+                        {/* Learn more indicator */}
+                        <div className="learn-more-indicator flex items-center text-brand-primary text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="mr-1">Learn More</span>
+                          <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  
+                  {/* Hover effect border */}
+                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-brand-primary/20 transition-all duration-300"></div>
                 </div>
               ))}
             </div>
