@@ -26,7 +26,9 @@ module.exports = {
       },
       boxShadow: {
         "brand-sm": "0 1px 2px rgba(0,0,0,0.06)",
-        "brand-md": "0 4px 12px rgba(0,0,0,0.10)"
+        "brand-md": "0 4px 12px rgba(0,0,0,0.10)",
+        "brand-lg": "0 10px 40px rgba(0,55,255,0.3)",
+        "brand-xl": "0 15px 50px rgba(0,55,255,0.4)"
       },
       maxWidth: { 
         container: "1280px" 
