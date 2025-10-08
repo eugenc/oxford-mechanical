@@ -606,19 +606,32 @@ export default function Home() {
       {/* Client Testimonials Section - 3D Carousel */}
       <TestimonialsCarousel />
 
-      {/* Case Studies Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
+      {/* Success Stories Section - Enhanced */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-brand-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-brand-accent rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-green-500 rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-brand-primary/10 text-brand-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Proven Results
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
               Success Stories
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real solutions for real challenges. See how we've helped property managers and building owners across the GTA.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Real solutions for real challenges. See how we've helped property managers and building owners across the GTA achieve remarkable results.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
                 title: "Downtown Condo Complex",
@@ -626,8 +639,10 @@ export default function Home() {
                 solution: "Comprehensive camera inspection and preventative maintenance program",
                 result: "95% reduction in emergency calls",
                 savings: "$50,000 annually",
-                image: "🏢",
-                category: "High-Rise Condos"
+                savingsPercent: "95%",
+                category: "High-Rise Condos",
+                categoryColor: "bg-blue-100 text-blue-700",
+                image: "/app/public/assets/city-background.jpeg"
               },
               {
                 title: "Corporate Office Tower",
@@ -635,8 +650,10 @@ export default function Home() {
                 solution: "Complete water system analysis and pump upgrades",
                 result: "Consistent pressure throughout building",
                 savings: "$25,000 in avoided downtime",
-                image: "🏢",
-                category: "Office Buildings"
+                savingsPercent: "100%",
+                category: "Office Buildings",
+                categoryColor: "bg-purple-100 text-purple-700",
+                image: "/app/public/assets/header-background.webp"
               },
               {
                 title: "University Residence",
@@ -644,54 +661,127 @@ export default function Home() {
                 solution: "Water-saving fixture upgrades and leak detection",
                 result: "40% reduction in water usage",
                 savings: "$75,000 annually",
-                image: "🎓",
-                category: "Education"
+                savingsPercent: "40%",
+                category: "Education",
+                categoryColor: "bg-green-100 text-green-700",
+                image: "/app/public/assets/water-savings-solutions.webp"
               }
             ].map((caseStudy, index) => (
-              <div key={index} className="card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-3xl">{caseStudy.image}</div>
-                  <div className="text-xs font-semibold text-brand-primary bg-blue-50 px-3 py-1 rounded-full">
-                    {caseStudy.category}
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-semibold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors">
-                  {caseStudy.title}
-                </h3>
-                
-                <div className="space-y-3 mb-6">
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Challenge:</h4>
-                    <p className="text-sm text-gray-600">{caseStudy.challenge}</p>
+              <div 
+                key={index} 
+                className="success-story-card group cursor-pointer"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative overflow-hidden">
+                  {/* Card Header with Image */}
+                  <div className="mb-6">
+                    <div className="w-full h-48 rounded-xl overflow-hidden mb-4 relative">
+                      <img 
+                        src={caseStudy.image} 
+                        alt={caseStudy.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {/* Image Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                      {/* Category Badge on Image */}
+                      <div className="absolute bottom-4 left-4">
+                        <div className={`inline-block text-xs font-bold bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1.5 rounded-full shadow-lg`}>
+                          {caseStudy.category}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Solution:</h4>
-                    <p className="text-sm text-gray-600">{caseStudy.solution}</p>
+                  <h3 className="text-xl font-bold text-brand-ink mb-4 group-hover:text-brand-primary transition-colors leading-tight">
+                    {caseStudy.title}
+                  </h3>
+                  
+                  {/* Story Flow */}
+                  <div className="space-y-4 mb-8">
+                    <div className="story-step">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-6 h-6 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold">1</div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-900 mb-1">Challenge</h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">{caseStudy.challenge}</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="story-step">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold">2</div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-900 mb-1">Solution</h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">{caseStudy.solution}</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="story-step">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-bold">3</div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-900 mb-1">Result</h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">{caseStudy.result}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-1">Result:</h4>
-                    <p className="text-sm text-gray-600">{caseStudy.result}</p>
+                  {/* Savings Highlight */}
+                  <div className="relative">
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200 group-hover:shadow-lg transition-all duration-300">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-2xl font-bold text-green-700">{caseStudy.savingsPercent}</div>
+                        <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                      </div>
+                      <div className="text-lg font-bold text-green-800 mb-1">Saved {caseStudy.savings}</div>
+                      <div className="text-sm text-green-600">in operational costs</div>
+                    </div>
+                    
+                    {/* Success Badge */}
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="bg-green-50 rounded-xl p-4 border-l-4 border-green-500">
-                  <div className="text-lg font-bold text-green-700">Saved {caseStudy.savings}</div>
-                  <div className="text-sm text-green-600">in operational costs</div>
                 </div>
               </div>
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <Link
-              href="/case-studies"
-              className="btn-primary inline-flex items-center px-6 py-3 text-base font-semibold rounded-xl"
-            >
-              View All Case Studies
-            </Link>
+          {/* Enhanced CTA Section */}
+          <div className="text-center">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+              <div className="text-left">
+                <h3 className="text-xl font-bold text-brand-ink mb-2">Ready to see similar results?</h3>
+                <p className="text-gray-600">Get your free building inspection and discover potential savings.</p>
+              </div>
+              <div className="flex gap-3">
+                <Link
+                  href="/case-studies"
+                  className="btn-secondary inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-xl"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  View All Stories
+                </Link>
+                <Link
+                  href="/contact"
+                  className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-xl"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Free Inspection
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

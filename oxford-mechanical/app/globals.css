@@ -367,6 +367,162 @@
   animation: cardGlow 4s ease-in-out infinite;
 }
 
+/* Success Stories Enhanced Styles */
+.success-story-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 55, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out both;
+  cursor: pointer;
+}
+
+/* Success Story Image Card Styles */
+.success-story-card .h-48 {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.success-story-card:hover .h-48 {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.success-story-card img {
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.success-story-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Image overlay styling */
+.success-story-card .bg-gradient-to-t {
+  transition: opacity 0.3s ease;
+}
+
+.success-story-card:hover .bg-gradient-to-t {
+  opacity: 0.8;
+}
+
+/* Category badge on image */
+.success-story-card .bg-white\/90 {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.success-story-card:hover .bg-white\/90 {
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+}
+
+/* Card content spacing adjustments */
+.success-story-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.success-story-card .relative.overflow-hidden {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.success-story-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.success-story-card:hover::before {
+  opacity: 1;
+}
+
+.success-story-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 55, 255, 0.15);
+  border-color: rgba(0, 55, 255, 0.2);
+}
+
+.success-story-card:hover .story-step {
+  transform: translateX(4px);
+}
+
+.story-step {
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.story-step::after {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 24px;
+  bottom: -16px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(0, 55, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.success-story-card:hover .story-step::after {
+  opacity: 1;
+}
+
+.story-step:last-child::after {
+  display: none;
+}
+
+/* Enhanced savings display */
+.success-story-card .bg-gradient-to-r {
+  position: relative;
+  overflow: hidden;
+}
+
+.success-story-card .bg-gradient-to-r::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.success-story-card:hover .bg-gradient-to-r::before {
+  left: 100%;
+}
+
+/* Success badge animation */
+.success-story-card .absolute.-top-2.-right-2 {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 /* Floating background elements */
 @keyframes float {
   0%, 100% {
@@ -384,6 +540,63 @@
 .floating-bg:nth-child(2) {
   animation-delay: -3s;
   animation-duration: 8s;
+}
+
+/* Success Stories Responsive Design */
+@media (max-width: 1024px) {
+  .success-story-card {
+    padding: 1.5rem;
+  }
+  
+  .success-story-card:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+}
+
+@media (max-width: 768px) {
+  .success-story-card {
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+  
+  .success-story-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .story-step {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .success-story-card {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+  
+  .success-story-card .bg-gradient-to-r {
+    padding: 1rem;
+  }
+  
+  .success-story-card .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  /* Adjust image height on mobile */
+  .success-story-card .h-48 {
+    height: 10rem;
+  }
+  
+  /* Adjust category badge positioning on mobile */
+  .success-story-card .absolute.bottom-4.left-4 {
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+  
+  .success-story-card .absolute.bottom-4.left-4 .text-xs {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.5rem;
+  }
 }
 
 /* Trust badge pulse */
