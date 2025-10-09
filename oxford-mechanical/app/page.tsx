@@ -9,7 +9,7 @@ import { Suspense } from 'react'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-20 lg:pb-0">
+    <div className="min-h-screen bg-gray-50 pb-24 lg:pb-0">
       <Navigation />
       
       {/* Hero Section - Enhanced for Performance & Accessibility */}
@@ -18,70 +18,73 @@ export default function Home() {
         role="banner"
         aria-label="Hero section with main call-to-action"
       >
-        {/* Background Image with Overlay */}
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-ink via-brand-ink/95 to-transparent"></div>
-          <div className="absolute inset-0 bg-black/30"></div>
-          {/* Subtle geometric pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-brand-accent rounded-full blur-2xl"></div>
-          </div>
+          <Image
+            src="/assets/header-background.webp"
+            alt="Commercial plumbing equipment and facilities"
+            fill
+            className="object-cover"
+            priority
+            quality={90}
+          />
+          {/* Optimized dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80"></div>
         </div>
         
         <div className="relative max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-5xl">
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-6 mb-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <span className="text-brand-accent">🏅</span>
-                <span className="text-sm font-medium">Licensed Since 2013</span>
+                <span className="text-xs sm:text-sm font-medium">Licensed Since 2013</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <span className="text-brand-accent">🛡️</span>
-                <span className="text-sm font-medium">Fully Insured</span>
+                <span className="text-xs sm:text-sm font-medium">Fully Insured</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <span className="text-brand-accent">⭐</span>
-                <span className="text-sm font-medium">100% Satisfaction</span>
+                <span className="text-xs sm:text-sm font-medium">100% Satisfaction</span>
               </div>
             </div>
 
             {/* Main Headline - Optimized for SEO and Accessibility */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] mb-8">
-              <span className="block text-white mb-2">Commercial Plumbing</span>
-              <span className="block text-brand-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium">Services for Toronto & GTA</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-[0.9] mb-6 sm:mb-8">
+              <span className="block text-white mb-1 sm:mb-2">Commercial Plumbing</span>
+              <span className="block text-brand-accent text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium">Services for Toronto & GTA</span>
             </h1>
             
             {/* Description */}
-            <div className="max-w-3xl mb-12">
-              <p className="text-xl md:text-2xl text-gray-100 mb-4 leading-relaxed">
+            <div className="max-w-3xl mb-8 sm:mb-12">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-100 mb-3 sm:mb-4 leading-relaxed">
                 24/7 emergency response, drain cleaning, and maintenance services.
               </p>
-              <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed">
                 Licensed & insured since 2013 with 100% satisfaction guarantee.
               </p>
             </div>
 
             {/* CTA Buttons - Enhanced for Better UX and Accessibility */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
               <Link
                 href="/contact"
-                className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-brand-primary/25 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-primary/50"
+                className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-brand-primary/25 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-primary/50"
                 aria-label="Get free plumbing inspection for your property"
               >
-                <span className="mr-3">Get Free Inspection</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <span className="mr-2 sm:mr-3">Get Free Inspection</span>
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
               <Link
                 href="/services"
-                className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
+                className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
                 aria-label="View our comprehensive plumbing services"
               >
-                <span className="mr-3">View Services</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <span className="mr-2 sm:mr-3">View Services</span>
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>

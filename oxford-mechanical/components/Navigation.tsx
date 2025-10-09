@@ -95,58 +95,20 @@ export default function Navigation() {
     },
   ]
 
-  const resourceItems = [
-    { 
-      name: 'Blog & Insights', 
-      href: '/blog',
-      description: 'Expert advice and industry insights',
-      icon: '📝'
-    },
-    { 
-      name: 'Maintenance Guides', 
-      href: '/resources/maintenance-guides',
-      description: 'Step-by-step maintenance instructions',
-      icon: '📋'
-    },
-    { 
-      name: 'Emergency Procedures', 
-      href: '/resources/emergency-procedures',
-      description: 'What to do during plumbing emergencies',
-      icon: '🚨'
-    },
-    { 
-      name: 'Water Saving Tips', 
-      href: '/resources/water-saving',
-      description: 'Eco-friendly water conservation strategies',
-      icon: '💧'
-    },
-    { 
-      name: 'Case Studies', 
-      href: '/case-studies',
-      description: 'Real solutions for real challenges',
-      icon: '📊'
-    },
-    { 
-      name: 'Certifications', 
-      href: '/certifications',
-      description: 'Our professional credentials and licenses',
-      icon: '🏅'
-    },
-  ]
-
   return (
     <nav className="bg-white/95 backdrop-blur-lg border-b border-gray-200/80 sticky top-0 z-50 shadow-sm">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-18">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-bold text-lg">OM</span>
-              </div>
-              <span className="ml-4 text-2xl font-display font-bold text-brand-ink group-hover:text-brand-primary transition-colors duration-300">
-                Oxford Mechanical
-              </span>
+              <Image
+                src="/assets/oxford-mechanical-logo-new.png"
+                alt="Oxford Mechanical Logo"
+                width={200}
+                height={48}
+                className="group-hover:scale-105 transition-all duration-300"
+              />
             </Link>
           </div>
 
@@ -251,46 +213,13 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
 
-              {/* Resources Dropdown */}
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
-                  Resources
-                  <svg className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
-                </button>
-                
-                <div className="absolute left-0 mt-3 w-[75vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <div className="py-4">
-                    <div className="px-6 py-3 border-b border-gray-100">
-                      <h3 className="text-sm font-bold text-gray-900">Resources & Tools</h3>
-                      <p className="text-xs text-gray-500 mt-1">Expert guidance and helpful resources</p>
-                    </div>
-                    <div className="grid grid-cols-6 gap-2 p-4">
-                      {resourceItems.map((resource) => (
-                        <Link
-                          key={resource.name}
-                          href={resource.href}
-                          className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
-                        >
-                          <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                            {resource.icon}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
-                              {resource.name}
-                            </h4>
-                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                              {resource.description}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Link
+                href="/resources"
+                className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-blue-50 relative group"
+              >
+                Resources
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+              </Link>
 
               <Link
                 href="/about"
@@ -343,7 +272,7 @@ export default function Navigation() {
               {/* Mobile Services */}
               <div className="pt-2">
                 <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Services</div>
-                <div className="grid grid-cols-2 gap-3 px-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4">
                   {serviceItems.map((service) => (
                     <Link
                       key={service.name}
@@ -370,7 +299,7 @@ export default function Navigation() {
               {/* Mobile Industries */}
               <div className="pt-2">
                 <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Industries</div>
-                <div className="grid grid-cols-2 gap-3 px-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4">
                   {industryItems.map((industry) => (
                     <Link
                       key={industry.name}
@@ -402,32 +331,13 @@ export default function Navigation() {
                 Projects
               </Link>
 
-              {/* Mobile Resources */}
-              <div className="pt-2">
-                <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Resources</div>
-                <div className="grid grid-cols-2 gap-3 px-4">
-                  {resourceItems.map((resource) => (
-                    <Link
-                      key={resource.name}
-                      href={resource.href}
-                      className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                        {resource.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
-                          {resource.name}
-                        </h4>
-                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                          {resource.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <Link
+                href="/resources"
+                className="text-gray-700 hover:text-brand-primary block px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Resources
+              </Link>
 
               <Link
                 href="/about"

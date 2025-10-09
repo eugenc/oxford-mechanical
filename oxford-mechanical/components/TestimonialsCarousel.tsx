@@ -142,14 +142,46 @@ const TestimonialsCarousel: React.FC = () => {
               320: {
                 slidesPerView: 1,
                 spaceBetween: 20,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 0,
+                  modifier: 1,
+                  slideShadows: false,
+                },
               },
               640: {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+                coverflowEffect: {
+                  rotate: 10,
+                  stretch: 0,
+                  depth: 25,
+                  modifier: 1,
+                  slideShadows: false,
+                },
+              },
+              768: {
                 slidesPerView: 2,
                 spaceBetween: 30,
+                coverflowEffect: {
+                  rotate: 15,
+                  stretch: 0,
+                  depth: 50,
+                  modifier: 1,
+                  slideShadows: false,
+                },
               },
               1024: {
                 slidesPerView: 3,
                 spaceBetween: 40,
+                coverflowEffect: {
+                  rotate: 15,
+                  stretch: 0,
+                  depth: 50,
+                  modifier: 1,
+                  slideShadows: false,
+                },
               },
             }}
           >
@@ -187,21 +219,21 @@ const TestimonialsCarousel: React.FC = () => {
         </div>
 
         {/* Additional Stats */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-8 bg-white rounded-2xl px-8 py-6 shadow-lg">
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 md:space-x-8 bg-white rounded-2xl px-6 sm:px-8 py-6 shadow-lg">
             <div className="text-center">
-              <div className="text-2xl font-bold text-brand-primary">500+</div>
-              <div className="text-sm text-gray-600">Properties Served</div>
+              <div className="text-xl sm:text-2xl font-bold text-brand-primary">500+</div>
+              <div className="text-xs sm:text-sm text-gray-600">Properties Served</div>
             </div>
-            <div className="w-px h-12 bg-gray-300"></div>
+            <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-brand-primary">15,000+</div>
-              <div className="text-sm text-gray-600">Service Calls</div>
+              <div className="text-xl sm:text-2xl font-bold text-brand-primary">15,000+</div>
+              <div className="text-xs sm:text-sm text-gray-600">Service Calls</div>
             </div>
-            <div className="w-px h-12 bg-gray-300"></div>
+            <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-brand-primary">99.8%</div>
-              <div className="text-sm text-gray-600">Customer Satisfaction</div>
+              <div className="text-xl sm:text-2xl font-bold text-brand-primary">99.8%</div>
+              <div className="text-xs sm:text-sm text-gray-600">Customer Satisfaction</div>
             </div>
           </div>
         </div>
