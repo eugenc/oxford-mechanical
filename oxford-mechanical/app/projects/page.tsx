@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
 
 const projects = [
@@ -271,6 +272,9 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsCarousel />
 
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />

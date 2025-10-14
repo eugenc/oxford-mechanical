@@ -2,6 +2,7 @@ import HeroSection from '@/components/HeroSection'
 import IndustryCard from '@/components/IndustryCard'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
 const industries = [
   {
@@ -276,6 +277,9 @@ export default function IndustriesPage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsCarousel />
 
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
