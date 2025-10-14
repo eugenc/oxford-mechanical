@@ -202,7 +202,7 @@ const TestimonialsCarousel: React.FC = () => {
                   </div>
                   
                   <blockquote className="text-gray-600 mb-6 leading-relaxed italic text-lg">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
                   
                   <div className="border-t pt-4">
