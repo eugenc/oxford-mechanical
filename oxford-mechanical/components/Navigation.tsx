@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import Image from 'next/image'
 
 export default function Navigation() {
@@ -133,13 +133,13 @@ export default function Navigation() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 
-                <div className="absolute left-0 mt-3 w-[75vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <div className="absolute left-0 mt-3 w-[50vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                   <div className="py-4">
                     <div className="px-6 py-3 border-b border-gray-100">
                       <h3 className="text-sm font-bold text-gray-900">Our Services</h3>
                       <p className="text-xs text-gray-500 mt-1">Professional plumbing solutions for every need</p>
                     </div>
-                    <div className="grid grid-cols-6 gap-2 p-4">
+                    <div className="grid grid-cols-3 gap-2 p-4">
                       {serviceItems.map((service) => (
                         <Link
                           key={service.name}
@@ -174,13 +174,13 @@ export default function Navigation() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 
-                <div className="absolute left-0 mt-3 w-[75vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <div className="absolute left-0 mt-3 w-[50vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                   <div className="py-4">
                     <div className="px-6 py-3 border-b border-gray-100">
                       <h3 className="text-sm font-bold text-gray-900">Industries We Serve</h3>
                       <p className="text-xs text-gray-500 mt-1">Specialized solutions for every industry</p>
                     </div>
-                    <div className="grid grid-cols-6 gap-2 p-4">
+                    <div className="grid grid-cols-3 gap-2 p-4">
                       {industryItems.map((industry) => (
                         <Link
                           key={industry.name}

@@ -9,7 +9,7 @@ export default function EmergencyServiceWidget() {
   return (
     <>
       {/* Desktop Widget */}
-      <div className="fixed bottom-6 right-6 z-40 hidden lg:block">
+      <div className="fixed bottom-6 left-6 z-40 hidden lg:block">
       {/* Collapsed Bubble State */}
       {!isExpanded && (
         <div 

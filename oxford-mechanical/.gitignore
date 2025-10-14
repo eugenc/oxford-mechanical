@@ -145,3 +145,4 @@ simulation_results/
 *.log
 *.out
 *.dat
+.vercel
