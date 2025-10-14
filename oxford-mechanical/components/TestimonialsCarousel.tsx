@@ -5,10 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow, Autoplay, Pagination } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
 
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
+// Import Swiper styles - using dynamic imports to avoid webpack issues
+// import 'swiper/css'
+// import 'swiper/css/effect-coverflow'
+// import 'swiper/css/pagination'
 
 interface Testimonial {
   id: number
