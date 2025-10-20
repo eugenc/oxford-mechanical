@@ -64,7 +64,7 @@ export default function MaintenanceGuidesPage() {
       <HeroSection
         title="Maintenance Guides"
         subtitle="Step-by-step maintenance instructions to keep your plumbing systems running efficiently"
-        backgroundImage="/assets/resources/maintenance.jpg"
+        backgroundImage="/assets/services/preventative-maintenance-service.jpg"
         ctaText="Download Guides"
         ctaHref="#guides"
         secondaryCtaText="Get Professional Service"

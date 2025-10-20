@@ -29,7 +29,7 @@ export default function EmergencyServiceWidget() {
 
       {/* Expanded Widget State */}
       {isExpanded && (
-        <div className="floating-cta bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-6 max-w-sm hover:shadow-3xl transition-all duration-300 animate-in slide-in-from-bottom-2 fade-in">
+        <div className="floating-cta bg-white/95 backdrop-blur-1 rounded-3xl shadow-2xl border border-gray-200/50 p-6 max-w-sm hover:shadow-3xl transition-all duration-300 animate-in slide-in-from-bottom-2 fade-in">
           {/* Close button */}
           <button
             onClick={() => setIsExpanded(false)}
@@ -83,7 +83,7 @@ export default function EmergencyServiceWidget() {
 
       {/* Mobile Widget */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden">
-        <div className="floating-cta-mobile bg-white/95 backdrop-blur-sm border-t border-gray-200/50 p-4">
+        <div className="floating-cta-mobile bg-white/95 backdrop-blur-1 border-t border-gray-200/50 p-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-xl flex items-center justify-center shadow-lg">

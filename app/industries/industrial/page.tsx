@@ -93,7 +93,7 @@ export default function IndustrialPage() {
       <HeroSection
         title="Industrial Facility Plumbing"
         subtitle="Heavy-duty plumbing for manufacturing and industrial sites with specialized equipment and safety requirements"
-        backgroundImage="/assets/industries/industrial.jpg"
+        backgroundImage="/assets/industries/industrial.webp"
         ctaText="Get Industrial Quote"
         ctaHref="/contact"
         secondaryCtaText="Emergency Service"
@@ -130,7 +130,7 @@ export default function IndustrialPage() {
             </div>
             <div className="relative">
               <Image
-                src="/assets/industries/industrial.jpg"
+                src="/assets/industries/industrial.webp"
                 alt="Industrial facility"
                 width={600}
                 height={400}

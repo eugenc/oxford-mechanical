@@ -24,7 +24,7 @@ export default function Home() {
             fill
             className="object-cover"
             priority
-            quality={90}
+            quality={95}
           />
           {/* Optimized dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80"></div>
@@ -34,15 +34,15 @@ export default function Home() {
           <div className="max-w-5xl">
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <span className="text-brand-accent">🏅</span>
                 <span className="text-xs sm:text-sm font-medium">Licensed Since 2013</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <span className="text-brand-accent">🛡️</span>
                 <span className="text-xs sm:text-sm font-medium">Fully Insured</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <span className="text-brand-accent">⭐</span>
                 <span className="text-xs sm:text-sm font-medium">100% Satisfaction</span>
               </div>
@@ -78,7 +78,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/services"
-                className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
+                className="group bg-white/10 backdrop-blur-1 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
                 aria-label="View our comprehensive plumbing services"
               >
                 <span className="mr-2 sm:mr-3">View Services</span>
@@ -424,7 +424,7 @@ export default function Home() {
         
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
               <span className="text-brand-primary">🔧</span>
               <span className="text-sm font-medium text-brand-ink">Professional Services</span>
             </div>
@@ -443,7 +443,7 @@ export default function Home() {
                 description: "24/7 emergency response for urgent plumbing issues affecting building operations",
                 href: "/services/emergency",
                 category: "Emergency Services",
-                backgroundImage: "/app/public/assets/emergency-plumbing.jpg",
+                backgroundImage: "/assets/services/emergency-plumbing-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-red-500 to-red-600"
               },
               {
@@ -451,7 +451,7 @@ export default function Home() {
                 description: "Professional drain cleaning, camera inspection, and sewer line maintenance",
                 href: "/drain-cleaning",
                 category: "Maintenance",
-                backgroundImage: "/app/public/assets/drain-cleaning.jpg",
+                backgroundImage: "/assets/services/drain-cleaning-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-blue-500 to-blue-600"
               },
               {
@@ -459,7 +459,7 @@ export default function Home() {
                 description: "Advanced diagnostic technology for accurate problem identification",
                 href: "/services/camera-inspection",
                 category: "Diagnostics",
-                backgroundImage: "/app/public/assets/camera-inspection.jpg",
+                backgroundImage: "/assets/services/camera-inspection-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-purple-500 to-purple-600"
               },
               {
@@ -467,7 +467,7 @@ export default function Home() {
                 description: "Comprehensive leak investigation and precision repair services",
                 href: "/services/leak-repair",
                 category: "Repair Services",
-                backgroundImage: "/app/public/assets/leak-detection.jpg",
+                backgroundImage: "/assets/services/leak-detection-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
               },
               {
@@ -475,7 +475,7 @@ export default function Home() {
                 description: "Scheduled maintenance programs to prevent costly emergency repairs",
                 href: "/services/maintenance",
                 category: "Maintenance",
-                backgroundImage: "/app/public/assets/preventative-maintenance.jpeg",
+                backgroundImage: "/assets/services/preventative-maintenance-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-green-500 to-green-600"
               },
               {
@@ -483,7 +483,7 @@ export default function Home() {
                 description: "Eco-friendly upgrades and water-saving solutions for cost reduction",
                 href: "/services/water-saving",
                 category: "Upgrades",
-                backgroundImage: "/app/public/assets/water-savings-solutions.webp",
+                backgroundImage: "/assets/services/water-conservation-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-cyan-500 to-cyan-600"
               }
             ].map((service, index) => (
@@ -492,13 +492,19 @@ export default function Home() {
                 href={service.href}
                 className="service-card group relative rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 hover:border-brand-primary/30 overflow-hidden will-change-transform min-h-[350px] sm:min-h-[400px] flex flex-col"
                 aria-label={`Learn more about ${service.title} - ${service.description}`}
-                style={{
-                  backgroundImage: `url(${service.backgroundImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
               >
+                {/* High-quality background image */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={service.backgroundImage}
+                    alt={`${service.title} service`}
+                    fill
+                    quality={95}
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                
                 {/* Background fallback for when image doesn't load */}
                 <div className={`absolute inset-0 ${service.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                 
@@ -506,13 +512,13 @@ export default function Home() {
                 <div className="absolute inset-0 bg-brand-primary/55"></div>
                 
                 {/* Glass effect overlay */}
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-1"></div>
                 
                 {/* Content with glass effect */}
                 <div className="relative z-10 p-8 flex flex-col h-full">
                   {/* Category badge */}
                   <div className="flex justify-end mb-6">
-                    <div className="bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-bold px-4 py-2 rounded-full">
+                    <div className="bg-white/20 backdrop-blur-1 border border-white/30 text-white text-xs font-bold px-4 py-2 rounded-full">
                       {service.category}
                     </div>
                   </div>
@@ -560,52 +566,54 @@ export default function Home() {
                 {
                   industry: "High-Rise Condos",
                   description: "Minimal disruption maintenance for high-density residential properties",
-                  image: "/app/public/assets/high-rise-condos.jpg",
+                  image: "/assets/industries/condos.jpg",
                   fallbackBg: "bg-gradient-to-br from-blue-500 to-blue-600"
                 },
                 {
                   industry: "Office Buildings",
                   description: "Commercial-grade solutions for corporate environments",
-                  image: "/app/public/assets/office-buildings.jpg",
+                  image: "/assets/industries/office.jpg",
                   fallbackBg: "bg-gradient-to-br from-gray-500 to-gray-600"
                 },
                 {
                   industry: "Healthcare Facilities",
                   description: "Specialized plumbing for hospitals and medical centers",
-                  image: "/app/public/assets/healthcare-facilities.jpg",
+                  image: "/assets/industries/healthcare.jpg",
                   fallbackBg: "bg-gradient-to-br from-red-500 to-red-600"
                 },
                 {
                   industry: "Educational Institutions",
                   description: "School and university plumbing maintenance and upgrades",
-                  image: "/app/public/assets/educational-institutions.jpg",
+                  image: "/assets/industries/education.jpg",
                   fallbackBg: "bg-gradient-to-br from-green-500 to-green-600"
                 },
                 {
                   industry: "Retail & Commercial",
                   description: "Shopping centers and retail space plumbing solutions",
-                  image: "/app/public/assets/retail-commercial.jpg",
+                  image: "/assets/industries/retail.jpg",
                   fallbackBg: "bg-gradient-to-br from-purple-500 to-purple-600"
                 },
                 {
                   industry: "Industrial Facilities",
                   description: "Heavy-duty plumbing for manufacturing and industrial sites",
-                  image: "/app/public/assets/industrial-facilities.jpg",
+                  image: "/assets/industries/industrial.webp",
                   fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
                 }
               ].map((industry, index) => (
                 <div key={index} className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
                   <div className="flex h-full">
                     {/* Image section - 35% width */}
-                    <div 
-                      className="image-section w-[35%] relative overflow-hidden"
-                      style={{
-                        backgroundImage: `url(${industry.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat'
-                      }}
-                    >
+                    <div className="image-section w-[35%] relative overflow-hidden">
+                      {/* High-quality background image */}
+                      <Image
+                        src={industry.image}
+                        alt={`${industry.industry} industry`}
+                        fill
+                        quality={95}
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 35vw, 300px"
+                      />
+                      
                       {/* Fallback background */}
                       <div className={`absolute inset-0 ${industry.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                       
@@ -613,7 +621,7 @@ export default function Home() {
                       <div className="image-overlay absolute inset-0 bg-brand-primary/40"></div>
                       
                       {/* Glass effect overlay */}
-                      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
+                      <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
                       
                       {/* Hover effect */}
                       <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -681,7 +689,7 @@ export default function Home() {
                 savingsPercent: "95%",
                 category: "High-Rise Condos",
                 categoryColor: "bg-blue-100 text-blue-700",
-                image: "/app/public/assets/city-background.jpeg"
+                image: "/assets/city-background.jpeg"
               },
               {
                 title: "Corporate Office Tower",
@@ -692,7 +700,7 @@ export default function Home() {
                 savingsPercent: "100%",
                 category: "Office Buildings",
                 categoryColor: "bg-purple-100 text-purple-700",
-                image: "/app/public/assets/header-background.webp"
+                image: "/assets/header-background.webp"
               },
               {
                 title: "University Residence",
@@ -703,7 +711,7 @@ export default function Home() {
                 savingsPercent: "40%",
                 category: "Education",
                 categoryColor: "bg-green-100 text-green-700",
-                image: "/app/public/assets/water-savings-solutions.webp"
+                image: "/assets/water-savings-solutions.webp"
               }
             ].map((caseStudy, index) => (
               <div 
@@ -720,13 +728,14 @@ export default function Home() {
                         alt={caseStudy.title}
                         width={400}
                         height={192}
+                        quality={95}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       {/* Image Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                       {/* Category Badge on Image */}
                       <div className="absolute bottom-4 left-4">
-                        <div className={`inline-block text-xs font-bold bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1.5 rounded-full shadow-lg`}>
+                        <div className={`inline-block text-xs font-bold bg-white/90 backdrop-blur-1 text-gray-800 px-3 py-1.5 rounded-full shadow-lg`}>
                           {caseStudy.category}
                         </div>
                       </div>
@@ -837,7 +846,7 @@ export default function Home() {
         
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
               <span className="text-brand-primary">⭐</span>
               <span className="text-sm font-medium text-brand-ink">Why Choose Us</span>
             </div>
@@ -854,25 +863,25 @@ export default function Home() {
               {
                 title: "24/7 Emergency Response",
                 description: "Round-the-clock availability for urgent plumbing needs",
-                image: "/app/public/assets/emergency-plumbing.jpg",
+                image: "/assets/services/emergency-plumbing-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-gray-800 to-gray-900"
               },
               {
                 title: "Licensed & Insured",
                 description: "Fully licensed since 2013 with comprehensive insurance coverage",
-                image: "/app/public/assets/licensed-plumber.jpg",
+                image: "/assets/trust/license-certificate-bg.jpg",
                 fallbackBg: "bg-gradient-to-br from-gray-700 to-gray-800"
               },
               {
                 title: "100% Satisfaction Guarantee",
                 description: "We stand behind our work with a complete satisfaction guarantee",
-                image: "/app/public/assets/satisfaction-guarantee.jpg",
+                image: "/assets/trust/certified-excellence-bg.jpg",
                 fallbackBg: "bg-gradient-to-br from-gray-800 to-gray-900"
               },
               {
                 title: "Free Building Inspections",
                 description: "Complimentary property inspections to identify potential issues",
-                image: "/app/public/assets/building-inspection.jpg",
+                image: "/assets/services/camera-inspection-service.jpg",
                 fallbackBg: "bg-gradient-to-br from-gray-700 to-gray-800"
               }
             ].map((feature, index) => (
@@ -881,15 +890,17 @@ export default function Home() {
                 className="why-choose-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20 overflow-hidden"
               >
                 {/* Image section - 25% of card height */}
-                <div 
-                  className="h-32 w-full relative overflow-hidden"
-                  style={{
-                    backgroundImage: `url(${feature.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                  }}
-                >
+                <div className="h-32 w-full relative overflow-hidden">
+                  {/* High-quality background image */}
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    quality={95}
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 300px"
+                  />
+                  
                   {/* Fallback background */}
                   <div className={`absolute inset-0 ${feature.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   
@@ -967,6 +978,7 @@ export default function Home() {
                   alt="Toronto skyline and surrounding areas"
                   width={600}
                   height={400}
+                  quality={95}
                   className="w-full h-80 lg:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/60 via-transparent to-transparent"></div>
@@ -1028,7 +1040,7 @@ export default function Home() {
           {/* Property Types - Enhanced */}
           <div className="mt-20">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
                 <span className="text-brand-primary">🏢</span>
                 <span className="text-sm font-medium text-brand-ink">Property Types We Serve</span>
               </div>
@@ -1229,7 +1241,7 @@ export default function Home() {
         
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
               <span className="text-brand-primary">🎁</span>
               <span className="text-sm font-medium text-brand-ink">Exclusive Programs</span>
             </div>
@@ -1516,7 +1528,7 @@ export default function Home() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
               <span className="text-brand-primary">🔍</span>
               <span className="text-sm font-medium text-brand-ink">Free Property Assessment</span>
             </div>
@@ -1781,7 +1793,7 @@ export default function Home() {
       <EmergencyServiceWidget />
 
       {/* Mobile CTA Bar */}
-      <div className="floating-cta-mobile fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 p-4">
+      <div className="floating-cta-mobile fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-1 border-t border-gray-200 p-4">
         <div className="flex gap-3">
           <Link
             href="tel:+1416-555-0123"

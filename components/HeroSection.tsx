@@ -52,15 +52,15 @@ export default function HeroSection({
           {/* Trust Indicators */}
           {showTrustBadges && (
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-white text-sm font-medium">Licensed & Insured</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                 <span className="text-white text-sm font-medium">24/7 Emergency Service</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
                 <span className="text-white text-sm font-medium">100% Satisfaction</span>
               </div>
@@ -80,7 +80,7 @@ export default function HeroSection({
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href={ctaHref}
-                className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
+                className="group bg-white/10 backdrop-blur-1 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
               >
                 {ctaText}
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

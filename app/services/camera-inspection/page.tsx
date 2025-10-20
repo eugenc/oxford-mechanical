@@ -66,7 +66,7 @@ export default function CameraInspectionPage() {
       <HeroSection
         title="Camera Inspection Services"
         subtitle="Advanced diagnostic technology for accurate problem identification and cost-effective solutions"
-        backgroundImage="/assets/services/camera-inspection.jpg"
+        backgroundImage="/assets/services/camera-inspection-service.jpg"
         ctaText="Schedule Inspection"
         ctaHref="/contact"
         secondaryCtaText="Emergency Service"
@@ -104,7 +104,7 @@ export default function CameraInspectionPage() {
             </div>
             <div className="relative">
               <Image
-                src="/assets/services/camera-inspection.jpg"
+                src="/assets/services/camera-inspection-service.jpg"
                 alt="Camera inspection equipment"
                 width={600}
                 height={400}

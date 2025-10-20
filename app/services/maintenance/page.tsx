@@ -103,7 +103,7 @@ export default function MaintenancePage() {
       <HeroSection
         title="Preventive Maintenance Programs"
         subtitle="Keep your plumbing systems running efficiently with our comprehensive maintenance programs"
-        backgroundImage="/assets/services/maintenance.jpg"
+        backgroundImage="/assets/services/preventative-maintenance-service.jpg"
         ctaText="Get Maintenance Plan"
         ctaHref="/contact"
         secondaryCtaText="Schedule Inspection"
@@ -140,7 +140,7 @@ export default function MaintenancePage() {
             </div>
             <div className="relative">
               <Image
-                src="/assets/services/maintenance.jpg"
+                src="/assets/services/preventative-maintenance-service.jpg"
                 alt="Maintenance technician at work"
                 width={600}
                 height={400}

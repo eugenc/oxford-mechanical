@@ -167,7 +167,7 @@ export default function ContactPage() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
               <span className="text-brand-primary">🔍</span>
               <span className="text-sm font-medium text-brand-ink">Free Property Assessment</span>
             </div>

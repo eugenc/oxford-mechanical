@@ -107,7 +107,7 @@ export default function EmergencyServicesPage() {
       <HeroSection
         title="24/7 Emergency Plumbing Services"
         subtitle="When plumbing emergencies strike, we're here to help. Our certified technicians respond quickly to restore your service and prevent damage."
-        backgroundImage="/assets/services/emergency-service.jpg"
+        backgroundImage="/assets/services/emergency-plumbing-service.jpg"
         ctaText="Call Emergency Line"
         ctaHref="tel:+14165550123"
         secondaryCtaText="Get Free Quote"

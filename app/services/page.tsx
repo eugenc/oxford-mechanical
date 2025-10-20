@@ -16,7 +16,7 @@ const services = [
       "Certified technicians",
       "Emergency equipment"
     ],
-    image: "/assets/services/emergency-service.jpg"
+    image: "/assets/services/emergency-plumbing-service.jpg"
   },
   {
     title: "Drain Cleaning",
@@ -29,7 +29,7 @@ const services = [
       "Preventive maintenance",
       "Eco-friendly solutions"
     ],
-    image: "/assets/services/drain-cleaning.jpg"
+    image: "/assets/services/drain-cleaning-service.jpg"
   },
   {
     title: "Camera Inspection",
@@ -42,7 +42,7 @@ const services = [
       "Problem identification",
       "Cost estimation"
     ],
-    image: "/assets/services/camera-inspection.jpg"
+    image: "/assets/services/camera-inspection-service.jpg"
   },
   {
     title: "Leak Repair",
@@ -55,7 +55,7 @@ const services = [
       "Precision repairs",
       "Water damage prevention"
     ],
-    image: "/assets/services/leak-repair.jpg"
+    image: "/assets/services/leak-detection-service.jpg"
   },
   {
     title: "Maintenance",
@@ -68,7 +68,7 @@ const services = [
       "Cost savings",
       "Extended equipment life"
     ],
-    image: "/assets/services/maintenance.jpg"
+    image: "/assets/services/preventative-maintenance-service.jpg"
   },
   {
     title: "Water Saving Solutions",

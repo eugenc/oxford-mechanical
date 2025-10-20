@@ -117,7 +117,7 @@ const industries = [
       "Minimal downtime protocols",
       "Specialized expertise"
     ],
-    image: "/assets/industries/industrial.jpg"
+    image: "/assets/industries/industrial.webp"
   }
 ]
 

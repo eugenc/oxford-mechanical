@@ -70,7 +70,7 @@ export default function LeakRepairPage() {
       <HeroSection
         title="Leak Detection & Repair"
         subtitle="Professional leak detection and repair services to prevent water damage and reduce costs"
-        backgroundImage="/assets/services/leak-repair.jpg"
+        backgroundImage="/assets/services/leak-detection-service.jpg"
         ctaText="Schedule Inspection"
         ctaHref="/contact"
         secondaryCtaText="Emergency Repair"
@@ -107,7 +107,7 @@ export default function LeakRepairPage() {
             </div>
             <div className="relative">
               <Image
-                src="/assets/services/leak-repair.jpg"
+                src="/assets/services/leak-detection-service.jpg"
                 alt="Leak detection equipment"
                 width={600}
                 height={400}

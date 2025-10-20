@@ -133,8 +133,8 @@
 
 /* Enhanced backdrop blur */
 .backdrop-blur-enhanced {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 /* Trust indicator styles */
@@ -642,8 +642,8 @@
 
 /* Enhanced backdrop blur */
 .backdrop-blur-trust {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 /* Trust indicator animations */
@@ -1668,8 +1668,14 @@ html {
 
 /* Modern backdrop filters */
 .backdrop-blur-modern {
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(1px) saturate(180%);
+  -webkit-backdrop-filter: blur(1px) saturate(180%);
+}
+
+/* Custom 1px blur for replacing backdrop-blur-sm */
+.backdrop-blur-1 {
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 /* Enhanced text rendering */

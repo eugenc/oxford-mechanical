@@ -35,7 +35,7 @@ export default function ServiceCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           <div className="absolute top-4 left-4">
-            <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 bg-white/90 backdrop-blur-1 rounded-xl flex items-center justify-center text-2xl">
               {icon}
             </div>
           </div>

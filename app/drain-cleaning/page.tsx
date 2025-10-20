@@ -83,7 +83,7 @@ export default function DrainCleaningPage() {
       <HeroSection
         title="Professional Drain Cleaning Services"
         subtitle="Advanced hydro-jetting and camera inspection technology to clear even the toughest drain blockages"
-        backgroundImage="/assets/services/drain-cleaning.jpg"
+        backgroundImage="/assets/services/drain-cleaning-service.jpg"
         ctaText="Schedule Service"
         ctaHref="/contact"
         secondaryCtaText="Emergency Service"
