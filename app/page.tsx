@@ -134,25 +134,29 @@ export default function Home() {
                 title: "Licensed Since 2013",
                 description: "Fully licensed by the Ontario College of Trades with continuous education and certification",
                 highlight: "11+ Years",
-                bgImage: "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+                bgImage: "/assets/trust/license-certificate-bg.jpg",
+                fallbackBg: "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
               },
               {
                 title: "Fully Insured",
                 description: "Comprehensive liability and workers' compensation coverage up to $2M",
                 highlight: "Up to $2M",
-                bgImage: "bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900"
+                bgImage: "/assets/trust/insurance-shield-bg.jpg",
+                fallbackBg: "bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900"
               },
               {
                 title: "24/7 Emergency Response",
                 description: "Round-the-clock availability for urgent plumbing needs across the GTA",
                 highlight: "Always Available",
-                bgImage: "bg-gradient-to-br from-red-900 via-red-800 to-red-900"
+                bgImage: "/assets/trust/emergency-response-bg.jpg",
+                fallbackBg: "bg-gradient-to-br from-red-900 via-red-800 to-red-900"
               },
               {
                 title: "100% Satisfaction",
                 description: "We stand behind our work with a complete satisfaction guarantee",
                 highlight: "Guaranteed",
-                bgImage: "bg-gradient-to-br from-green-900 via-green-800 to-green-900"
+                bgImage: "/assets/trust/certified-excellence-bg.jpg",
+                fallbackBg: "bg-gradient-to-br from-green-900 via-green-800 to-green-900"
               }
             ].map((trust, index) => (
               <div 
@@ -160,9 +164,19 @@ export default function Home() {
                 className="trust-card group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20"
               >
                 {/* Background Image */}
-                <div className={`absolute inset-0 ${trust.bgImage}`}>
-                  {/* Overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500"></div>
+                <div className="absolute inset-0">
+                  {/* Background image with fallback */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${trust.bgImage})`,
+                    }}
+                  >
+                    {/* Fallback gradient background */}
+                    <div className={`absolute inset-0 ${trust.fallbackBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                  </div>
+                  {/* Overlay for better text readability - 45% transparency */}
+                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-500"></div>
                   {/* Subtle pattern overlay */}
                   <div className="absolute inset-0 opacity-10" style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -1790,90 +1804,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-brand-ink text-white py-16">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div className="lg:col-span-1">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-md">
-                  <span className="text-white font-bold text-lg">OM</span>
-                </div>
-                <span className="ml-4 text-2xl font-display font-semibold">
-                  Oxford Mechanical
-                </span>
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                Professional plumbing services for Toronto and GTA. 
-                Licensed, insured, and committed to excellence since 2013.
-              </p>
-              <div className="flex items-center space-x-4">
-                <div className="trust-badge">
-                  <span>🏅</span>
-                  Licensed Since 2013
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Services</h3>
-              <ul className="space-y-3 text-sm">
-                <li><Link href="/services/emergency" className="text-gray-300 hover:text-white transition-colors">Emergency Services</Link></li>
-                <li><Link href="/drain-cleaning" className="text-gray-300 hover:text-white transition-colors">Drain Cleaning</Link></li>
-                <li><Link href="/services/camera-inspection" className="text-gray-300 hover:text-white transition-colors">Camera Inspection</Link></li>
-                <li><Link href="/services/leak-repair" className="text-gray-300 hover:text-white transition-colors">Leak Repair</Link></li>
-                <li><Link href="/services/maintenance" className="text-gray-300 hover:text-white transition-colors">Maintenance</Link></li>
-                <li><Link href="/services/water-saving" className="text-gray-300 hover:text-white transition-colors">Water Saving Solutions</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Industries</h3>
-              <ul className="space-y-3 text-sm">
-                <li><Link href="/industries/condos" className="text-gray-300 hover:text-white transition-colors">High-Rise Condos</Link></li>
-                <li><Link href="/industries/office" className="text-gray-300 hover:text-white transition-colors">Office Buildings</Link></li>
-                <li><Link href="/industries/education" className="text-gray-300 hover:text-white transition-colors">Schools & Universities</Link></li>
-                <li><Link href="/industries/healthcare" className="text-gray-300 hover:text-white transition-colors">Healthcare Facilities</Link></li>
-                <li><Link href="/industries/retail" className="text-gray-300 hover:text-white transition-colors">Retail & Commercial</Link></li>
-                <li><Link href="/industries/industrial" className="text-gray-300 hover:text-white transition-colors">Industrial Facilities</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Contact & Resources</h3>
-              <div className="space-y-4 text-sm">
-                <div>
-                  <p className="text-gray-300 mb-2">1111 Finch West, Toronto</p>
-                  <p className="text-gray-300 mb-2">info@oxfordmechanical.ca</p>
-                  <p className="text-gray-300 mb-2">(416) 555-0123</p>
-                  <p className="text-brand-accent font-medium">24/7 Emergency Service</p>
-                </div>
-                <div className="pt-4">
-                  <Link
-                    href="/contact"
-                    className="btn-primary inline-flex items-center px-4 py-2 text-sm font-semibold rounded-xl"
-                  >
-                    Get Free Quote
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-sm text-gray-400">
-                <p>&copy; 2024 Oxford Mechanical. All rights reserved.</p>
-              </div>
-              <div className="flex space-x-6 text-sm">
-                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
-                <Link href="/certifications" className="text-gray-400 hover:text-white transition-colors">Certifications</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

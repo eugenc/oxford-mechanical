@@ -2,7 +2,7 @@ import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
-import Image from 'next/image'
+import FallbackImage from '@/components/FallbackImage'
 
 const challenges = [
   {
@@ -98,6 +98,7 @@ export default function HealthcarePage() {
         ctaHref="/contact"
         secondaryCtaText="Emergency Service"
         secondaryCtaHref="tel:+14165550123"
+        className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800"
       />
 
       {/* Industry Overview */}
@@ -129,12 +130,16 @@ export default function HealthcarePage() {
               </div>
             </div>
             <div className="relative">
-              <Image
+              <FallbackImage
                 src="/assets/industries/healthcare.jpg"
                 alt="Healthcare facility"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-lg"
+                fallbackIcon="🏥"
+                fallbackText="Healthcare Facility"
+                fallbackSubtext="Professional medical environment"
+                fallbackBg="from-blue-100 to-blue-200"
               />
             </div>
           </div>
