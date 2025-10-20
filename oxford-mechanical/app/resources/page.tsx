@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
 const resources = [
   {
@@ -227,6 +228,9 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsCarousel />
 
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />

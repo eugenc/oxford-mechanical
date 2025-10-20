@@ -111,7 +111,7 @@ export default function WaterSavingPage() {
                 Sustainable Water Solutions
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Water conservation is not just environmentally responsible—it's also economically smart. 
+                Water conservation is not just environmentally responsible—it&apos;s also economically smart. 
                 Our water-saving solutions help reduce your water bills while contributing to environmental 
                 sustainability.
               </p>
