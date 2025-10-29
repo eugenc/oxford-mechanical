@@ -1,0 +1,120 @@
+{
+  "name": "FPL Web Theme",
+  "version": "1.0",
+  "tokens": {
+    "semantic": {
+      "bg": {
+        "canvas": { "value": "{color.neutral.white}" },
+        "subtle": { "value": "{color.neutral.ink-100}" },
+        "inverse": { "value": "{color.neutral.ink-900}" }
+      },
+      "text": {
+        "default": { "value": "{color.neutral.ink-900}" },
+        "muted":   { "value": "{color.neutral.ink-700}" },
+        "inverse": { "value": "{color.neutral.white}" },
+        "link":    { "value": "{color.brand.primary}" }
+      },
+      "border": {
+        "default": { "value": "{color.neutral.ink-200}" },
+        "focus":   { "value": "{color.brand.primary}" }
+      },
+      "button": {
+        "primary-bg":       { "value": "{color.brand.primary}" },
+        "primary-text":     { "value": "{color.neutral.white}" },
+        "primary-hover":    { "value": "{color.brand.primary-strong}" },
+        "secondary-bg":     { "value": "{color.neutral.white}" },
+        "secondary-text":   { "value": "{color.brand.primary}" },
+        "secondary-border": { "value": "{color.brand.primary}" },
+        "ghost-hover":      { "value": "{color.neutral.ink-100}" }
+      },
+      "alert": {
+        "info-bg":     { "value": "#E9F6FF" },
+        "info-border": { "value": "{color.brand.primary}" },
+        "success-bg":  { "value": "#EAF5EC" },
+        "warning-bg":  { "value": "#FFF3E0" },
+        "danger-bg":   { "value": "#FDECEC" }
+      },
+      "link": {
+        "default":  { "value": "{color.brand.primary}" },
+        "hover":    { "value": "{color.brand.primary-strong}" },
+        "visited":  { "value": "#0B6CA8" }
+      },
+      "accent": {
+        "blue":   { "value": "{color.accent.blue}" },
+        "green":  { "value": "{color.accent.green}" }
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "sans": { "value": "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'" }
+      },
+      "fontSize": {
+        "xs": { "value": "12px" },
+        "sm": { "value": "14px" },
+        "md": { "value": "16px" },
+        "lg": { "value": "18px" },
+        "xl": { "value": "20px" },
+        "2xl": { "value": "24px" },
+        "3xl": { "value": "30px" }
+      },
+      "lineHeight": {
+        "tight": { "value": "1.2" },
+        "normal": { "value": "1.5" },
+        "relaxed": { "value": "1.7" }
+      },
+      "fontWeight": {
+        "regular": { "value": "400" },
+        "medium": { "value": "500" },
+        "semibold": { "value": "600" },
+        "bold": { "value": "700" }
+      }
+    },
+    "spacing": {
+      "xs": { "value": "4px" },
+      "sm": { "value": "8px" },
+      "md": { "value": "12px" },
+      "lg": { "value": "16px" },
+      "xl": { "value": "24px" },
+      "2xl": { "value": "32px" },
+      "3xl": { "value": "48px" }
+    },
+    "radii": {
+      "sm": { "value": "6px" },
+      "md": { "value": "10px" },
+      "lg": { "value": "14px" },
+      "pill": { "value": "9999px" }
+    },
+    "shadow": {
+      "sm":  { "value": "0 1px 2px rgba(0,0,0,0.06)" },
+      "md":  { "value": "0 2px 6px rgba(0,0,0,0.10)" },
+      "lg":  { "value": "0 8px 24px rgba(0,0,0,0.12)" },
+      "focus": { "value": "0 0 0 3px rgba(47,151,218,0.35)" }
+    },
+    "components": {
+      "card": {
+        "bg": { "value": "{semantic.bg.canvas}" },
+        "border": { "value": "{semantic.border.default}" },
+        "shadow": { "value": "{shadow.sm}" },
+        "radius": { "value": "{radii.lg}" }
+      },
+      "navbar": {
+        "bg": { "value": "{color.neutral.white}" },
+        "link": { "value": "{semantic.link.default}" },
+        "linkHover": { "value": "{semantic.link.hover}" },
+        "border": { "value": "{semantic.border.default}" }
+      },
+      "footer": {
+        "bg": { "value": "{semantic.bg.subtle}" },
+        "text": { "value": "{semantic.text.muted}" }
+      },
+      "chip": {
+        "bg": { "value": "{color.neutral.ink-100}" },
+        "text": { "value": "{semantic.text.default}" },
+        "radius": { "value": "{radii.pill}" }
+      }
+    }
+  },
+  "aliases": {
+    "color": { "$ref": "fpl-colors.json#/color" }
+  }
+}

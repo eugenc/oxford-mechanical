@@ -1,0 +1,38 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "version": "1.0",
+    "metadata": {
+      "brand": "FPL",
+      "source": ["#2F97DA (Brandfetch fpl.com)", "#0096D6/#0097DA, #78C239 (NextEra)"],
+      "updated": "2025-10-29"
+    },
+    "color": {
+      "brand": {
+        "primary": { "value": "#2F97DA" },
+        "primary-strong": { "value": "#1E86C9" },
+        "primary-weak": { "value": "#E6F3FB" }
+      },
+      "accent": {
+        "blue": { "value": "#0096D6" },
+        "blue-alt": { "value": "#0097DA" },
+        "green": { "value": "#78C239" }
+      },
+      "neutral": {
+        "black": { "value": "#000000" },
+        "white": { "value": "#FFFFFF" },
+        "ink-900": { "value": "#0F1720" },
+        "ink-700": { "value": "#334155" },
+        "ink-500": { "value": "#64748B" },
+        "ink-300": { "value": "#CBD5E1" },
+        "ink-200": { "value": "#E2E8F0" },
+        "ink-100": { "value": "#F1F5F9" }
+      },
+      "status": {
+        "success": { "value": "#2E7D32" },
+        "warning": { "value": "#B26A00" },
+        "danger":  { "value": "#B00020" },
+        "info":    { "value": "#2F97DA" }
+      }
+    }
+  }
+  
