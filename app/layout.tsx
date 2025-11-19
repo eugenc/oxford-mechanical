@@ -8,24 +8,11 @@ import StructuredData from '@/components/StructuredData'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  ...genMeta({
-    title: siteConfig.defaultTitle,
-    description: siteConfig.defaultDescription,
-    path: '',
-  }),
-  icons: {
-    icon: [
-      { url: '/assets/oxford-mechanical-logo.webp', type: 'image/webp' },
-      { url: '/assets/oxford-mechanical-logo.webp', type: 'image/webp', sizes: '32x32' },
-      { url: '/assets/oxford-mechanical-logo.webp', type: 'image/webp', sizes: '16x16' },
-    ],
-    apple: [
-      { url: '/assets/oxford-mechanical-logo.webp', type: 'image/webp' },
-    ],
-    shortcut: '/assets/oxford-mechanical-logo.webp',
-  },
-}
+export const metadata: Metadata = genMeta({
+  title: siteConfig.defaultTitle,
+  description: siteConfig.defaultDescription,
+  path: '',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
