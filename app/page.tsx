@@ -236,6 +236,148 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Section - Optimized for Performance */}
+      <section 
+        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden"
+        role="region"
+        aria-label="Our services"
+      >
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl floating-bg"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-accent rounded-full blur-2xl floating-bg"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
+              <span className="text-brand-primary">🔧</span>
+              <span className="text-sm font-medium text-brand-ink">Professional Services</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
+              Comprehensive Plumbing Solutions
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              From emergency repairs to preventative maintenance, we provide specialized plumbing services for every industry and property type.
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 lg:mb-20">
+            {[
+              {
+                title: "Emergency Response",
+                description: "24/7 emergency response for urgent plumbing issues affecting building operations",
+                href: "/services/emergency",
+                category: "Emergency Services",
+                backgroundImage: "/assets/services/emergency-plumbing-service.jpg",
+                fallbackBg: "bg-gradient-to-br from-red-500 to-red-600"
+              },
+              {
+                title: "Drain & Sewer Services",
+                description: "Professional drain cleaning, camera inspection, and sewer line maintenance",
+                href: "/drain-cleaning",
+                category: "Maintenance",
+                backgroundImage: "/assets/services/drain-cleaning-service.jpg",
+                fallbackBg: "bg-gradient-to-br from-blue-500 to-blue-600"
+              },
+              {
+                title: "Camera Inspection",
+                description: "Advanced diagnostic technology for accurate problem identification",
+                href: "/services/camera-inspection",
+                category: "Diagnostics",
+                backgroundImage: "/assets/services/camera-inspection-service.jpg",
+                fallbackBg: "bg-gradient-to-br from-purple-500 to-purple-600"
+              },
+              {
+                title: "Leak Detection & Repair",
+                description: "Comprehensive leak investigation and precision repair services",
+                href: "/services/leak-repair",
+                category: "Repair Services",
+                backgroundImage: "/assets/services/leak-detection-service.jpg",
+                fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
+              },
+              {
+                title: "Preventative Maintenance",
+                description: "Scheduled maintenance programs to prevent costly emergency repairs",
+                href: "/services/maintenance",
+                category: "Maintenance",
+                backgroundImage: "/assets/services/preventative-maintenance-service.jpg",
+                fallbackBg: "bg-gradient-to-br from-green-500 to-green-600"
+              },
+              {
+                title: "Water Conservation",
+                description: "Eco-friendly upgrades and water-saving solutions for cost reduction",
+                href: "/services/water-saving",
+                category: "Upgrades",
+                backgroundImage: "/assets/services/water-conservation-service.jpg",
+                fallbackBg: "bg-gradient-to-br from-cyan-500 to-cyan-600"
+              }
+            ].map((service, index) => (
+              <Link
+                key={index}
+                href={service.href}
+                className="service-card group relative rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 hover:border-brand-primary/30 overflow-hidden will-change-transform min-h-[350px] sm:min-h-[400px] flex flex-col"
+                aria-label={`Learn more about ${service.title} - ${service.description}`}
+              >
+                {/* High-quality background image */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={service.backgroundImage}
+                    alt={`${service.title} service`}
+                    fill
+                    quality={95}
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                
+                {/* Background fallback for when image doesn't load */}
+                <div className={`absolute inset-0 ${service.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                
+                {/* Brand blue overlay with 55% opacity */}
+                <div className="absolute inset-0 bg-brand-primary/55"></div>
+                
+                {/* Glass effect overlay */}
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-1"></div>
+                
+                {/* Content with glass effect */}
+                <div className="relative z-10 p-8 flex flex-col h-full">
+                  {/* Category badge */}
+                  <div className="flex justify-end mb-6">
+                    <div className="bg-white/20 backdrop-blur-1 border border-white/30 text-white text-xs font-bold px-4 py-2 rounded-full">
+                      {service.category}
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-white/90 leading-relaxed mb-6 text-base">
+                        {service.description}
+                      </p>
+                    </div>
+                    
+                    {/* Learn More link with enhanced styling */}
+                    <div className="flex items-center text-white font-semibold group-hover:text-brand-accent transition-colors duration-300">
+                      <span className="mr-2">Learn More</span>
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Hover effect border */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-white/30 transition-all duration-300"></div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Free Plumbing Inspection Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background decorative elements */}
@@ -410,11 +552,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - Optimized for Performance */}
+      {/* Specialized Industry Expertise Section */}
       <section 
         className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden"
         role="region"
-        aria-label="Our services"
+        aria-label="Specialized industry expertise"
       >
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">
@@ -423,229 +565,103 @@ export default function Home() {
         </div>
         
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <span className="text-brand-primary">🔧</span>
-              <span className="text-sm font-medium text-brand-ink">Professional Services</span>
+              <span className="text-brand-primary">🏢</span>
+              <span className="text-sm font-medium text-brand-ink">Industry Specialization</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
-              Comprehensive Plumbing Solutions
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
+              Specialized Industry Expertise
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              From emergency repairs to preventative maintenance, we provide specialized plumbing services for every industry and property type.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We understand the unique challenges of different property types and industries. Our specialized approach ensures optimal solutions for your specific needs.
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 lg:mb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
-                title: "Emergency Response",
-                description: "24/7 emergency response for urgent plumbing issues affecting building operations",
-                href: "/services/emergency",
-                category: "Emergency Services",
-                backgroundImage: "/assets/services/emergency-plumbing-service.jpg",
-                fallbackBg: "bg-gradient-to-br from-red-500 to-red-600"
-              },
-              {
-                title: "Drain & Sewer Services",
-                description: "Professional drain cleaning, camera inspection, and sewer line maintenance",
-                href: "/drain-cleaning",
-                category: "Maintenance",
-                backgroundImage: "/assets/services/drain-cleaning-service.jpg",
+                industry: "High-Rise Condos",
+                description: "Minimal disruption maintenance for high-density residential properties",
+                image: "/assets/industries/condos.jpg",
                 fallbackBg: "bg-gradient-to-br from-blue-500 to-blue-600"
               },
               {
-                title: "Camera Inspection",
-                description: "Advanced diagnostic technology for accurate problem identification",
-                href: "/services/camera-inspection",
-                category: "Diagnostics",
-                backgroundImage: "/assets/services/camera-inspection-service.jpg",
-                fallbackBg: "bg-gradient-to-br from-purple-500 to-purple-600"
+                industry: "Office Buildings",
+                description: "Commercial-grade solutions for corporate environments",
+                image: "/assets/industries/office.jpg",
+                fallbackBg: "bg-gradient-to-br from-gray-500 to-gray-600"
               },
               {
-                title: "Leak Detection & Repair",
-                description: "Comprehensive leak investigation and precision repair services",
-                href: "/services/leak-repair",
-                category: "Repair Services",
-                backgroundImage: "/assets/services/leak-detection-service.jpg",
-                fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
+                industry: "Healthcare Facilities",
+                description: "Specialized plumbing for hospitals and medical centers",
+                image: "/assets/industries/healthcare.jpg",
+                fallbackBg: "bg-gradient-to-br from-red-500 to-red-600"
               },
               {
-                title: "Preventative Maintenance",
-                description: "Scheduled maintenance programs to prevent costly emergency repairs",
-                href: "/services/maintenance",
-                category: "Maintenance",
-                backgroundImage: "/assets/services/preventative-maintenance-service.jpg",
+                industry: "Educational Institutions",
+                description: "School and university plumbing maintenance and upgrades",
+                image: "/assets/industries/education.jpg",
                 fallbackBg: "bg-gradient-to-br from-green-500 to-green-600"
               },
               {
-                title: "Water Conservation",
-                description: "Eco-friendly upgrades and water-saving solutions for cost reduction",
-                href: "/services/water-saving",
-                category: "Upgrades",
-                backgroundImage: "/assets/services/water-conservation-service.jpg",
-                fallbackBg: "bg-gradient-to-br from-cyan-500 to-cyan-600"
+                industry: "Retail & Commercial",
+                description: "Shopping centers and retail space plumbing solutions",
+                image: "/assets/industries/retail.jpg",
+                fallbackBg: "bg-gradient-to-br from-purple-500 to-purple-600"
+              },
+              {
+                industry: "Industrial Facilities",
+                description: "Heavy-duty plumbing for manufacturing and industrial sites",
+                image: "/assets/industries/industrial.webp",
+                fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
               }
-            ].map((service, index) => (
-              <Link
-                key={index}
-                href={service.href}
-                className="service-card group relative rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 hover:border-brand-primary/30 overflow-hidden will-change-transform min-h-[350px] sm:min-h-[400px] flex flex-col"
-                aria-label={`Learn more about ${service.title} - ${service.description}`}
-              >
-                {/* High-quality background image */}
-                <div className="absolute inset-0">
+            ].map((industry, index) => (
+              <div key={index} className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 flex flex-col h-full will-change-transform">
+                {/* Image section - 40% height */}
+                <div className="image-section h-[40%] min-h-[200px] relative overflow-hidden">
+                  {/* High-quality background image */}
                   <Image
-                    src={service.backgroundImage}
-                    alt={`${service.title} service`}
+                    src={industry.image}
+                    alt={`${industry.industry} industry`}
                     fill
                     quality={95}
-                    className="object-cover object-center"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
+                  
+                  {/* Gradient overlay for better text contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
+                  
+                  {/* Glass effect overlay */}
+                  <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-1 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-0 group-hover:scale-100"></div>
                 </div>
                 
-                {/* Background fallback for when image doesn't load */}
-                <div className={`absolute inset-0 ${service.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                
-                {/* Brand blue overlay with 55% opacity */}
-                <div className="absolute inset-0 bg-brand-primary/55"></div>
-                
-                {/* Glass effect overlay */}
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-1"></div>
-                
-                {/* Content with glass effect */}
-                <div className="relative z-10 p-8 flex flex-col h-full">
-                  {/* Category badge */}
-                  <div className="flex justify-end mb-6">
-                    <div className="bg-white/20 backdrop-blur-1 border border-white/30 text-white text-xs font-bold px-4 py-2 rounded-full">
-                      {service.category}
-                    </div>
+                {/* Content section - 60% height */}
+                <div className="content-section h-[60%] p-6 lg:p-8 flex flex-col justify-center relative">
+                  {/* Subtle background accent on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    <h4 className="text-xl lg:text-2xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
+                      {industry.industry}
+                    </h4>
+                    <p className="text-sm lg:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {industry.description}
+                    </p>
                   </div>
                   
-                  {/* Content */}
-                  <div className="flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      <p className="text-white/90 leading-relaxed mb-6 text-base">
-                        {service.description}
-                      </p>
-                    </div>
-                    
-                    {/* Learn More link with enhanced styling */}
-                    <div className="flex items-center text-white font-semibold group-hover:text-brand-accent transition-colors duration-300">
-                      <span className="mr-2">Learn More</span>
-                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </div>
-                  </div>
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-primary/0 to-transparent group-hover:via-brand-primary/50 transition-all duration-500"></div>
                 </div>
-                
-                {/* Hover effect border */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-white/30 transition-all duration-300"></div>
-              </Link>
+              </div>
             ))}
-          </div>
-
-          {/* Industry Focus Section */}
-          <div className="bg-white rounded-2xl p-8 lg:p-12">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
-                Specialized Industry Expertise
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We understand the unique challenges of different property types and industries. Our specialized approach ensures optimal solutions for your specific needs.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {[
-                {
-                  industry: "High-Rise Condos",
-                  description: "Minimal disruption maintenance for high-density residential properties",
-                  image: "/assets/industries/condos.jpg",
-                  fallbackBg: "bg-gradient-to-br from-blue-500 to-blue-600"
-                },
-                {
-                  industry: "Office Buildings",
-                  description: "Commercial-grade solutions for corporate environments",
-                  image: "/assets/industries/office.jpg",
-                  fallbackBg: "bg-gradient-to-br from-gray-500 to-gray-600"
-                },
-                {
-                  industry: "Healthcare Facilities",
-                  description: "Specialized plumbing for hospitals and medical centers",
-                  image: "/assets/industries/healthcare.jpg",
-                  fallbackBg: "bg-gradient-to-br from-red-500 to-red-600"
-                },
-                {
-                  industry: "Educational Institutions",
-                  description: "School and university plumbing maintenance and upgrades",
-                  image: "/assets/industries/education.jpg",
-                  fallbackBg: "bg-gradient-to-br from-green-500 to-green-600"
-                },
-                {
-                  industry: "Retail & Commercial",
-                  description: "Shopping centers and retail space plumbing solutions",
-                  image: "/assets/industries/retail.jpg",
-                  fallbackBg: "bg-gradient-to-br from-purple-500 to-purple-600"
-                },
-                {
-                  industry: "Industrial Facilities",
-                  description: "Heavy-duty plumbing for manufacturing and industrial sites",
-                  image: "/assets/industries/industrial.webp",
-                  fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
-                }
-              ].map((industry, index) => (
-                <div key={index} className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 flex flex-col h-full will-change-transform">
-                  {/* Image section - 40% height */}
-                  <div className="image-section h-[40%] min-h-[200px] relative overflow-hidden">
-                    {/* High-quality background image */}
-                    <Image
-                      src={industry.image}
-                      alt={`${industry.industry} industry`}
-                      fill
-                      quality={95}
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    
-                    {/* Gradient overlay for better text contrast */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
-                    
-                    {/* Glass effect overlay */}
-                    <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
-                    
-                    {/* Hover effect overlay */}
-                    <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Decorative corner accent */}
-                    <div className="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-1 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-0 group-hover:scale-100"></div>
-                  </div>
-                  
-                  {/* Content section - 60% height */}
-                  <div className="content-section h-[60%] p-6 lg:p-8 flex flex-col justify-center relative">
-                    {/* Subtle background accent on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div className="relative z-10">
-                      <h4 className="text-xl lg:text-2xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
-                        {industry.industry}
-                      </h4>
-                      <p className="text-sm lg:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                        {industry.description}
-                      </p>
-                    </div>
-                    
-                    {/* Bottom accent line */}
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-primary/0 to-transparent group-hover:via-brand-primary/50 transition-all duration-500"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -676,7 +692,7 @@ export default function Home() {
               </svg>
               Proven Results
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-6 leading-tight">
               Success Stories
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -836,127 +852,6 @@ export default function Home() {
                   </svg>
                   Free Inspection
                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section - Enhanced */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl floating-bg"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-brand-accent rounded-full blur-2xl floating-bg"></div>
-        </div>
-        
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <span className="text-brand-primary">⭐</span>
-              <span className="text-sm font-medium text-brand-ink">Why Choose Us</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
-              Why Choose Oxford Mechanical?
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              With over a decade of experience, we&apos;ve built a reputation for reliability, quality, and customer satisfaction.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "24/7 Emergency Response",
-                description: "Round-the-clock availability for urgent plumbing needs",
-                image: "/assets/services/emergency-plumbing-service.jpg",
-                fallbackBg: "bg-gradient-to-br from-gray-800 to-gray-900"
-              },
-              {
-                title: "Licensed & Insured",
-                description: "Fully licensed since 2013 with comprehensive insurance coverage",
-                image: "/assets/trust/license-certificate-bg.jpg",
-                fallbackBg: "bg-gradient-to-br from-gray-700 to-gray-800"
-              },
-              {
-                title: "100% Satisfaction Guarantee",
-                description: "We stand behind our work with a complete satisfaction guarantee",
-                image: "/assets/trust/certified-excellence-bg.jpg",
-                fallbackBg: "bg-gradient-to-br from-gray-800 to-gray-900"
-              },
-              {
-                title: "Free Building Inspections",
-                description: "Complimentary property inspections to identify potential issues",
-                image: "/assets/services/camera-inspection-service.jpg",
-                fallbackBg: "bg-gradient-to-br from-gray-700 to-gray-800"
-              }
-            ].map((feature, index) => (
-              <div 
-                key={index} 
-                className="why-choose-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20 overflow-hidden"
-              >
-                {/* Image section - 25% of card height */}
-                <div className="h-32 w-full relative overflow-hidden">
-                  {/* High-quality background image */}
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    fill
-                    quality={95}
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 300px"
-                  />
-                  
-                  {/* Fallback background */}
-                  <div className={`absolute inset-0 ${feature.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                  
-                  {/* Dark overlay for better text contrast */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                  
-                  {/* Hover effect */}
-                  <div className="absolute inset-0 bg-brand-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                
-                {/* Content section - 75% of card height */}
-                <div className="p-6 flex flex-col justify-center h-48">
-                  <h3 className="text-xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300 leading-tight">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    {feature.description}
-                  </p>
-                </div>
-                
-                {/* Subtle top accent line */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-brand-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            ))}
-          </div>
-          
-          {/* Stats Section */}
-          <div className="mt-20">
-            <div className="bg-white rounded-2xl p-12 shadow-lg max-w-4xl mx-auto">
-              <div className="flex items-center justify-center gap-16">
-                <div className="flex-1 text-center">
-                  <div className="text-4xl font-bold text-brand-primary mb-2">11+</div>
-                  <div className="text-gray-700 font-medium">Years Experience</div>
-                </div>
-                <div className="w-px h-16 bg-gray-200"></div>
-                <div className="flex-1 text-center">
-                  <div className="text-4xl font-bold text-brand-primary mb-2">500+</div>
-                  <div className="text-gray-700 font-medium">Properties Served</div>
-                </div>
-                <div className="w-px h-16 bg-gray-200"></div>
-                <div className="flex-1 text-center">
-                  <div className="text-4xl font-bold text-brand-primary mb-2">15,000+</div>
-                  <div className="text-gray-700 font-medium">Service Calls</div>
-                </div>
-                <div className="w-px h-16 bg-gray-200"></div>
-                <div className="flex-1 text-center">
-                  <div className="text-4xl font-bold text-brand-primary mb-2">99.8%</div>
-                  <div className="text-gray-700 font-medium">Customer Satisfaction</div>
-                </div>
               </div>
             </div>
           </div>
