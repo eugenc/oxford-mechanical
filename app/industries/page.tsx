@@ -3,6 +3,11 @@ import IndustryCard from '@/components/IndustryCard'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.industries()
 
 const industries = [
   {
@@ -123,7 +128,17 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Industry-Specific Solutions',
+          description: 'Tailored plumbing services for every industry across the Greater Toronto Area.',
+          url: 'https://oxfordmechanical.ca/industries',
+        }}
+        pathname="/industries"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Industry-Specific Solutions"
@@ -284,5 +299,6 @@ export default function IndustriesPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

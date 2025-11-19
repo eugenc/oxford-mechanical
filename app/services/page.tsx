@@ -4,6 +4,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Icon, { type IconName } from '@/components/Icon'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.services()
 
 const services = [
   {
@@ -88,7 +93,17 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Professional Plumbing Services',
+          description: 'Comprehensive plumbing solutions for commercial and residential properties.',
+          url: 'https://oxfordmechanical.ca/services',
+        }}
+        pathname="/services"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Professional Plumbing Services"
@@ -248,5 +263,6 @@ export default function ServicesPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

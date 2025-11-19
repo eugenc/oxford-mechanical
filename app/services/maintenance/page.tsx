@@ -3,6 +3,10 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+
+export const metadata = pageMetadata.maintenance()
 
 const maintenancePlans = [
   {
@@ -98,7 +102,16 @@ const benefits = [
 
 export default function MaintenancePage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="Service"
+        data={{
+          serviceType: 'Preventive Maintenance Service',
+          name: 'Preventive Maintenance Services',
+          description: 'Preventative maintenance programs to avoid costly repairs. Scheduled maintenance keeps your plumbing systems running efficiently.',
+        }}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Preventive Maintenance Programs"
@@ -274,5 +287,6 @@ export default function MaintenancePage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

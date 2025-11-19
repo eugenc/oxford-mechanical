@@ -3,6 +3,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.office()
 
 const challenges = [
   {
@@ -88,7 +93,17 @@ const benefits = [
 
 export default function OfficeBuildingsPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Office Building Plumbing Services',
+          description: 'Commercial-grade plumbing solutions for corporate environments and business facilities.',
+          url: 'https://oxfordmechanical.ca/industries/office',
+        }}
+        pathname="/industries/office"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Office Building Plumbing Services"
@@ -279,5 +294,6 @@ export default function OfficeBuildingsPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

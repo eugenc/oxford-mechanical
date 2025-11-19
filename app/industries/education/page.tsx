@@ -3,6 +3,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.education()
 
 const challenges = [
   {
@@ -88,7 +93,17 @@ const benefits = [
 
 export default function EducationPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'School & University Plumbing Services',
+          description: 'Educational institution plumbing maintenance and upgrades designed for student safety and facility longevity.',
+          url: 'https://oxfordmechanical.ca/industries/education',
+        }}
+        pathname="/industries/education"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Educational Facility Plumbing"
@@ -279,5 +294,6 @@ export default function EducationPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

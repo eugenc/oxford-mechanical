@@ -3,6 +3,10 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+
+export const metadata = pageMetadata.cameraInspection()
 
 const features = [
   {
@@ -61,7 +65,16 @@ const benefits = [
 
 export default function CameraInspectionPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="Service"
+        data={{
+          serviceType: 'Camera Inspection Service',
+          name: 'Camera Inspection Services',
+          description: 'Advanced diagnostic camera inspection for accurate problem identification in your plumbing system.',
+        }}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Camera Inspection Services"
@@ -216,5 +229,6 @@ export default function CameraInspectionPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

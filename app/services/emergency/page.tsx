@@ -1,6 +1,10 @@
 import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+
+export const metadata = pageMetadata.emergency()
 
 const emergencyServices = [
   {
@@ -102,7 +106,22 @@ const emergencySteps = [
 
 export default function EmergencyServicesPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="Service"
+        data={{
+          serviceType: 'Emergency Plumbing Service',
+          name: '24/7 Emergency Plumbing Services',
+          description: 'Immediate emergency plumbing response in Toronto & GTA. Available 24/7 for burst pipes, sewer backups, and urgent repairs.',
+          hoursAvailable: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '00:00',
+            closes: '23:59',
+          },
+        }}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="24/7 Emergency Plumbing Services"
@@ -253,5 +272,6 @@ export default function EmergencyServicesPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

@@ -1,8 +1,23 @@
 import HeroSection from '@/components/HeroSection'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.privacy()
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Privacy Policy',
+          description: 'How we protect and handle your personal information.',
+          url: 'https://oxfordmechanical.ca/privacy',
+        }}
+        pathname="/privacy"
+      />
+      <div className="min-h-screen">
       <HeroSection
         title="Privacy Policy"
         subtitle="How we protect and handle your personal information"
@@ -107,6 +122,7 @@ export default function PrivacyPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

@@ -3,6 +3,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.industrial()
 
 const challenges = [
   {
@@ -88,7 +93,17 @@ const benefits = [
 
 export default function IndustrialPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Industrial Facility Plumbing Services',
+          description: 'Heavy-duty plumbing for manufacturing and industrial sites with specialized equipment and safety requirements.',
+          url: 'https://oxfordmechanical.ca/industries/industrial',
+        }}
+        pathname="/industries/industrial"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Industrial Facility Plumbing"
@@ -279,5 +294,6 @@ export default function IndustrialPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

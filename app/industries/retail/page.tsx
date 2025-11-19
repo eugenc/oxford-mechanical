@@ -3,6 +3,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.retail()
 
 const challenges = [
   {
@@ -88,7 +93,17 @@ const benefits = [
 
 export default function RetailPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Retail & Commercial Plumbing Services',
+          description: 'Shopping centers and retail space plumbing solutions optimized for customer experience.',
+          url: 'https://oxfordmechanical.ca/industries/retail',
+        }}
+        pathname="/industries/retail"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Retail & Commercial Plumbing"
@@ -280,5 +295,6 @@ export default function RetailPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

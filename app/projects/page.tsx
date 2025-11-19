@@ -3,6 +3,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.projects()
 
 const projects = [
   {
@@ -103,7 +108,17 @@ const categories = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Our Projects & Case Studies',
+          description: 'See our successful plumbing projects and case studies across the Greater Toronto Area.',
+          url: 'https://oxfordmechanical.ca/projects',
+        }}
+        pathname="/projects"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Our Project Portfolio"
@@ -279,5 +294,6 @@ export default function ProjectsPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

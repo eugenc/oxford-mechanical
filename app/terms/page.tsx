@@ -1,8 +1,23 @@
 import HeroSection from '@/components/HeroSection'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.terms()
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Terms of Service',
+          description: 'Terms and conditions for using our services.',
+          url: 'https://oxfordmechanical.ca/terms',
+        }}
+        pathname="/terms"
+      />
+      <div className="min-h-screen">
       <HeroSection
         title="Terms of Service"
         subtitle="Terms and conditions for using our services"
@@ -122,6 +137,7 @@ export default function TermsPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

@@ -3,6 +3,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import FallbackImage from '@/components/FallbackImage'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.healthcare()
 
 const challenges = [
   {
@@ -88,7 +93,17 @@ const benefits = [
 
 export default function HealthcarePage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'Healthcare Facility Plumbing Services',
+          description: 'Specialized plumbing for hospitals and medical centers with strict hygiene and safety requirements.',
+          url: 'https://oxfordmechanical.ca/industries/healthcare',
+        }}
+        pathname="/industries/healthcare"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Healthcare Facility Plumbing"
@@ -284,5 +299,6 @@ export default function HealthcarePage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

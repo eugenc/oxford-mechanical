@@ -1,6 +1,10 @@
 import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+
+export const metadata = pageMetadata.drainCleaning()
 
 const drainServices = [
   {
@@ -78,7 +82,16 @@ const drainTypes = [
 
 export default function DrainCleaningPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="Service"
+        data={{
+          serviceType: 'Drain Cleaning Service',
+          name: 'Professional Drain Cleaning Services',
+          description: 'Professional drain cleaning and sewer maintenance using advanced hydro-jetting technology.',
+        }}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Professional Drain Cleaning Services"
@@ -249,5 +262,6 @@ export default function DrainCleaningPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

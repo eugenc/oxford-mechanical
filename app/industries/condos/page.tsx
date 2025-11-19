@@ -1,6 +1,11 @@
 import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.condos()
 
 const condoChallenges = [
   {
@@ -117,7 +122,17 @@ const condoBenefits = [
 
 export default function CondosPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'High-Rise Condo Plumbing Services',
+          description: 'Specialized plumbing services for high-density residential properties with minimal disruption to residents.',
+          url: 'https://oxfordmechanical.ca/industries/condos',
+        }}
+        pathname="/industries/condos"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="High-Rise Condo Plumbing Services"
@@ -321,5 +336,6 @@ export default function CondosPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

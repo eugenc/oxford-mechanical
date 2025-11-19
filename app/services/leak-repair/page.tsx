@@ -3,6 +3,10 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+
+export const metadata = pageMetadata.leakRepair()
 
 const services = [
   {
@@ -65,7 +69,16 @@ const warningSigns = [
 
 export default function LeakRepairPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="Service"
+        data={{
+          serviceType: 'Leak Detection & Repair Service',
+          name: 'Leak Detection & Repair',
+          description: 'Comprehensive leak investigation and precision repair services. We locate and fix leaks quickly to prevent water damage.',
+        }}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Leak Detection & Repair"
@@ -229,5 +242,6 @@ export default function LeakRepairPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

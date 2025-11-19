@@ -1,15 +1,30 @@
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import Tabs from '@/components/Tabs'
-import PropertyTypeSelector from '@/components/PropertyTypeSelector'
+import InspectionForm from '@/components/InspectionForm'
 import Icon, { type IconName } from '@/components/Icon'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Suspense } from 'react'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.home()
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 lg:pb-0">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: siteConfig.defaultTitle,
+          description: siteConfig.defaultDescription,
+          url: siteConfig.url,
+        }}
+        pathname="/"
+      />
+      <div className="min-h-screen bg-gray-50 pb-24 lg:pb-0">
       
       {/* Hero Section - Enhanced for Performance & Accessibility */}
       <section 
@@ -1339,140 +1354,8 @@ export default function Home() {
             </div>
             
             {/* Right Side - Enhanced Form */}
-            <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 relative overflow-hidden order-1 lg:order-2">
-              {/* Form header - Hat design */}
-              <div className="bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-t-3xl p-6 relative overflow-hidden">
-                {/* Background decorative elements */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
-                <div className="absolute top-2 left-2 w-16 h-16 bg-white/5 rounded-full blur-lg"></div>
-                
-                <div className="relative z-10 flex items-center gap-4">
-                  {/* Icon */}
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  
-                  {/* Text content */}
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">Get In Touch</h3>
-                    <p className="text-white/90 text-sm">Ready to schedule your free inspection? Contact us today!</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Form content */}
-              <div className="p-8 lg:p-10">
-
-              <form className="space-y-6" role="form" aria-label="Free inspection request form">
-                {/* Personal Information Section */}
-                <div className="space-y-4">
-                  <h4 className="text-lg font-semibold text-brand-ink border-b border-gray-200 pb-2">Contact Information</h4>
-                  
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="full-name" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Full Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="full-name"
-                        type="text"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
-                        placeholder="Your full name"
-                        required
-                        autoComplete="name"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Phone Number <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="phone"
-                        type="tel"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
-                        placeholder="(416) 555-0123"
-                        required
-                        autoComplete="tel"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
-                      placeholder="your.email@company.com"
-                      required
-                      autoComplete="email"
-                    />
-                  </div>
-                </div>
-
-                {/* Property Information Section */}
-                <div className="space-y-4">
-                  <h4 className="text-lg font-semibold text-brand-ink border-b border-gray-200 pb-2">Property Information</h4>
-                  
-                  <div>
-                    <label htmlFor="property-address" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Property Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      id="property-address"
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
-                      placeholder="Full property address"
-                      required
-                      autoComplete="street-address"
-                    />
-                  </div>
-                </div>
-                
-                <PropertyTypeSelector />
-                
-                {/* Enhanced CTA Button */}
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-600 hover:from-brand-primary-600 hover:to-brand-primary-700 text-white text-center py-4 text-lg font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-brand-primary/25 flex items-center justify-center gap-3"
-                >
-                  <Icon name="calendar" className="w-5 h-5" />
-                  <span>Schedule Free Inspection</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
-              </form>
-
-              {/* Form footer */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-6 text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>100% Free</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>No Obligation</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>24hr Response</span>
-                  </div>
-                </div>
-              </div>
-              </div>
+            <div className="order-1 lg:order-2">
+              <InspectionForm />
             </div>
           </div>
         </div>
@@ -1509,29 +1392,32 @@ export default function Home() {
       <EmergencyServiceWidget />
 
       {/* Mobile CTA Bar */}
-      <div className="floating-cta-mobile fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-1 border-t border-gray-200 p-4">
-        <div className="flex gap-3">
-          <Link
-            href="tel:+1416-555-0123"
-            className="flex-1 bg-gradient-to-r from-brand-primary to-brand-primary-600 hover:from-brand-primary-600 hover:to-brand-primary-700 text-white text-center py-3 text-sm font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            Emergency Call
-          </Link>
-          <Link
-            href="/contact"
-            className="flex-1 bg-gradient-to-r from-brand-accent to-green-600 hover:from-green-600 hover:to-green-700 text-white text-center py-3 text-sm font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Free Inspection
-          </Link>
+      <div className="floating-cta-mobile fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/98 backdrop-blur-md border-t border-gray-300 shadow-lg">
+        <div className="max-w-container mx-auto px-3 sm:px-4 py-3 sm:py-4">
+          <div className="flex gap-2.5 sm:gap-3">
+            <Link
+              href="tel:+1416-555-0123"
+              className="flex-1 bg-gradient-to-r from-brand-primary to-brand-primary-600 hover:from-brand-primary-600 hover:to-brand-primary-700 active:from-brand-primary-700 active:to-brand-primary-800 text-white text-center py-3.5 sm:py-4 text-sm sm:text-base font-bold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md active:scale-[0.98] min-h-[48px]"
+            >
+              <svg className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span className="whitespace-nowrap">Emergency Call</span>
+            </Link>
+            <Link
+              href="/contact"
+              className="flex-1 bg-gradient-to-r from-brand-accent to-green-600 hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 text-white text-center py-3.5 sm:py-4 text-sm sm:text-base font-bold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md active:scale-[0.98] min-h-[48px]"
+            >
+              <svg className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span className="whitespace-nowrap">Free Inspection</span>
+            </Link>
+          </div>
         </div>
       </div>
 
     </div>
+    </>
   )
 }

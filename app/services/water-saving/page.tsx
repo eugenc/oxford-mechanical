@@ -3,6 +3,10 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+
+export const metadata = pageMetadata.waterSaving()
 
 const solutions = [
   {
@@ -90,7 +94,16 @@ const caseStudies = [
 
 export default function WaterSavingPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="Service"
+        data={{
+          serviceType: 'Water Saving Solutions Service',
+          name: 'Water Saving Solutions',
+          description: 'Eco-friendly upgrades and water conservation solutions. Reduce water bills and environmental impact.',
+        }}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="Water Conservation Solutions"
@@ -291,5 +304,6 @@ export default function WaterSavingPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }

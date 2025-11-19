@@ -3,6 +3,11 @@ import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import Icon from '@/components/Icon'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/page-metadata'
+import StructuredData from '@/components/StructuredData'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata = pageMetadata.about()
 
 const teamMembers = [
   {
@@ -88,7 +93,17 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: 'About Oxford Mechanical',
+          description: 'Learn about Oxford Mechanical, Toronto\'s trusted plumbing partner since 2013.',
+          url: 'https://oxfordmechanical.ca/about',
+        }}
+        pathname="/about"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
         title="About Oxford Mechanical"
@@ -313,5 +328,6 @@ export default function AboutPage() {
       {/* Emergency Service Widget */}
       <EmergencyServiceWidget />
     </div>
+    </>
   )
 }
