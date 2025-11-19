@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Icon, { type IconName } from '@/components/Icon'
@@ -97,6 +97,19 @@ export default function Navigation() {
 
   const [servicesHovered, setServicesHovered] = useState(false)
   const [industriesHovered, setIndustriesHovered] = useState(false)
+  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const industriesTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (servicesTimeoutRef.current) {
+        clearTimeout(servicesTimeoutRef.current)
+      }
+      if (industriesTimeoutRef.current) {
+        clearTimeout(industriesTimeoutRef.current)
+      }
+    }
+  }, [])
 
   return (
     <nav className="bg-white/95 backdrop-blur-1 border-b border-gray-200/80 sticky top-0 z-50 shadow-sm">
@@ -129,8 +142,18 @@ export default function Navigation() {
               {/* Services Dropdown */}
               <div 
                 className="relative group"
-                onMouseEnter={() => setServicesHovered(true)}
-                onMouseLeave={() => setServicesHovered(false)}
+                onMouseEnter={() => {
+                  if (servicesTimeoutRef.current) {
+                    clearTimeout(servicesTimeoutRef.current)
+                    servicesTimeoutRef.current = null
+                  }
+                  setServicesHovered(true)
+                }}
+                onMouseLeave={() => {
+                  servicesTimeoutRef.current = setTimeout(() => {
+                    setServicesHovered(false)
+                  }, 500)
+                }}
               >
                 <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
                   Services
@@ -144,8 +167,18 @@ export default function Navigation() {
               {/* Industries Dropdown */}
               <div 
                 className="relative group"
-                onMouseEnter={() => setIndustriesHovered(true)}
-                onMouseLeave={() => setIndustriesHovered(false)}
+                onMouseEnter={() => {
+                  if (industriesTimeoutRef.current) {
+                    clearTimeout(industriesTimeoutRef.current)
+                    industriesTimeoutRef.current = null
+                  }
+                  setIndustriesHovered(true)
+                }}
+                onMouseLeave={() => {
+                  industriesTimeoutRef.current = setTimeout(() => {
+                    setIndustriesHovered(false)
+                  }, 500)
+                }}
               >
                 <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
                   Industries
@@ -184,19 +217,25 @@ export default function Navigation() {
 
           {/* Services Mega Menu */}
           <div 
-            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg transition-all duration-300 transform ${
+            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg rounded-b-2xl transition-all duration-300 transform -mt-1 ${
               servicesHovered 
                 ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
                 : 'opacity-0 invisible -translate-y-2 pointer-events-none'
             }`}
-            onMouseEnter={() => setServicesHovered(true)}
-            onMouseLeave={() => setServicesHovered(false)}
+            onMouseEnter={() => {
+              if (servicesTimeoutRef.current) {
+                clearTimeout(servicesTimeoutRef.current)
+                servicesTimeoutRef.current = null
+              }
+              setServicesHovered(true)
+            }}
+            onMouseLeave={() => {
+              servicesTimeoutRef.current = setTimeout(() => {
+                setServicesHovered(false)
+              }, 500)
+            }}
           >
             <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="px-6 py-3 border-b border-gray-100 mb-4">
-                <h3 className="text-sm font-bold text-gray-900">Our Services</h3>
-                <p className="text-xs text-gray-500 mt-1">Professional plumbing solutions for every need</p>
-              </div>
               <div className="grid grid-cols-6 gap-4">
                 {serviceItems.map((service) => (
                   <Link
@@ -223,19 +262,25 @@ export default function Navigation() {
 
           {/* Industries Mega Menu */}
           <div 
-            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg transition-all duration-300 transform ${
+            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg rounded-b-2xl transition-all duration-300 transform -mt-1 ${
               industriesHovered 
                 ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
                 : 'opacity-0 invisible -translate-y-2 pointer-events-none'
             }`}
-            onMouseEnter={() => setIndustriesHovered(true)}
-            onMouseLeave={() => setIndustriesHovered(false)}
+            onMouseEnter={() => {
+              if (industriesTimeoutRef.current) {
+                clearTimeout(industriesTimeoutRef.current)
+                industriesTimeoutRef.current = null
+              }
+              setIndustriesHovered(true)
+            }}
+            onMouseLeave={() => {
+              industriesTimeoutRef.current = setTimeout(() => {
+                setIndustriesHovered(false)
+              }, 500)
+            }}
           >
             <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="px-6 py-3 border-b border-gray-100 mb-4">
-                <h3 className="text-sm font-bold text-gray-900">Industries We Serve</h3>
-                <p className="text-xs text-gray-500 mt-1">Specialized solutions for every industry</p>
-              </div>
               <div className="grid grid-cols-6 gap-4">
                 {industryItems.map((industry) => (
                   <Link
