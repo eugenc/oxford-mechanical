@@ -95,9 +95,12 @@ export default function Navigation() {
     },
   ]
 
+  const [servicesHovered, setServicesHovered] = useState(false)
+  const [industriesHovered, setIndustriesHovered] = useState(false)
+
   return (
     <nav className="bg-white/95 backdrop-blur-1 border-b border-gray-200/80 sticky top-0 z-50 shadow-sm">
-      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -124,85 +127,33 @@ export default function Navigation() {
               </Link>
               
               {/* Services Dropdown */}
-              <div className="relative group">
+              <div 
+                className="relative group"
+                onMouseEnter={() => setServicesHovered(true)}
+                onMouseLeave={() => setServicesHovered(false)}
+              >
                 <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
                   Services
-                  <svg className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`ml-2 h-4 w-4 transition-transform duration-300 ${servicesHovered ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
-                
-                <div className="absolute left-0 mt-3 w-[50vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <div className="py-4">
-                    <div className="px-6 py-3 border-b border-gray-100">
-                      <h3 className="text-sm font-bold text-gray-900">Our Services</h3>
-                      <p className="text-xs text-gray-500 mt-1">Professional plumbing solutions for every need</p>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 p-4">
-                      {serviceItems.map((service) => (
-                        <Link
-                          key={service.name}
-                          href={service.href}
-                          className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
-                        >
-                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                            <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
-                              {service.name}
-                            </h4>
-                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                              {service.description}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Industries Dropdown */}
-              <div className="relative group">
+              <div 
+                className="relative group"
+                onMouseEnter={() => setIndustriesHovered(true)}
+                onMouseLeave={() => setIndustriesHovered(false)}
+              >
                 <button className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center hover:bg-blue-50 relative">
                   Industries
-                  <svg className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`ml-2 h-4 w-4 transition-transform duration-300 ${industriesHovered ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
-                
-                <div className="absolute left-0 mt-3 w-[50vw] max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <div className="py-4">
-                    <div className="px-6 py-3 border-b border-gray-100">
-                      <h3 className="text-sm font-bold text-gray-900">Industries We Serve</h3>
-                      <p className="text-xs text-gray-500 mt-1">Specialized solutions for every industry</p>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 p-4">
-                      {industryItems.map((industry) => (
-                        <Link
-                          key={industry.name}
-                          href={industry.href}
-                          className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
-                        >
-                          <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                            <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
-                              {industry.name}
-                            </h4>
-                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                              {industry.description}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <Link
@@ -228,6 +179,84 @@ export default function Navigation() {
                 Contact
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
+            </div>
+          </div>
+
+          {/* Services Mega Menu */}
+          <div 
+            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg transition-all duration-300 transform ${
+              servicesHovered 
+                ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
+                : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+            }`}
+            onMouseEnter={() => setServicesHovered(true)}
+            onMouseLeave={() => setServicesHovered(false)}
+          >
+            <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+              <div className="px-6 py-3 border-b border-gray-100 mb-4">
+                <h3 className="text-sm font-bold text-gray-900">Our Services</h3>
+                <p className="text-xs text-gray-500 mt-1">Professional plumbing solutions for every need</p>
+              </div>
+              <div className="grid grid-cols-6 gap-4">
+                {serviceItems.map((service) => (
+                  <Link
+                    key={service.name}
+                    href={service.href}
+                    className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group/item"
+                  >
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover/item:bg-brand-primary group-hover/item:text-white transition-all duration-200">
+                      <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover/item:text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs font-semibold text-gray-900 group-hover/item:text-brand-primary transition-colors">
+                        {service.name}
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                        {service.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Industries Mega Menu */}
+          <div 
+            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg transition-all duration-300 transform ${
+              industriesHovered 
+                ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
+                : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+            }`}
+            onMouseEnter={() => setIndustriesHovered(true)}
+            onMouseLeave={() => setIndustriesHovered(false)}
+          >
+            <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+              <div className="px-6 py-3 border-b border-gray-100 mb-4">
+                <h3 className="text-sm font-bold text-gray-900">Industries We Serve</h3>
+                <p className="text-xs text-gray-500 mt-1">Specialized solutions for every industry</p>
+              </div>
+              <div className="grid grid-cols-6 gap-4">
+                {industryItems.map((industry) => (
+                  <Link
+                    key={industry.name}
+                    href={industry.href}
+                    className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group/item"
+                  >
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover/item:bg-brand-primary group-hover/item:text-white transition-all duration-200">
+                      <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover/item:text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs font-semibold text-gray-900 group-hover/item:text-brand-primary transition-colors">
+                        {industry.name}
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                        {industry.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
