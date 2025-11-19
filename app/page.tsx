@@ -13,7 +13,7 @@ export default function Home() {
       
       {/* Hero Section - Enhanced for Performance & Accessibility */}
       <section 
-        className="relative bg-gradient-to-br from-brand-ink via-brand-ink to-gray-900 text-white overflow-hidden min-h-[90vh] flex items-center"
+        className="relative bg-gradient-to-br from-brand-ink via-brand-ink to-gray-900 text-white overflow-hidden min-h-[70vh] sm:min-h-[80vh] lg:min-h-[90vh] flex items-center hero-mobile-optimized"
         role="banner"
         aria-label="Hero section with main call-to-action"
       >
@@ -23,68 +23,69 @@ export default function Home() {
             src="/assets/header-background.webp"
             alt="Commercial plumbing equipment and facilities"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
             quality={95}
           />
-          {/* Optimized dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80"></div>
+          {/* Optimized dark overlay with enhanced contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-800/75 to-gray-900/85"></div>
+          {/* Additional subtle overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/10"></div>
         </div>
         
-        <div className="relative max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 xl:py-24 z-10">
           <div className="max-w-5xl">
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
-                <Icon name="trophy" className="w-5 h-5 text-brand-accent" />
-                <span className="text-xs sm:text-sm font-medium">Licensed Since 2013</span>
+            {/* Trust Indicators - Top badges (all on desktop, only Licensed on mobile) */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-10">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/12 backdrop-blur-sm rounded-full px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 border border-white/25 shadow-md hover:bg-white/18 hover:border-white/35 transition-all duration-300 hover:scale-105 hero-badge">
+                <Icon name="trophy" className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accent flex-shrink-0 drop-shadow-sm" />
+                <span className="text-[11px] sm:text-xs md:text-sm font-semibold whitespace-nowrap text-white drop-shadow-sm">Licensed Since 2013</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
-                <Icon name="shield" className="w-5 h-5 text-brand-accent" />
-                <span className="text-xs sm:text-sm font-medium">Fully Insured</span>
+              {/* Fully Insured and 100% Satisfaction - hidden on mobile, shown on desktop */}
+              <div className="hidden sm:flex items-center gap-1.5 sm:gap-2 bg-white/12 backdrop-blur-sm rounded-full px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 border border-white/25 shadow-md hover:bg-white/18 hover:border-white/35 transition-all duration-300 hover:scale-105 hero-badge">
+                <Icon name="shield" className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accent flex-shrink-0 drop-shadow-sm" />
+                <span className="text-[11px] sm:text-xs md:text-sm font-semibold whitespace-nowrap text-white drop-shadow-sm">Fully Insured</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
-                <Icon name="star" className="w-5 h-5 text-brand-accent" />
-                <span className="text-xs sm:text-sm font-medium">100% Satisfaction</span>
+              <div className="hidden sm:flex items-center gap-1.5 sm:gap-2 bg-white/12 backdrop-blur-sm rounded-full px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 border border-white/25 shadow-md hover:bg-white/18 hover:border-white/35 transition-all duration-300 hover:scale-105 hero-badge">
+                <Icon name="star" className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accent flex-shrink-0 drop-shadow-sm" />
+                <span className="text-[11px] sm:text-xs md:text-sm font-semibold whitespace-nowrap text-white drop-shadow-sm">100% Satisfaction</span>
               </div>
             </div>
 
-            {/* Main Headline - Optimized for SEO and Accessibility */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-[0.9] mb-6 sm:mb-8">
-              <span className="block text-white mb-1 sm:mb-2">Commercial Plumbing</span>
-              <span className="block text-brand-accent text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium">Services for Toronto & GTA</span>
+            {/* Main Headline with increased size */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-bold leading-[1.1] sm:leading-[1.05] md:leading-[0.9] mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10 hero-headline">
+              <span className="block text-white mb-1.5 sm:mb-2 md:mb-2.5 hero-title-main">Commercial Plumbing</span>
+              <span className="block text-brand-accent text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-medium hero-title-sub">Services in Toronto & GTA</span>
             </h1>
             
-            {/* Description */}
-            <div className="max-w-3xl mb-8 sm:mb-12">
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-100 mb-3 sm:mb-4 leading-relaxed">
-                24/7 emergency response, drain cleaning, and maintenance services.
-              </p>
-              <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed">
-                Licensed & insured since 2013 with 100% satisfaction guarantee.
+            {/* Description with enhanced contrast */}
+            <div className="max-w-4xl mb-8 sm:mb-10 lg:mb-12">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-medium drop-shadow-md hero-description">
+                24/7 emergency response, drain cleaning, and maintenance&nbsp;services.
               </p>
             </div>
 
-            {/* CTA Buttons - Enhanced for Better UX and Accessibility */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
+            {/* CTA Buttons with enhanced styling */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
               <Link
                 href="/contact"
-                className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-brand-primary/25 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-primary/50"
+                className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg lg:text-xl font-bold rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-brand-primary/35 transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-brand-primary/50 active:scale-[0.98] hero-cta-primary"
                 aria-label="Get free plumbing inspection for your property"
               >
                 <span className="mr-2 sm:mr-3">Get Free Inspection</span>
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
               <Link
                 href="/services"
-                className="group bg-white/10 backdrop-blur-1 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30"
+                className="group bg-white/12 backdrop-blur-sm border-2 border-white/35 text-white hover:bg-white/20 hover:border-white/50 inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg lg:text-xl font-bold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-white/40 active:scale-[0.98] shadow-xl hover:shadow-2xl hero-cta-secondary"
                 aria-label="View our comprehensive plumbing services"
               >
                 <span className="mr-2 sm:mr-3">View Services</span>
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
             </div>
@@ -93,9 +94,9 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block z-10">
           <div className="animate-bounce">
-            <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white/70 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
@@ -115,21 +116,21 @@ export default function Home() {
         </div>
         
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-trust rounded-full px-4 py-2 border border-brand-primary/20 mb-6 trust-badge-pulse">
-              <Icon name="check" className="w-4 h-4 text-brand-primary" />
-              <span className="text-sm font-medium text-brand-ink">Trusted & Certified</span>
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-trust rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-brand-primary/20 mb-4 sm:mb-6 trust-badge-pulse">
+              <Icon name="check" className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-primary" />
+              <span className="text-xs sm:text-sm font-medium text-brand-ink">Trusted & Certified</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-brand-ink mb-3 sm:mb-4 px-2">
               Licensed, Insured & 
               <span className="text-brand-primary block">Certified Excellence</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
               Serving the Greater Toronto Area with the highest standards of professionalism and safety since 2013.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 title: "Licensed Since 2013",
@@ -162,7 +163,7 @@ export default function Home() {
             ].map((trust, index) => (
               <div 
                 key={index} 
-                className="trust-card group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20"
+                className="trust-card group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20 min-h-[280px] sm:min-h-[320px]"
               >
                 {/* Background Image */}
                 <div className="absolute inset-0">
@@ -185,54 +186,27 @@ export default function Home() {
                 </div>
                 
                 {/* Content */}
-                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="text-xs font-bold text-brand-accent mb-3 uppercase tracking-wider">
-                      {trust.highlight}
+                <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col">
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="text-xs sm:text-sm font-bold text-brand-accent mb-2 sm:mb-3 uppercase tracking-wider">
+                        {trust.highlight}
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-brand-accent transition-colors duration-300">
+                        {trust.title}
+                      </h3>
+                      <p className="text-white/90 leading-relaxed text-sm sm:text-base">
+                        {trust.description}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4 leading-tight group-hover:text-brand-accent transition-colors duration-300">
-                      {trust.title}
-                    </h3>
                   </div>
-                  <p className="text-gray-200 leading-relaxed text-sm">
-                    {trust.description}
-                  </p>
                 </div>
                 
                 {/* Subtle bottom accent */}
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
-          </div>
-          
-          {/* Bottom trust indicators */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex flex-wrap items-center justify-center gap-8 bg-white/60 backdrop-blur-trust rounded-2xl px-8 py-6 border border-gray-200">
-              <div className="trust-indicator flex items-center gap-3">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <Icon name="check" className="w-4 h-4 text-green-600" />
-                </div>
-                <span className="text-sm font-medium text-gray-700">Ontario Licensed</span>
-              </div>
-              <div className="trust-indicator flex items-center gap-3">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Icon name="shield" className="w-4 h-4 text-blue-600" />
-                </div>
-                <span className="text-sm font-medium text-gray-700">Fully Insured</span>
-              </div>
-              <div className="trust-indicator flex items-center gap-3">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                  <Icon name="star" className="w-4 h-4 text-purple-600" />
-                </div>
-                <span className="text-sm font-medium text-gray-700">5-Star Rated</span>
-              </div>
-              <div className="trust-indicator flex items-center gap-3">
-                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                  <Icon name="emergency" className="w-4 h-4 text-orange-600" />
-                </div>
-                <span className="text-sm font-medium text-gray-700">24/7 Emergency</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -380,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* Free Plumbing Inspection Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-primary rounded-full blur-3xl"></div>
@@ -388,7 +362,7 @@ export default function Home() {
         </div>
         
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-primary rounded-3xl p-12 lg:p-16 relative overflow-hidden">
+          <div className="bg-brand-primary rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
             {/* Background decorative elements inside the blue box */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-white rounded-full blur-2xl"></div>
@@ -396,56 +370,88 @@ export default function Home() {
             </div>
             
             <div className="relative">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
                 {/* Left Side - Text Content */}
                 <div className="text-left">
-                  <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-3 sm:mb-4">
                     Free Plumbing Inspections
                   </h2>
-                  <h3 className="text-xl font-display font-semibold text-blue-100 mb-4">
+                  <h3 className="text-lg sm:text-xl font-display font-semibold text-blue-100 mb-4 sm:mb-5">
                     for Condos, Commercial, and High-Rise Buildings
                   </h3>
-                  <p className="text-xl text-blue-100 mb-8">
+                  <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed">
                     Prevent costly water damage and get peace of mind with a detailed plumbing report — at no cost.
                   </p>
                   
                   <div className="flex justify-start">
                     <Link
                       href="/inspection"
-                      className="bg-white text-brand-primary hover:bg-gray-100 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-white/25"
+                      className="bg-white text-brand-primary hover:bg-gray-100 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-white/25"
                     >
-                      <Icon name="calendar" className="w-5 h-5 mr-3" />
+                      <Icon name="calendar" className="w-5 h-5 mr-2 sm:mr-3" />
                       Book Your Free Inspection
                     </Link>
                   </div>
                 </div>
                 
                 {/* Right Side - Supporting Points */}
-                <div className="grid grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-6 xl:gap-8">
                   {/* Row 1 */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Detailed inspection & report</h3>
-                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
-                    <p className="text-blue-100 text-base">Comprehensive assessment of all plumbing systems</p>
+                  <div className="group">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 mt-1">
+                        <Icon name="clipboard" className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Detailed inspection & report</h3>
+                        <p className="text-sm sm:text-base text-blue-100 leading-relaxed">
+                          Comprehensive assessment of all plumbing systems
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Photos, findings, and recommendations</h3>
-                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
-                    <p className="text-blue-100 text-base">Visual documentation with expert analysis</p>
+                  <div className="group">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 mt-1">
+                        <Icon name="camera" className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Photos, findings, and recommendations</h3>
+                        <p className="text-sm sm:text-base text-blue-100 leading-relaxed">
+                          Visual documentation with expert analysis
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   
                   {/* Row 2 */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Budget recommendations</h3>
-                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
-                    <p className="text-blue-100 text-base">Cost estimates and priority-based repair planning</p>
+                  <div className="group">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 mt-1">
+                        <Icon name="money" className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Budget recommendations</h3>
+                        <p className="text-sm sm:text-base text-blue-100 leading-relaxed">
+                          Cost estimates and priority-based repair planning
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Zero obligations or hidden fees</h3>
-                    <div className="w-12 h-0.5 bg-white/60 mb-3"></div>
-                    <p className="text-blue-100 text-base">Completely free with no strings attached</p>
+                  <div className="group">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 mt-1">
+                        <Icon name="check" className="w-5 h-5 sm:w-6 sm:h-6 text-white" solid />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Zero obligations or hidden fees</h3>
+                        <p className="text-sm sm:text-base text-blue-100 leading-relaxed">
+                          Completely free with no strings attached
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -474,11 +480,11 @@ export default function Home() {
               </div>
               
               <div className="space-y-6 text-reveal">
-                <p className="text-xl text-gray-700 leading-relaxed">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   Since 2013, Oxford Mechanical has been providing comprehensive plumbing services 
                   for condos, high-rise buildings, and commercial properties across the Greater Toronto Area.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   We specialize in minimizing disruptions while delivering superior service using 
                   the latest tools and technology. Our commitment to excellence has made us the 
                   trusted choice for property managers and building owners.
