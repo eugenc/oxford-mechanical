@@ -878,6 +878,170 @@
   input, textarea, select {
     font-size: 16px; /* Prevents zoom on iOS */
   }
+  
+  /* Hero section mobile optimizations */
+  .hero-mobile-optimized {
+    min-height: 70vh;
+  }
+  
+  /* Optimize hero text on mobile */
+  .hero-mobile-optimized h1 {
+    line-height: 1.15;
+    word-spacing: -0.05em;
+  }
+  
+  /* Better spacing for hero badges on mobile */
+  .hero-mobile-optimized .flex-wrap {
+    gap: 0.5rem;
+  }
+}
+
+/* Enhanced Hero Section Styling */
+.hero-headline {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title-main {
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title-sub {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.hero-description {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced badge animations */
+.hero-badge {
+  animation: fadeInUp 0.6s ease-out backwards;
+  will-change: transform;
+}
+
+.hero-badge:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hero-badge:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero-badge:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Smooth entrance animation for hero content */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-mobile-optimized > div > div {
+  animation: heroFadeIn 0.8s ease-out;
+}
+
+/* Enhanced button styling */
+.hero-cta-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-600) 100%);
+  box-shadow: 0 10px 30px rgba(0, 55, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, #0024b8 100%);
+  box-shadow: 0 15px 40px rgba(0, 55, 255, 0.5), 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta-secondary {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-cta-secondary:hover {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  .hero-headline {
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-badge {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hero-badge:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge,
+  .hero-mobile-optimized > div > div {
+    animation: none;
+  }
+  
+  .hero-badge:hover {
+    transform: none;
+  }
+  
+  .hero-cta-primary:hover,
+  .hero-cta-secondary:hover {
+    transform: none;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  /* Further reduce hero height on very small screens */
+  .hero-mobile-optimized {
+    min-height: 65vh;
+  }
+  
+  /* Compact hero badges on very small screens */
+  .hero-mobile-optimized .flex-wrap > div {
+    padding: 0.375rem 0.625rem;
+  }
+  
+  .hero-mobile-optimized .flex-wrap > div span {
+    font-size: 0.625rem;
+  }
+  
+  /* Tighter hero text spacing */
+  .hero-mobile-optimized h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .hero-mobile-optimized h1 span {
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Reduce description spacing */
+  .hero-mobile-optimized .max-w-3xl {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Compact button spacing */
+  .hero-mobile-optimized .flex-col {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* Performance optimizations */

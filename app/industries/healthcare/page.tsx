@@ -136,7 +136,7 @@ export default function HealthcarePage() {
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-lg"
-                fallbackIcon="🏥"
+                fallbackIcon="healthcare"
                 fallbackText="Healthcare Facility"
                 fallbackSubtext="Professional medical environment"
                 fallbackBg="from-blue-100 to-blue-200"
