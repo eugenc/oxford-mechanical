@@ -551,17 +551,17 @@ export default function Home() {
           </div>
 
           {/* Industry Focus Section */}
-          <div className="bg-white rounded-2xl p-8">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-display font-bold text-brand-ink mb-4">
+          <div className="bg-white rounded-2xl p-8 lg:p-12">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
                 Specialized Industry Expertise
-              </h3>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 We understand the unique challenges of different property types and industries. Our specialized approach ensures optimal solutions for your specific needs.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {[
                 {
                   industry: "High-Rise Condos",
@@ -600,42 +600,48 @@ export default function Home() {
                   fallbackBg: "bg-gradient-to-br from-orange-500 to-orange-600"
                 }
               ].map((industry, index) => (
-                <div key={index} className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
-                  <div className="flex h-full">
-                    {/* Image section - 35% width */}
-                    <div className="image-section w-[35%] relative overflow-hidden">
-                      {/* High-quality background image */}
-                      <Image
-                        src={industry.image}
-                        alt={`${industry.industry} industry`}
-                        fill
-                        quality={95}
-                        className="object-cover object-center"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 35vw, 300px"
-                      />
-                      
-                      {/* Fallback background */}
-                      <div className={`absolute inset-0 ${industry.fallbackBg} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                      
-                      {/* Brand blue overlay */}
-                      <div className="image-overlay absolute inset-0 bg-brand-primary/40"></div>
-                      
-                      {/* Glass effect overlay */}
-                      <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
-                      
-                      {/* Hover effect */}
-                      <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
+                <div key={index} className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 flex flex-col h-full will-change-transform">
+                  {/* Image section - 40% height */}
+                  <div className="image-section h-[40%] min-h-[200px] relative overflow-hidden">
+                    {/* High-quality background image */}
+                    <Image
+                      src={industry.image}
+                      alt={`${industry.industry} industry`}
+                      fill
+                      quality={95}
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                     
-                    {/* Content section - 65% width */}
-                    <div className="content-section flex-1 p-6 flex flex-col justify-center">
-                      <h4 className="text-lg font-bold text-brand-ink mb-2 group-hover:text-brand-primary transition-colors duration-300">
+                    {/* Gradient overlay for better text contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
+                    
+                    {/* Glass effect overlay */}
+                    <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
+                    
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Decorative corner accent */}
+                    <div className="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-1 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-0 group-hover:scale-100"></div>
+                  </div>
+                  
+                  {/* Content section - 60% height */}
+                  <div className="content-section h-[60%] p-6 lg:p-8 flex flex-col justify-center relative">
+                    {/* Subtle background accent on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div className="relative z-10">
+                      <h4 className="text-xl lg:text-2xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
                         {industry.industry}
                       </h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-sm lg:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         {industry.description}
                       </p>
                     </div>
+                    
+                    {/* Bottom accent line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-primary/0 to-transparent group-hover:via-brand-primary/50 transition-all duration-500"></div>
                   </div>
                 </div>
               ))}
@@ -1035,198 +1041,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-          
-          {/* Property Types - Enhanced */}
-          <div className="mt-20">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-                <span className="text-brand-primary">🏢</span>
-                <span className="text-sm font-medium text-brand-ink">Property Types We Serve</span>
-              </div>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
-                Comprehensive Property Coverage
-              </h3>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                From high-rise condos to industrial facilities, we provide specialized plumbing services for every property type across the GTA.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { 
-                  type: "High-rise condos", 
-                  icon: "🏢", 
-                  description: "Minimal disruption solutions for high-density residential properties",
-                  gradient: "from-blue-500 to-blue-600"
-                },
-                { 
-                  type: "Office buildings", 
-                  icon: "🏬", 
-                  description: "Commercial-grade plumbing for corporate environments",
-                  gradient: "from-gray-500 to-gray-600"
-                },
-                { 
-                  type: "Schools & universities", 
-                  icon: "🎓", 
-                  description: "Educational institution maintenance and upgrades",
-                  gradient: "from-green-500 to-green-600"
-                },
-                { 
-                  type: "Public buildings", 
-                  icon: "🏛️", 
-                  description: "Government and municipal building services",
-                  gradient: "from-purple-500 to-purple-600"
-                },
-                { 
-                  type: "Residential properties", 
-                  icon: "🏠", 
-                  description: "Multi-unit and single-family home solutions",
-                  gradient: "from-orange-500 to-orange-600"
-                },
-                { 
-                  type: "Commercial complexes", 
-                  icon: "🏪", 
-                  description: "Shopping centers and retail space maintenance",
-                  gradient: "from-cyan-500 to-cyan-600"
-                },
-                { 
-                  type: "Industrial facilities", 
-                  icon: "🏭", 
-                  description: "Heavy-duty plumbing for manufacturing sites",
-                  gradient: "from-red-500 to-red-600"
-                },
-                { 
-                  type: "Healthcare facilities", 
-                  icon: "🏥", 
-                  description: "Specialized plumbing for hospitals and medical centers",
-                  gradient: "from-pink-500 to-pink-600"
-                }
-              ].map((property, index) => (
-                <div 
-                  key={index} 
-                  className="property-type-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-brand-primary/20 overflow-hidden"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {/* Background decorative element */}
-                  <div className="absolute top-0 right-0 w-20 h-20 opacity-5">
-                    <div className={`w-full h-full bg-gradient-to-br ${property.gradient} rounded-full blur-xl`}></div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="relative z-10 p-6">
-                    {/* Icon */}
-                    <div className="w-16 h-16 bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{property.icon}</span>
-                    </div>
-                    
-                    {/* Title */}
-                    <h4 className="text-lg font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300 leading-tight">
-                      {property.type}
-                    </h4>
-                    
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                      {property.description}
-                    </p>
-                  </div>
-                  
-                  {/* Hover accent line */}
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Subtle hover glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Bottom CTA */}
-            <div className="mt-12 text-center">
-              <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="text-left">
-                  <h4 className="text-lg font-bold text-brand-ink mb-1">Need specialized service for your property type?</h4>
-                  <p className="text-gray-600 text-sm">Get a customized solution tailored to your building&apos;s unique requirements.</p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
-                >
-                  <span className="mr-2">Get Custom Quote</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
-              Latest Insights
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Weekly inspiration and expert advice on plumbing maintenance and building management.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "The Importance of Regular Plumbing Inspections for Condos",
-                excerpt: "Learn why regular plumbing inspections are crucial for high-rise buildings and how they can prevent costly emergency repairs.",
-                date: "December 15, 2024",
-                readTime: "5 min read",
-                href: "/blog/plumbing-inspections-condos"
-              },
-              {
-                title: "Water Saving Solutions for Commercial Buildings",
-                excerpt: "Discover eco-friendly plumbing upgrades that can reduce water consumption and lower utility costs for your property.",
-                date: "December 8, 2024",
-                readTime: "7 min read",
-                href: "/blog/water-saving-solutions"
-              },
-              {
-                title: "Emergency Plumbing: What to Do Before We Arrive",
-                excerpt: "Essential steps to take during a plumbing emergency to minimize damage and ensure safety for building occupants.",
-                date: "December 1, 2024",
-                readTime: "4 min read",
-                href: "/blog/emergency-plumbing-tips"
-              }
-            ].map((post, index) => (
-              <Link
-                key={index}
-                href={post.href}
-                className="card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
-              >
-                <div className="mb-4">
-                  <span className="text-sm text-brand-primary font-medium">{post.date}</span>
-                  <span className="text-sm text-gray-500 ml-2">• {post.readTime}</span>
-                </div>
-                <h3 className="text-xl font-semibold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {post.excerpt}
-                </p>
-                <div className="mt-4 text-brand-primary font-medium group-hover:text-brand-primary-600 transition-colors">
-                  Read More →
-                </div>
-              </Link>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link
-              href="/blog"
-              className="btn-primary inline-flex items-center px-6 py-3 text-base font-semibold rounded-xl"
-            >
-              View All Articles
-            </Link>
           </div>
         </div>
       </section>

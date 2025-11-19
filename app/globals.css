@@ -766,6 +766,8 @@
   animation-fill-mode: both;
   position: relative;
   overflow: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .industry-card:nth-child(1) { animation-delay: 0.1s; }
@@ -778,36 +780,38 @@
 /* Industry card image section enhancements */
 .industry-card .image-section {
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
-.industry-card:hover .image-section {
-  transform: scale(1.05);
+.industry-card .image-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 55, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.industry-card:hover .image-section::before {
+  opacity: 1;
 }
 
 /* Industry card content section */
 .industry-card .content-section {
   position: relative;
   z-index: 2;
+  transition: all 0.3s ease;
 }
 
 /* Enhanced hover effects for industry cards */
 .industry-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 55, 255, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 55, 255, 0.2);
 }
 
-/* Industry card image overlay effects */
-.industry-card .image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0, 55, 255, 0.4) 0%, rgba(0, 55, 255, 0.2) 100%);
-  transition: all 0.3s ease;
-}
-
-.industry-card:hover .image-overlay {
-  background: linear-gradient(135deg, rgba(0, 55, 255, 0.5) 0%, rgba(0, 55, 255, 0.3) 100%);
-}
+/* Industry card image overlay effects - removed as we're using gradient overlay in component */
 
 /* Mobile responsiveness for industry cards */
 @media (max-width: 768px) {
@@ -816,26 +820,29 @@
   }
   
   .industry-card .image-section {
-    width: 40% !important;
+    height: 40% !important;
+    min-height: 180px;
   }
   
   .industry-card .content-section {
-    width: 60% !important;
+    height: 60% !important;
+    padding: 1.25rem !important;
   }
 }
 
 @media (max-width: 640px) {
-  .industry-card {
-    flex-direction: column;
-  }
-  
   .industry-card .image-section {
-    width: 100% !important;
-    height: 200px;
+    height: 40% !important;
+    min-height: 160px;
   }
   
   .industry-card .content-section {
-    width: 100% !important;
+    height: 60% !important;
+    padding: 1rem !important;
+  }
+  
+  .industry-card:hover {
+    transform: translateY(-1px);
   }
 }
 
