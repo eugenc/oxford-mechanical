@@ -1,18 +1,24 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+  
   return (
     <footer className="bg-brand-ink text-white py-16">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-lg">OM</span>
-              </div>
-              <span className="ml-4 text-2xl font-display font-semibold">
-                Oxford Mechanical
-              </span>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/assets/oxford-mechanical-logo-new.png"
+                  alt="Oxford Mechanical Logo"
+                  width={180}
+                  height={43}
+                  className="brightness-0 invert"
+                />
+              </Link>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
               Professional plumbing services for Toronto and GTA. 
@@ -74,7 +80,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              <p>&copy; 2024 Oxford Mechanical. All rights reserved.</p>
+              <p>&copy; {currentYear} Oxford Mechanical. All rights reserved.</p>
             </div>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>

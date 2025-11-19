@@ -119,11 +119,11 @@ export default function Home() {
               <span className="text-brand-primary">✓</span>
               <span className="text-sm font-medium text-brand-ink">Trusted & Certified</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
               Licensed, Insured & 
               <span className="text-brand-primary block">Certified Excellence</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Serving the Greater Toronto Area with the highest standards of professionalism and safety since 2013.
             </p>
           </div>
@@ -254,10 +254,10 @@ export default function Home() {
               <span className="text-brand-primary">🔧</span>
               <span className="text-sm font-medium text-brand-ink">Professional Services</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
               Comprehensive Plumbing Solutions
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From emergency repairs to preventative maintenance, we provide specialized plumbing services for every industry and property type.
             </p>
           </div>
@@ -398,13 +398,13 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Left Side - Text Content */}
                 <div className="text-left">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
                     Free Plumbing Inspections
                   </h2>
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-blue-100 mb-6 leading-tight">
+                  <h3 className="text-xl font-display font-semibold text-blue-100 mb-4">
                     for Condos, Commercial, and High-Rise Buildings
                   </h3>
-                  <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
+                  <p className="text-xl text-blue-100 mb-8">
                     Prevent costly water damage and get peace of mind with a detailed plumbing report — at no cost.
                   </p>
                   
@@ -466,7 +466,7 @@ export default function Home() {
             {/* Left Content */}
             <div className="space-y-8">
               <div className="text-reveal">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-8 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
                   About Oxford Mechanical
                 </h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full mb-8"></div>
@@ -570,10 +570,10 @@ export default function Home() {
               <span className="text-brand-primary">🏢</span>
               <span className="text-sm font-medium text-brand-ink">Industry Specialization</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand-ink mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
               Specialized Industry Expertise
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We understand the unique challenges of different property types and industries. Our specialized approach ensures optimal solutions for your specific needs.
             </p>
           </div>
@@ -954,10 +954,10 @@ export default function Home() {
               <span className="text-brand-primary">🎁</span>
               <span className="text-sm font-medium text-brand-ink">Exclusive Programs</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
               Loyalty & Cashback Programs
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We value our long-term clients with exclusive programs designed to save you money and provide additional benefits.
             </p>
           </div>
@@ -1241,10 +1241,10 @@ export default function Home() {
               <span className="text-brand-primary">🔍</span>
               <span className="text-sm font-medium text-brand-ink">Free Property Assessment</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
               Schedule Your Free Inspection
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Get a comprehensive property inspection for your condo or high-rise building. 
               Our detailed assessment includes property-wide inspection, detailed reports, and complete cost estimation.
             </p>
