@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import Icon, { type IconName } from '@/components/Icon'
 
 interface FallbackImageProps {
   src: string
@@ -9,7 +10,7 @@ interface FallbackImageProps {
   width?: number
   height?: number
   className?: string
-  fallbackIcon?: string
+  fallbackIcon?: IconName
   fallbackText?: string
   fallbackSubtext?: string
   fallbackBg?: string
@@ -21,7 +22,7 @@ export default function FallbackImage({
   width = 600,
   height = 400,
   className = "",
-  fallbackIcon = "🏢",
+  fallbackIcon = "building",
   fallbackText = "Professional Building",
   fallbackSubtext = "High-quality facility",
   fallbackBg = "from-gray-100 to-gray-200"
@@ -35,7 +36,9 @@ export default function FallbackImage({
         style={{ width: width, height: height }}
       >
         <div className="text-center text-gray-600">
-          <div className="text-6xl mb-4">{fallbackIcon}</div>
+          <div className="mb-4 flex justify-center">
+            <Icon name={fallbackIcon} className="w-24 h-24" />
+          </div>
           <div className="text-xl font-semibold">{fallbackText}</div>
           <div className="text-sm opacity-75">{fallbackSubtext}</div>
         </div>

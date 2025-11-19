@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import Icon from '@/components/Icon'
 import Image from 'next/image'
 
 const teamMembers = [
@@ -261,32 +262,32 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                🏅
+              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Icon name="trophy" className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Licensed Plumber</h3>
               <p className="text-gray-600">Fully licensed since 2013</p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                🛡️
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Icon name="shield" className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Fully Insured</h3>
               <p className="text-gray-600">Comprehensive liability coverage</p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                ✅
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Icon name="check" className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Bonded</h3>
               <p className="text-gray-600">Bonded for your protection</p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                ⭐
+              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Icon name="star" className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">A+ Rating</h3>
               <p className="text-gray-600">BBB accredited business</p>

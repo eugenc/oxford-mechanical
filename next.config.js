@@ -11,6 +11,31 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
+  // Redirects for missing pages to existing content
+  async redirects() {
+    return [
+      {
+        source: '/inspection',
+        destination: '/contact',
+        permanent: true, // 308 redirect
+      },
+      {
+        source: '/case-studies',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/certifications',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/resources',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

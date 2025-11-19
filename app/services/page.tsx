@@ -3,12 +3,13 @@ import ServiceCard from '@/components/ServiceCard'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import Icon, { type IconName } from '@/components/Icon'
 
 const services = [
   {
     title: "Emergency Services",
     description: "24/7 emergency response for urgent plumbing issues that can&apos;t wait. Our certified technicians are ready to respond to your call anytime, anywhere in the GTA.",
-    icon: "🚨",
+    icon: "emergency" as IconName,
     href: "/services/emergency",
     features: [
       "24/7 availability",
@@ -21,7 +22,7 @@ const services = [
   {
     title: "Drain Cleaning",
     description: "Professional drain cleaning and sewer maintenance using advanced hydro-jetting technology. We clear even the toughest blockages safely and effectively.",
-    icon: "🚿",
+    icon: "shower" as IconName,
     href: "/drain-cleaning",
     features: [
       "Hydro-jetting technology",
@@ -34,7 +35,7 @@ const services = [
   {
     title: "Camera Inspection",
     description: "Advanced diagnostic technology for accurate problem identification. Our high-definition cameras provide detailed insights into your plumbing system&apos;s condition.",
-    icon: "📹",
+    icon: "camera" as IconName,
     href: "/services/camera-inspection",
     features: [
       "HD camera technology",
@@ -47,7 +48,7 @@ const services = [
   {
     title: "Leak Repair",
     description: "Comprehensive leak investigation and precision repair services. We locate and fix leaks quickly to prevent water damage and reduce costs.",
-    icon: "🔧",
+    icon: "wrench" as IconName,
     href: "/services/leak-repair",
     features: [
       "Leak detection technology",
@@ -60,7 +61,7 @@ const services = [
   {
     title: "Maintenance",
     description: "Preventative maintenance programs to avoid costly repairs. Our scheduled maintenance keeps your plumbing systems running efficiently year-round.",
-    icon: "🛠️",
+    icon: "tools" as IconName,
     href: "/services/maintenance",
     features: [
       "Scheduled maintenance",
@@ -73,7 +74,7 @@ const services = [
   {
     title: "Water Saving Solutions",
     description: "Eco-friendly upgrades and water conservation solutions. Reduce your water bills and environmental impact with our sustainable plumbing solutions.",
-    icon: "💧",
+    icon: "water" as IconName,
     href: "/services/water-saving",
     features: [
       "Water-efficient fixtures",
@@ -167,8 +168,8 @@ export default function ServicesPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                🔧
+              <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Icon name="wrench" className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Expert Technicians</h3>
               <p className="text-gray-600">Certified professionals with extensive training and experience</p>
@@ -192,8 +193,8 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-4">
-                🏢
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                <Icon name="building" className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">High-Rise Condos</h3>
               <p className="text-gray-600 mb-4">Specialized services for high-density residential properties with minimal disruption to residents.</p>
@@ -203,8 +204,8 @@ export default function ServicesPage() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl mb-4">
-                🏢
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                <Icon name="building" className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Office Buildings</h3>
               <p className="text-gray-600 mb-4">Commercial-grade solutions for corporate environments and business facilities.</p>
@@ -214,8 +215,8 @@ export default function ServicesPage() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl mb-4">
-                🎓
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <Icon name="education" className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Educational Facilities</h3>
               <p className="text-gray-600 mb-4">Specialized plumbing maintenance for schools and universities across the GTA.</p>

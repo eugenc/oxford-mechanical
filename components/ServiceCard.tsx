@@ -2,11 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import Icon, { type IconName } from '@/components/Icon'
 
 interface ServiceCardProps {
   title: string
   description: string
-  icon: string
+  icon: IconName | string
   href: string
   features?: string[]
   image?: string
@@ -35,8 +36,12 @@ export default function ServiceCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           <div className="absolute top-4 left-4">
-            <div className="w-12 h-12 bg-white/90 backdrop-blur-1 rounded-xl flex items-center justify-center text-2xl">
-              {icon}
+            <div className="w-12 h-12 bg-white/90 backdrop-blur-1 rounded-xl flex items-center justify-center">
+              {typeof icon === 'string' && (icon.length === 1 || icon.length === 2) && icon.charCodeAt(0) > 127 ? (
+                <span className="text-2xl">{icon}</span>
+              ) : (
+                <Icon name={icon as IconName} className="w-6 h-6" />
+              )}
             </div>
           </div>
         </div>
@@ -45,8 +50,12 @@ export default function ServiceCard({
       {/* Content Section */}
       <div className="p-6">
         {!image && (
-          <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-            {icon}
+          <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+            {typeof icon === 'string' && (icon.length === 1 || icon.length === 2) && icon.charCodeAt(0) > 127 ? (
+              <span className="text-3xl">{icon}</span>
+            ) : (
+              <Icon name={icon as IconName} className="w-8 h-8" />
+            )}
           </div>
         )}
 

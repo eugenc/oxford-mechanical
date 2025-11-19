@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import PropertyTypeSelector from '@/components/PropertyTypeSelector'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import Icon from '@/components/Icon'
 
 const contactInfo = [
   {
@@ -168,7 +169,7 @@ export default function ContactPage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <span className="text-brand-primary">🔍</span>
+              <Icon name="search" className="w-5 h-5 text-brand-primary" />
               <span className="text-sm font-medium text-brand-ink">Free Property Assessment</span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-ink mb-6 leading-tight">
@@ -191,7 +192,7 @@ export default function ContactPage() {
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl">📋</span>
+                        <Icon name="clipboard" className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-brand-ink mb-2">Property-Wide Inspection</h4>
@@ -201,7 +202,7 @@ export default function ContactPage() {
                     
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl">📊</span>
+                        <Icon name="chart" className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-brand-ink mb-2">Detailed Assessment Report</h4>
@@ -211,7 +212,7 @@ export default function ContactPage() {
                     
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl">💰</span>
+                        <Icon name="money" className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-brand-ink mb-2">Complete Cost Estimation</h4>
@@ -364,7 +365,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-600 hover:from-brand-primary-600 hover:to-brand-primary-700 text-white text-center py-4 text-lg font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-brand-primary/25 flex items-center justify-center gap-3"
                 >
-                  <span>📅</span>
+                  <Icon name="calendar" className="w-5 h-5" />
                   <span>Schedule Free Inspection</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

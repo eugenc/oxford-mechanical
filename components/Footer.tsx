@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Icon from '@/components/Icon'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -25,9 +26,9 @@ export default function Footer() {
               Licensed, insured, and committed to excellence since 2013.
             </p>
             <div className="flex items-center space-x-4">
-              <div className="trust-badge">
-                <span>🏅</span>
-                Licensed Since 2013
+              <div className="trust-badge flex items-center gap-2">
+                <Icon name="trophy" className="w-5 h-5" />
+                <span>Licensed Since 2013</span>
               </div>
             </div>
           </div>

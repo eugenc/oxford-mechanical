@@ -2,6 +2,7 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
 import Tabs from '@/components/Tabs'
 import PropertyTypeSelector from '@/components/PropertyTypeSelector'
+import Icon, { type IconName } from '@/components/Icon'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Suspense } from 'react'
@@ -35,15 +36,15 @@ export default function Home() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
-                <span className="text-brand-accent">🏅</span>
+                <Icon name="trophy" className="w-5 h-5 text-brand-accent" />
                 <span className="text-xs sm:text-sm font-medium">Licensed Since 2013</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
-                <span className="text-brand-accent">🛡️</span>
+                <Icon name="shield" className="w-5 h-5 text-brand-accent" />
                 <span className="text-xs sm:text-sm font-medium">Fully Insured</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-1 rounded-full px-3 sm:px-4 py-2 border border-white/20">
-                <span className="text-brand-accent">⭐</span>
+                <Icon name="star" className="w-5 h-5 text-brand-accent" />
                 <span className="text-xs sm:text-sm font-medium">100% Satisfaction</span>
               </div>
             </div>
@@ -116,7 +117,7 @@ export default function Home() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-trust rounded-full px-4 py-2 border border-brand-primary/20 mb-6 trust-badge-pulse">
-              <span className="text-brand-primary">✓</span>
+              <Icon name="check" className="w-4 h-4 text-brand-primary" />
               <span className="text-sm font-medium text-brand-ink">Trusted & Certified</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
@@ -209,25 +210,25 @@ export default function Home() {
             <div className="inline-flex flex-wrap items-center justify-center gap-8 bg-white/60 backdrop-blur-trust rounded-2xl px-8 py-6 border border-gray-200">
               <div className="trust-indicator flex items-center gap-3">
                 <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-green-600 text-sm">✓</span>
+                  <Icon name="check" className="w-4 h-4 text-green-600" />
                 </div>
                 <span className="text-sm font-medium text-gray-700">Ontario Licensed</span>
               </div>
               <div className="trust-indicator flex items-center gap-3">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 text-sm">🛡️</span>
+                  <Icon name="shield" className="w-4 h-4 text-blue-600" />
                 </div>
                 <span className="text-sm font-medium text-gray-700">Fully Insured</span>
               </div>
               <div className="trust-indicator flex items-center gap-3">
                 <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                  <span className="text-purple-600 text-sm">⭐</span>
+                  <Icon name="star" className="w-4 h-4 text-purple-600" />
                 </div>
                 <span className="text-sm font-medium text-gray-700">5-Star Rated</span>
               </div>
               <div className="trust-indicator flex items-center gap-3">
                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                  <span className="text-orange-600 text-sm">🚨</span>
+                  <Icon name="emergency" className="w-4 h-4 text-orange-600" />
                 </div>
                 <span className="text-sm font-medium text-gray-700">24/7 Emergency</span>
               </div>
@@ -251,7 +252,7 @@ export default function Home() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <span className="text-brand-primary">🔧</span>
+              <Icon name="wrench" className="w-5 h-5 text-brand-primary" />
               <span className="text-sm font-medium text-brand-ink">Professional Services</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
@@ -413,7 +414,7 @@ export default function Home() {
                       href="/inspection"
                       className="bg-white text-brand-primary hover:bg-gray-100 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-white/25"
                     >
-                      <span className="mr-3">📅</span>
+                      <Icon name="calendar" className="w-5 h-5 mr-3" />
                       Book Your Free Inspection
                     </Link>
                   </div>
@@ -543,7 +544,7 @@ export default function Home() {
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg border border-gray-100 px-4 py-2 floating-badge">
                 <div className="flex items-center gap-2">
-                  <span className="text-brand-primary text-xl">🏅</span>
+                  <Icon name="trophy" className="w-6 h-6 text-brand-primary" />
                   <span className="text-sm font-semibold text-brand-ink">Trusted Since 2013</span>
                 </div>
               </div>
@@ -567,7 +568,7 @@ export default function Home() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <span className="text-brand-primary">🏢</span>
+              <Icon name="building" className="w-5 h-5 text-brand-primary" />
               <span className="text-sm font-medium text-brand-ink">Industry Specialization</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
@@ -951,7 +952,7 @@ export default function Home() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <span className="text-brand-primary">🎁</span>
+              <Icon name="gift" className="w-5 h-5 text-brand-primary" />
               <span className="text-sm font-medium text-brand-ink">Exclusive Programs</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
@@ -967,7 +968,7 @@ export default function Home() {
               {
                 id: 'cashback',
                 label: 'Cashback Program',
-                icon: '💰',
+                icon: <Icon name="money" className="w-5 h-5" />,
                 content: (
                   <div className="cashback-program">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -1010,7 +1011,7 @@ export default function Home() {
                         <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
                           <div className="flex items-center gap-3 mb-3">
                             <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                              <span className="text-white text-sm">📅</span>
+                              <Icon name="calendar" className="w-4 h-4 text-white" />
                             </div>
                             <h4 className="text-lg font-semibold text-green-800">Quarterly Payments</h4>
                           </div>
@@ -1026,15 +1027,15 @@ export default function Home() {
                           <h4 className="text-xl font-semibold text-brand-ink mb-6">Program Benefits</h4>
                           <div className="space-y-4">
                             {[
-                              { benefit: "Automatic enrollment", icon: "✅" },
-                              { benefit: "No minimum spending required", icon: "💳" },
-                              { benefit: "Transparent tracking dashboard", icon: "📊" },
-                              { benefit: "Direct deposit payments", icon: "🏦" },
-                              { benefit: "Annual bonus rewards", icon: "🎁" },
-                              { benefit: "Referral bonuses", icon: "👥" }
+                              { benefit: "Automatic enrollment", icon: "check" },
+                              { benefit: "No minimum spending required", icon: "credit-card" },
+                              { benefit: "Transparent tracking dashboard", icon: "chart" },
+                              { benefit: "Direct deposit payments", icon: "bank" },
+                              { benefit: "Annual bonus rewards", icon: "gift" },
+                              { benefit: "Referral bonuses", icon: "users" }
                             ].map((item, index) => (
                               <div key={index} className="flex items-center gap-3">
-                                <span className="text-xl">{item.icon}</span>
+                                <Icon name={item.icon as IconName} className="w-5 h-5" />
                                 <span className="text-gray-700 font-medium">{item.benefit}</span>
                               </div>
                             ))}
@@ -1067,7 +1068,7 @@ export default function Home() {
               {
                 id: 'loyalty',
                 label: 'Loyalty Rewards',
-                icon: '⭐',
+                icon: <Icon name="star" className="w-5 h-5" />,
                 content: (
                   <div className="loyalty-rewards">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -1105,7 +1106,7 @@ export default function Home() {
                                 <div className="space-y-2">
                                   {level.benefits.map((benefit, benefitIndex) => (
                                     <div key={benefitIndex} className="flex items-center gap-2 text-sm">
-                                      <span className="text-green-500">✓</span>
+                                      <Icon name="check" className="w-4 h-4 text-green-500" />
                                       <span className="text-gray-700">{benefit}</span>
                                     </div>
                                   ))}
@@ -1121,7 +1122,7 @@ export default function Home() {
                         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-200">
                           <div className="flex items-center gap-3 mb-3">
                             <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                              <span className="text-white text-sm">👑</span>
+                              <Icon name="star" className="w-4 h-4 text-white" solid />
                             </div>
                             <h4 className="text-lg font-semibold text-purple-800">VIP Treatment</h4>
                           </div>
@@ -1137,15 +1138,15 @@ export default function Home() {
                           <h4 className="text-xl font-semibold text-brand-ink mb-6">Premium Benefits</h4>
                           <div className="grid gap-4">
                             {[
-                              { benefit: "Priority Emergency Response", description: "Guaranteed 1-hour response time", icon: "🚨", highlight: true },
-                              { benefit: "Extended Warranty", description: "Up to 3 years on all work", icon: "🛡️", highlight: false },
-                              { benefit: "Free Annual Inspections", description: "Comprehensive property assessment", icon: "🔍", highlight: false },
-                              { benefit: "Dedicated Account Manager", description: "Personal point of contact", icon: "👤", highlight: true },
-                              { benefit: "Special Pricing", description: "Exclusive rates on all services", icon: "💰", highlight: false },
-                              { benefit: "Flexible Payment Terms", description: "Extended payment options", icon: "📅", highlight: false }
+                              { benefit: "Priority Emergency Response", description: "Guaranteed 1-hour response time", icon: "emergency", highlight: true },
+                              { benefit: "Extended Warranty", description: "Up to 3 years on all work", icon: "shield", highlight: false },
+                              { benefit: "Free Annual Inspections", description: "Comprehensive property assessment", icon: "search", highlight: false },
+                              { benefit: "Dedicated Account Manager", description: "Personal point of contact", icon: "user", highlight: true },
+                              { benefit: "Special Pricing", description: "Exclusive rates on all services", icon: "money", highlight: false },
+                              { benefit: "Flexible Payment Terms", description: "Extended payment options", icon: "calendar", highlight: false }
                             ].map((item, index) => (
                               <div key={index} className={`flex items-start gap-3 p-3 rounded-lg ${item.highlight ? 'bg-brand-primary/5 border border-brand-primary/20' : 'bg-gray-50'}`}>
-                                <span className="text-xl mt-1">{item.icon}</span>
+                                <Icon name={item.icon as IconName} className="w-5 h-5 mt-1" />
                                 <div className="flex-1">
                                   <h5 className="font-semibold text-brand-ink mb-1">{item.benefit}</h5>
                                   <p className="text-sm text-gray-600">{item.description}</p>
@@ -1238,7 +1239,7 @@ export default function Home() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <span className="text-brand-primary">🔍</span>
+              <Icon name="search" className="w-5 h-5 text-brand-primary" />
               <span className="text-sm font-medium text-brand-ink">Free Property Assessment</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
@@ -1261,7 +1262,7 @@ export default function Home() {
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl">📋</span>
+                        <Icon name="clipboard" className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-brand-ink mb-2">Property-Wide Inspection</h4>
@@ -1271,7 +1272,7 @@ export default function Home() {
                     
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl">📊</span>
+                        <Icon name="chart" className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-brand-ink mb-2">Detailed Assessment Report</h4>
@@ -1281,7 +1282,7 @@ export default function Home() {
                     
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl">💰</span>
+                        <Icon name="money" className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-brand-ink mb-2">Complete Cost Estimation</h4>
@@ -1434,7 +1435,7 @@ export default function Home() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-600 hover:from-brand-primary-600 hover:to-brand-primary-700 text-white text-center py-4 text-lg font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-brand-primary/25 flex items-center justify-center gap-3"
                 >
-                  <span>📅</span>
+                  <Icon name="calendar" className="w-5 h-5" />
                   <span>Schedule Free Inspection</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

@@ -5,7 +5,7 @@ import { useState } from 'react'
 interface Tab {
   id: string
   label: string
-  icon: string
+  icon: React.ReactNode
   content: React.ReactNode
 }
 

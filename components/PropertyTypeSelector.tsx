@@ -1,11 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Icon, { type IconName } from '@/components/Icon'
 
 interface PropertyType {
   id: string
   label: string
-  icon: string
+  icon: IconName
   description: string
 }
 
@@ -13,37 +14,37 @@ const propertyTypes: PropertyType[] = [
   { 
     id: 'high-rise-condo', 
     label: 'High-Rise Condo', 
-    icon: '🏢',
+    icon: 'building',
     description: 'Residential towers'
   },
   { 
     id: 'office-building', 
     label: 'Office Building', 
-    icon: '🏬',
+    icon: 'building',
     description: 'Corporate spaces'
   },
   { 
     id: 'retail-commercial', 
     label: 'Retail/Commercial', 
-    icon: '🏪',
+    icon: 'retail',
     description: 'Shopping centers'
   },
   { 
     id: 'educational', 
     label: 'Educational', 
-    icon: '🎓',
+    icon: 'education',
     description: 'Schools & universities'
   },
   { 
     id: 'healthcare', 
     label: 'Healthcare', 
-    icon: '🏥',
+    icon: 'healthcare',
     description: 'Medical facilities'
   },
   { 
     id: 'industrial', 
     label: 'Industrial', 
-    icon: '🏭',
+    icon: 'industrial',
     description: 'Manufacturing sites'
   }
 ]
@@ -83,8 +84,8 @@ export default function PropertyTypeSelector() {
                 ? 'border-brand-primary bg-brand-primary/5 shadow-lg'
                 : 'border-gray-200'
             }`}>
-              <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-200">
-                {property.icon}
+              <div className="mb-2 group-hover:scale-110 transition-transform duration-200">
+                <Icon name={property.icon} className="w-8 h-8" />
               </div>
               <div className="text-center">
                 <div className={`text-sm font-semibold transition-colors duration-200 ${

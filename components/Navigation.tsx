@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Icon, { type IconName } from '@/components/Icon'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,37 +23,37 @@ export default function Navigation() {
       name: 'Emergency Services', 
       href: '/services/emergency',
       description: '24/7 emergency response for urgent plumbing issues',
-      icon: '🚨'
+      icon: 'emergency' as IconName
     },
     { 
       name: 'Drain Cleaning', 
       href: '/drain-cleaning',
       description: 'Professional drain cleaning and sewer maintenance',
-      icon: '🚿'
+      icon: 'shower' as IconName
     },
     { 
       name: 'Camera Inspection', 
       href: '/services/camera-inspection',
       description: 'Advanced diagnostic technology for accurate problem identification',
-      icon: '📹'
+      icon: 'camera' as IconName
     },
     { 
       name: 'Leak Repair', 
       href: '/services/leak-repair',
       description: 'Comprehensive leak investigation and precision repair',
-      icon: '🔧'
+      icon: 'wrench' as IconName
     },
     { 
       name: 'Maintenance', 
       href: '/services/maintenance',
       description: 'Preventative maintenance programs to avoid costly repairs',
-      icon: '🛠️'
+      icon: 'tools' as IconName
     },
     { 
       name: 'Water Saving Solutions', 
       href: '/services/water-saving',
       description: 'Eco-friendly upgrades and water conservation solutions',
-      icon: '💧'
+      icon: 'water' as IconName
     },
   ]
 
@@ -61,37 +62,37 @@ export default function Navigation() {
       name: 'High-Rise Condos', 
       href: '/industries/condos',
       description: 'Minimal disruption maintenance for high-density residential properties',
-      icon: '🏢'
+      icon: 'building' as IconName
     },
     { 
       name: 'Office Buildings', 
       href: '/industries/office',
       description: 'Commercial-grade solutions for corporate environments',
-      icon: '🏢'
+      icon: 'building' as IconName
     },
     { 
       name: 'Schools & Universities', 
       href: '/industries/education',
       description: 'Educational institution plumbing maintenance and upgrades',
-      icon: '🎓'
+      icon: 'education' as IconName
     },
     { 
       name: 'Healthcare Facilities', 
       href: '/industries/healthcare',
       description: 'Specialized plumbing for hospitals and medical centers',
-      icon: '🏥'
+      icon: 'healthcare' as IconName
     },
     { 
       name: 'Retail & Commercial', 
       href: '/industries/retail',
       description: 'Shopping centers and retail space plumbing solutions',
-      icon: '🛍️'
+      icon: 'retail' as IconName
     },
     { 
       name: 'Industrial Facilities', 
       href: '/industries/industrial',
       description: 'Heavy-duty plumbing for manufacturing and industrial sites',
-      icon: '🏭'
+      icon: 'industrial' as IconName
     },
   ]
 
@@ -146,8 +147,8 @@ export default function Navigation() {
                           href={service.href}
                           className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
                         >
-                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                            {service.icon}
+                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                            <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
@@ -187,8 +188,8 @@ export default function Navigation() {
                           href={industry.href}
                           className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group"
                         >
-                          <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                            {industry.icon}
+                          <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                            <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
@@ -280,8 +281,8 @@ export default function Navigation() {
                       className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                        {service.icon}
+                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                        <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
@@ -307,8 +308,8 @@ export default function Navigation() {
                       className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                        {industry.icon}
+                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                        <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
