@@ -1352,8 +1352,29 @@
 .floating-cta-mobile {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  /* Safe area padding for devices with notches */
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Safe area support */
+.pb-safe {
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0));
+}
+
+/* Mobile CTA button optimizations */
+.floating-cta-mobile a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  touch-action: manipulation;
+}
+
+/* Ensure buttons are accessible on mobile */
+@media (max-width: 767px) {
+  .floating-cta-mobile a {
+    min-height: 48px; /* Minimum touch target size */
+    font-size: 0.875rem;
+  }
 }
 
 /* CTA icon animations */

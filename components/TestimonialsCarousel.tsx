@@ -209,21 +209,21 @@ const TestimonialsCarousel: React.FC = () => {
         </div>
 
         {/* Additional Stats */}
-        <div className="mt-12 sm:mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 md:space-x-8 bg-white rounded-2xl px-6 sm:px-8 py-6 shadow-lg">
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-brand-primary">500+</div>
-              <div className="text-xs sm:text-sm text-gray-600">Properties Served</div>
+        <div className="mt-8 sm:mt-12 lg:mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center justify-center w-full sm:w-auto space-y-6 sm:space-y-0 sm:space-x-6 md:space-x-8 bg-white rounded-2xl px-4 sm:px-6 md:px-8 py-5 sm:py-6 shadow-lg">
+            <div className="text-center w-full sm:w-auto">
+              <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-brand-primary mb-1">50+</div>
+              <div className="text-sm sm:text-sm text-gray-600">Properties Served</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-brand-primary">15,000+</div>
-              <div className="text-xs sm:text-sm text-gray-600">Service Calls</div>
+            <div className="text-center w-full sm:w-auto">
+              <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-brand-primary mb-1">5,000+</div>
+              <div className="text-sm sm:text-sm text-gray-600">Service Calls</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-brand-primary">99.8%</div>
-              <div className="text-xs sm:text-sm text-gray-600">Customer Satisfaction</div>
+            <div className="text-center w-full sm:w-auto">
+              <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-brand-primary mb-1">99.8%</div>
+              <div className="text-sm sm:text-sm text-gray-600">Customer Satisfaction</div>
             </div>
           </div>
         </div>
