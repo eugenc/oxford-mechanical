@@ -13,7 +13,6 @@ export default function Navigation() {
     { name: 'Services', href: '/services' },
     { name: 'Industries', href: '/industries' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Resources', href: '/resources' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -215,14 +214,6 @@ export default function Navigation() {
               </Link>
 
               <Link
-                href="/resources"
-                className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-blue-50 relative group"
-              >
-                Resources
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-
-              <Link
                 href="/about"
                 className="text-gray-700 hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-blue-50 relative group"
               >
@@ -330,14 +321,6 @@ export default function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projects
-              </Link>
-
-              <Link
-                href="/resources"
-                className="text-gray-700 hover:text-brand-primary block px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Resources
               </Link>
 
               <Link
