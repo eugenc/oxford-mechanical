@@ -113,17 +113,11 @@ const TestimonialsCarousel: React.FC = () => {
 
         <div className="relative">
           <Swiper
-            effect="coverflow"
+            effect="slide"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView="auto"
-            coverflowEffect={{
-              rotate: 15,
-              stretch: 0,
-              depth: 50,
-              modifier: 1,
-              slideShadows: false,
-            }}
+            slidesPerView={1}
+            spaceBetween={20}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
@@ -131,39 +125,33 @@ const TestimonialsCarousel: React.FC = () => {
             loop={true}
             pagination={{
               clickable: true,
-              dynamicBullets: true,
+              dynamicBullets: false, // Disabled to prevent overlapping when active bullet moves
             }}
-            modules={[EffectCoverflow, Autoplay, Pagination]}
+            modules={[Autoplay, Pagination, EffectCoverflow]}
             className="testimonials-swiper"
             onSwiper={(swiper) => {
               swiperRef.current = swiper
             }}
             breakpoints={{
+              // Mobile: Simple slide effect
               320: {
                 slidesPerView: 1,
                 spaceBetween: 20,
-                coverflowEffect: {
-                  rotate: 0,
-                  stretch: 0,
-                  depth: 0,
-                  modifier: 1,
-                  slideShadows: false,
-                },
+                effect: "slide",
+                centeredSlides: true,
               },
               640: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 20,
-                coverflowEffect: {
-                  rotate: 10,
-                  stretch: 0,
-                  depth: 25,
-                  modifier: 1,
-                  slideShadows: false,
-                },
+                effect: "slide",
+                centeredSlides: true,
               },
+              // Tablet and Desktop: Coverflow effect
               768: {
                 slidesPerView: 2,
                 spaceBetween: 30,
+                effect: "coverflow",
+                centeredSlides: true,
                 coverflowEffect: {
                   rotate: 15,
                   stretch: 0,
@@ -175,6 +163,8 @@ const TestimonialsCarousel: React.FC = () => {
               1024: {
                 slidesPerView: 3,
                 spaceBetween: 40,
+                effect: "coverflow",
+                centeredSlides: true,
                 coverflowEffect: {
                   rotate: 15,
                   stretch: 0,
