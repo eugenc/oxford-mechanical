@@ -112,7 +112,7 @@ export default function Navigation() {
   }, [])
 
   return (
-    <nav className="bg-white/55 md:bg-white/95 backdrop-blur-1 border-b border-gray-200/80 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-white/55 md:bg-white/95 backdrop-blur-1 border-b border-gray-200/80 sticky top-0 z-50 shadow-sm relative">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -215,102 +215,13 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Services Mega Menu */}
-          <div 
-            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg rounded-b-2xl transition-all duration-300 transform -mt-1 ${
-              servicesHovered 
-                ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
-                : 'opacity-0 invisible -translate-y-2 pointer-events-none'
-            }`}
-            onMouseEnter={() => {
-              if (servicesTimeoutRef.current) {
-                clearTimeout(servicesTimeoutRef.current)
-                servicesTimeoutRef.current = null
-              }
-              setServicesHovered(true)
-            }}
-            onMouseLeave={() => {
-              servicesTimeoutRef.current = setTimeout(() => {
-                setServicesHovered(false)
-              }, 500)
-            }}
-          >
-            <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="grid grid-cols-6 gap-4">
-                {serviceItems.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group/item"
-                  >
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover/item:bg-brand-primary group-hover/item:text-white transition-all duration-200">
-                      <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover/item:text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="text-xs font-semibold text-gray-900 group-hover/item:text-brand-primary transition-colors">
-                        {service.name}
-                      </h4>
-                      <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                        {service.description}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Industries Mega Menu */}
-          <div 
-            className={`hidden md:block absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg rounded-b-2xl transition-all duration-300 transform -mt-1 ${
-              industriesHovered 
-                ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
-                : 'opacity-0 invisible -translate-y-2 pointer-events-none'
-            }`}
-            onMouseEnter={() => {
-              if (industriesTimeoutRef.current) {
-                clearTimeout(industriesTimeoutRef.current)
-                industriesTimeoutRef.current = null
-              }
-              setIndustriesHovered(true)
-            }}
-            onMouseLeave={() => {
-              industriesTimeoutRef.current = setTimeout(() => {
-                setIndustriesHovered(false)
-              }, 500)
-            }}
-          >
-            <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="grid grid-cols-6 gap-4">
-                {industryItems.map((industry) => (
-                  <Link
-                    key={industry.name}
-                    href={industry.href}
-                    className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group/item"
-                  >
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover/item:bg-brand-primary group-hover/item:text-white transition-all duration-200">
-                      <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover/item:text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="text-xs font-semibold text-gray-900 group-hover/item:text-brand-primary transition-colors">
-                        {industry.name}
-                      </h4>
-                      <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                        {industry.description}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden relative z-50">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-brand-primary p-3 rounded-xl hover:bg-blue-50 transition-all duration-300"
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               <svg className="h-6 w-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -325,8 +236,8 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-white border-t border-gray-200 shadow-lg">
+          <div className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-gray-200 shadow-lg z-50">
+            <div className="px-4 pt-4 pb-6 space-y-2">
               <Link
                 href="/"
                 className="text-gray-700 hover:text-brand-primary block px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
@@ -416,6 +327,96 @@ export default function Navigation() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Services Mega Menu - Direct child of nav */}
+      <div 
+        className={`hidden md:block absolute left-0 right-0 top-full bg-white border-b border-gray-200 shadow-lg rounded-b-2xl transition-all duration-300 transform z-50 ${
+          servicesHovered 
+            ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
+            : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+        }`}
+        onMouseEnter={() => {
+          if (servicesTimeoutRef.current) {
+            clearTimeout(servicesTimeoutRef.current)
+            servicesTimeoutRef.current = null
+          }
+          setServicesHovered(true)
+        }}
+        onMouseLeave={() => {
+          servicesTimeoutRef.current = setTimeout(() => {
+            setServicesHovered(false)
+          }, 500)
+        }}
+      >
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="grid grid-cols-6 gap-4">
+            {serviceItems.map((service) => (
+              <Link
+                key={service.name}
+                href={service.href}
+                className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group/item"
+              >
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover/item:bg-brand-primary group-hover/item:text-white transition-all duration-200">
+                  <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover/item:text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-xs font-semibold text-gray-900 group-hover/item:text-brand-primary transition-colors">
+                    {service.name}
+                  </h4>
+                  <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                    {service.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Industries Mega Menu - Direct child of nav */}
+      <div 
+        className={`hidden md:block absolute left-0 right-0 top-full bg-white border-b border-gray-200 shadow-lg rounded-b-2xl transition-all duration-300 transform z-50 ${
+          industriesHovered 
+            ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
+            : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+        }`}
+        onMouseEnter={() => {
+          if (industriesTimeoutRef.current) {
+            clearTimeout(industriesTimeoutRef.current)
+            industriesTimeoutRef.current = null
+          }
+          setIndustriesHovered(true)
+        }}
+        onMouseLeave={() => {
+          industriesTimeoutRef.current = setTimeout(() => {
+            setIndustriesHovered(false)
+          }, 500)
+        }}
+      >
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="grid grid-cols-6 gap-4">
+            {industryItems.map((industry) => (
+              <Link
+                key={industry.name}
+                href={industry.href}
+                className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-200 group/item"
+              >
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover/item:bg-brand-primary group-hover/item:text-white transition-all duration-200">
+                  <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover/item:text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-xs font-semibold text-gray-900 group-hover/item:text-brand-primary transition-colors">
+                    {industry.name}
+                  </h4>
+                  <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                    {industry.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </nav>
   )
