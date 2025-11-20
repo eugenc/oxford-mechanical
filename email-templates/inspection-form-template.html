@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Inspection Request - Oxford Mechanical</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #0b0e1c;
+            line-height: 1.6;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        .email-header {
+            background: linear-gradient(135deg, #0037ff 0%, #002edb 100%);
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(156, 197, 158, 0.1) 0%, transparent 70%);
+        }
+        
+        .email-header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .email-header .subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .email-header .badge {
+            display: inline-block;
+            background-color: rgba(156, 197, 158, 0.2);
+            color: #9cc59e;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .email-body {
+            padding: 40px 30px;
+        }
+        
+        .priority-banner {
+            background: linear-gradient(135deg, #9cc59e 0%, #7fb381 100%);
+            color: #065f46;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .priority-banner strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .priority-banner span {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .info-section {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0037ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .info-row {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .info-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #0b0e1c;
+            min-width: 140px;
+            font-size: 14px;
+        }
+        
+        .info-value {
+            color: #374151;
+            font-size: 14px;
+            flex: 1;
+        }
+        
+        .property-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .property-type-badge {
+            display: inline-block;
+            background-color: #0037ff;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #0037ff 0%, #002edb 100%);
+            color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .cta-box strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .email-footer {
+            background-color: #0b0e1c;
+            padding: 30px;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .email-footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .email-footer a {
+            color: #9cc59e;
+            text-decoration: none;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 30px 0;
+        }
+        
+        .action-steps {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .action-steps h3 {
+            color: #0037ff;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+        }
+        
+        .action-steps ol {
+            margin: 0;
+            padding-left: 20px;
+            color: #374151;
+            font-size: 14px;
+        }
+        
+        .action-steps li {
+            margin-bottom: 8px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .email-body {
+                padding: 30px 20px;
+            }
+            
+            .email-header {
+                padding: 30px 20px;
+            }
+            
+            .info-row {
+                flex-direction: column;
+            }
+            
+            .info-label {
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <h1>Free Inspection Request</h1>
+            <p class="subtitle">New Property Inspection Request Received</p>
+            <span class="badge">High Priority</span>
+        </div>
+        
+        <!-- Body -->
+        <div class="email-body">
+            <div class="priority-banner">
+                <strong>🎯 Action Required</strong>
+                <span>Schedule a free inspection for this property within 24 hours</span>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-row">
+                    <div class="info-label">Contact Name:</div>
+                    <div class="info-value"><strong>{{from_name}}</strong></div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Email Address:</div>
+                    <div class="info-value">
+                        <a href="mailto:{{from_email}}" style="color: #0037ff; text-decoration: none; font-weight: 500;">{{from_email}}</a>
+                    </div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Phone Number:</div>
+                    <div class="info-value">
+                        <a href="tel:{{phone}}" style="color: #0037ff; text-decoration: none; font-weight: 500;">{{phone}}</a>
+                    </div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Property Address:</div>
+                    <div class="info-value" style="font-weight: 600; color: #0b0e1c;">{{property_address}}</div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Property Types:</div>
+                    <div class="info-value">
+                        <div style="margin-top: 8px; line-height: 2; color: #374151;">
+                            {{property_types}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <strong>📅 Next Steps</strong>
+                <p>Contact the customer to schedule a convenient time for the free inspection. Remember to bring camera equipment and inspection forms.</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="action-steps">
+                <h3>Recommended Action Plan:</h3>
+                <ol>
+                    <li>Call or email the customer within 24 hours</li>
+                    <li>Confirm property address and access details</li>
+                    <li>Schedule inspection at a convenient time</li>
+                    <li>Prepare inspection checklist and camera equipment</li>
+                    <li>Send confirmation email with appointment details</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="email-footer">
+            <p><strong>Oxford Mechanical</strong></p>
+            <p>1111 Finch West, Toronto, ON M3J 2P5</p>
+            <p>Phone: <a href="tel:+14165550123">(416) 555-0123</a> | Email: <a href="mailto:info@oxfordmechanical.ca">info@oxfordmechanical.ca</a></p>
+            <p style="margin-top: 15px; font-size: 12px; opacity: 0.7;">Licensed Since 2013 | 24/7 Emergency Service</p>
+        </div>
+    </div>
+</body>
+</html>
+

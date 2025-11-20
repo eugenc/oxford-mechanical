@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { sendContactForm } from '@/lib/emailjs'
 
 interface ContactFormProps {
   title?: string
@@ -55,10 +56,20 @@ export default function ContactForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus('idle')
     
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      await sendContactForm({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service,
+        urgency: formData.urgency,
+        message: formData.message,
+        preferredContact: formData.preferredContact
+      })
+      
       setSubmitStatus('success')
       setFormData({
         name: '',
@@ -71,6 +82,7 @@ export default function ContactForm({
         preferredContact: 'phone'
       })
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

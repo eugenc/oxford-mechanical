@@ -10,8 +10,9 @@ A modern, responsive website for Oxford Mechanical - professional plumbing servi
 - 🎯 SEO optimized with proper meta tags
 - 🚀 Fast loading with optimized performance
 - 🎨 Custom Tailwind CSS configuration
-- 📧 Contact forms and service pages
+- 📧 Contact forms with EmailJS integration
 - 🔧 Emergency service highlighting
+- 📋 Free inspection request forms
 
 ## Tech Stack
 
@@ -43,14 +44,25 @@ npm install
 yarn install
 ```
 
-3. Run the development server:
+3. Set up environment variables for EmailJS:
+   - Create a `.env.local` file in the root directory
+   - Add the following variables (get these from your EmailJS account at https://www.emailjs.com/):
+   ```env
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key_here
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id_here
+   NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID=your_contact_template_id_here
+   NEXT_PUBLIC_EMAILJS_INSPECTION_TEMPLATE_ID=your_inspection_template_id_here
+   NEXT_PUBLIC_EMAILJS_TO_EMAIL=info@oxfordmechanical.ca
+   ```
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
@@ -102,6 +114,47 @@ The website uses a custom theme with the following brand colors:
 - **Email**: info@oxfordmechanical.ca
 - **Phone**: (416) 555-0123
 - **Emergency**: 24/7 Service Available
+
+## EmailJS Setup
+
+The website uses EmailJS to handle form submissions. To set up EmailJS:
+
+1. **Create an EmailJS account** at https://www.emailjs.com/
+2. **Create an Email Service** (Gmail, Outlook, etc.)
+3. **Create Email Templates**:
+   - One template for Contact Form submissions
+   - One template for Free Inspection Form submissions
+4. **Get your credentials**:
+   - Public Key: Found in Account > API Keys
+   - Service ID: Found in Email Services
+   - Template IDs: Found in Email Templates
+5. **Add to `.env.local`**:
+   ```env
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID=your_contact_template_id
+   NEXT_PUBLIC_EMAILJS_INSPECTION_TEMPLATE_ID=your_inspection_template_id
+   NEXT_PUBLIC_EMAILJS_TO_EMAIL=info@oxfordmechanical.ca
+   ```
+
+### Email Template Variables
+
+**Contact Form Template** should include:
+- `{{from_name}}` - Sender's name
+- `{{from_email}}` - Sender's email
+- `{{phone}}` - Sender's phone number
+- `{{company}}` - Company/property name
+- `{{service}}` - Service requested
+- `{{urgency}}` - Urgency level
+- `{{message}}` - Message content
+- `{{preferred_contact}}` - Preferred contact method
+
+**Inspection Form Template** should include:
+- `{{from_name}}` - Sender's name
+- `{{from_email}}` - Sender's email
+- `{{phone}}` - Sender's phone number
+- `{{property_address}}` - Property address
+- `{{property_types}}` - Selected property types
 
 ## Development
 

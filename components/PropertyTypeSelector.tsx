@@ -49,15 +49,28 @@ const propertyTypes: PropertyType[] = [
   }
 ]
 
-export default function PropertyTypeSelector() {
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([])
+interface PropertyTypeSelectorProps {
+  value?: string[]
+  onChange?: (selectedTypes: string[]) => void
+}
+
+export default function PropertyTypeSelector({ value, onChange }: PropertyTypeSelectorProps) {
+  const [selectedTypes, setSelectedTypes] = useState<string[]>(value || [])
+
+  // Sync with external value prop
+  useEffect(() => {
+    if (value !== undefined) {
+      setSelectedTypes(value)
+    }
+  }, [value])
 
   const handleTypeToggle = (typeId: string) => {
-    setSelectedTypes(prev => 
-      prev.includes(typeId) 
-        ? prev.filter(id => id !== typeId)
-        : [...prev, typeId]
-    )
+    const newSelected = selectedTypes.includes(typeId) 
+      ? selectedTypes.filter(id => id !== typeId)
+      : [...selectedTypes, typeId]
+    
+    setSelectedTypes(newSelected)
+    onChange?.(newSelected)
   }
 
   return (
