@@ -12,8 +12,8 @@ export const metadata = pageMetadata.services()
 
 const services = [
   {
-    title: "Emergency Services",
-    description: "24/7 emergency response for urgent plumbing issues that can&apos;t wait. Our certified technicians are ready to respond to your call anytime, anywhere in the GTA.",
+    title: "Commercial Emergency Services",
+    description: "We provide commercial emergency plumbing service 24/7 for urgent plumbing issues that can&apos;t wait. Our certified technicians are ready to respond to your commercial property anytime, anywhere in the GTA.",
     icon: "emergency" as IconName,
     href: "/services/emergency",
     features: [
@@ -170,8 +170,8 @@ export default function ServicesPage() {
               <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
                 ⚡
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">24/7 Emergency</h3>
-              <p className="text-gray-600">Round-the-clock emergency response for urgent plumbing issues</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">24/7 Commercial Emergency</h3>
+              <p className="text-gray-600">We provide commercial emergency plumbing service round-the-clock for urgent commercial plumbing issues</p>
             </div>
 
             <div className="text-center">

@@ -40,11 +40,11 @@ export const pageMetadata = {
 
   emergency: (): Metadata =>
     generateMetadata({
-      title: '24/7 Emergency Plumbing Services',
+      title: '24/7 Commercial Emergency Services',
       description:
-        'Immediate emergency plumbing response in Toronto & GTA. Available 24/7 for burst pipes, sewer backups, and urgent repairs.',
+        'We provide commercial emergency plumbing service 24/7 in Toronto & GTA. Immediate response for commercial properties with burst pipes, sewer backups, and urgent repairs.',
       path: '/services/emergency',
-      keywords: ['emergency plumbing', '24/7', 'urgent repair', 'burst pipe'],
+      keywords: ['commercial emergency plumbing', 'commercial emergency services', '24/7', 'urgent repair', 'burst pipe'],
     }),
 
   cameraInspection: (): Metadata =>

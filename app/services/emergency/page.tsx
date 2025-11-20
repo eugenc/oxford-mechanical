@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import ContactForm from '@/components/ContactForm'
 import EmergencyServiceWidget from '@/components/EmergencyServiceWidget'
+import Image from 'next/image'
 import { pageMetadata } from '@/lib/page-metadata'
 import StructuredData from '@/components/StructuredData'
 
@@ -10,7 +11,7 @@ const emergencyServices = [
   {
     title: "Burst Pipe Repair",
     description: "Immediate response to burst pipes to prevent water damage and restore service quickly.",
-    icon: "💥",
+    image: "/assets/services/emergency-plumbing-service.jpg",
     responseTime: "30 minutes",
     features: [
       "Emergency shut-off",
@@ -22,7 +23,7 @@ const emergencyServices = [
   {
     title: "Sewer Backup",
     description: "Professional sewer backup cleanup and repair to restore proper drainage and prevent health hazards.",
-    icon: "🚽",
+    image: "/assets/services/drain-cleaning-service.jpg",
     responseTime: "45 minutes",
     features: [
       "Sewer line inspection",
@@ -34,7 +35,7 @@ const emergencyServices = [
   {
     title: "Water Heater Failure",
     description: "Emergency water heater repair or replacement to restore hot water service for your property.",
-    icon: "🔥",
+    image: "/assets/services/preventative-maintenance-service.jpg",
     responseTime: "60 minutes",
     features: [
       "Diagnostic testing",
@@ -46,7 +47,7 @@ const emergencyServices = [
   {
     title: "Gas Leak Detection",
     description: "Critical gas leak detection and repair to ensure safety and prevent potential hazards.",
-    icon: "⚠️",
+    image: "/assets/services/leak-detection-service.jpg",
     responseTime: "20 minutes",
     features: [
       "Gas leak detection",
@@ -58,7 +59,7 @@ const emergencyServices = [
   {
     title: "Flooding Emergency",
     description: "Rapid response to flooding situations with water extraction and damage prevention.",
-    icon: "🌊",
+    image: "/assets/services/emergency-plumbing-service.jpg",
     responseTime: "30 minutes",
     features: [
       "Water extraction",
@@ -70,7 +71,7 @@ const emergencyServices = [
   {
     title: "No Water Service",
     description: "Emergency diagnosis and repair for complete water service loss affecting your property.",
-    icon: "🚰",
+    image: "/assets/services/emergency-plumbing-service.jpg",
     responseTime: "45 minutes",
     features: [
       "System diagnosis",
@@ -110,9 +111,9 @@ export default function EmergencyServicesPage() {
       <StructuredData
         type="Service"
         data={{
-          serviceType: 'Emergency Plumbing Service',
-          name: '24/7 Emergency Plumbing Services',
-          description: 'Immediate emergency plumbing response in Toronto & GTA. Available 24/7 for burst pipes, sewer backups, and urgent repairs.',
+          serviceType: 'Commercial Emergency Plumbing Service',
+          name: '24/7 Commercial Emergency Services',
+          description: '24/7 commercial emergency plumbing service in Toronto & GTA. Immediate response for commercial properties with burst pipes, sewer backups, and urgent repairs.',
           hoursAvailable: {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -124,8 +125,8 @@ export default function EmergencyServicesPage() {
       <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
-        title="24/7 Emergency Plumbing Services"
-        subtitle="When plumbing emergencies strike, we're here to help. Our certified technicians respond quickly to restore your service and prevent damage."
+        title="24/7 Commercial Emergency Services"
+        subtitle="We provide commercial emergency plumbing service 24/7. When plumbing emergencies strike your commercial property, our certified technicians respond quickly to restore your service and prevent damage."
         backgroundImage="/assets/services/emergency-plumbing-service.jpg"
         ctaText="Call Emergency Line"
         ctaHref="tel:+14165550123"
@@ -138,40 +139,55 @@ export default function EmergencyServicesPage() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Emergency Services We Provide
+              Commercial Emergency Services We Provide
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We provide commercial emergency plumbing service for businesses and commercial properties. 
               Our certified technicians are equipped to handle any plumbing emergency, 
               from burst pipes to gas leaks, with rapid response times.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {emergencyServices.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300">
-                <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-3xl mb-6">
-                  {service.icon}
+              <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+                {/* Image Section - 50% of card */}
+                <div className="relative h-[200px] sm:h-[220px] lg:h-[240px] overflow-hidden bg-gray-100">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                  {/* Gradient overlay for better text readability if needed */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                
-                <div className="mb-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-semibold text-gray-700">Response Time:</span>
-                    <span className="text-brand-primary font-bold">{service.responseTime}</span>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-sm text-gray-600">
-                      <svg className="w-4 h-4 text-brand-primary mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {feature}
+                {/* Content Section - 50% of card */}
+                <div className="flex-1 flex flex-col p-6 lg:p-8">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-5 text-sm lg:text-base leading-relaxed flex-shrink-0">{service.description}</p>
+                  
+                  {/* Response Time Badge */}
+                  <div className="mb-5 pb-5 border-b border-gray-100">
+                    <div className="inline-flex items-center gap-2 bg-brand-primary/10 rounded-lg px-4 py-2">
+                      <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Response Time:</span>
+                      <span className="text-brand-primary font-bold text-lg">{service.responseTime}</span>
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Features List */}
+                  <div className="space-y-2.5 flex-1">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start text-sm text-gray-600">
+                        <svg className="w-5 h-5 text-brand-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="leading-relaxed">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -215,7 +231,8 @@ export default function EmergencyServicesPage() {
               Why Choose Our Emergency Service?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              When every minute counts, you need a reliable emergency plumbing service you can trust.
+              When every minute counts, you need a reliable commercial emergency plumbing service you can trust. 
+              We provide commercial emergency plumbing service 24/7 to keep your business running.
             </p>
           </div>
 
@@ -260,8 +277,8 @@ export default function EmergencyServicesPage() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <ContactForm
-              title="Emergency Service Request"
-              subtitle="For urgent plumbing emergencies, call us immediately at (416) 555-0123. For non-emergency requests, use this form."
+              title="Commercial Emergency Service Request"
+              subtitle="We provide commercial emergency plumbing service 24/7. For urgent commercial plumbing emergencies, call us immediately at (416) 555-0123. For non-emergency requests, use this form."
               showServiceSelection={true}
               showUrgencyLevel={true}
             />
