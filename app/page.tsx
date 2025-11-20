@@ -971,15 +971,15 @@ export default function Home() {
         </div>
         
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-4 py-2 border border-brand-primary/20 mb-6">
-              <Icon name="gift" className="w-5 h-5 text-brand-primary" />
-              <span className="text-sm font-medium text-brand-ink">Exclusive Programs</span>
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-1 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-brand-primary/20 mb-4 sm:mb-6">
+              <Icon name="gift" className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary" />
+              <span className="text-xs sm:text-sm font-medium text-brand-ink">Exclusive Programs</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-brand-ink mb-3 sm:mb-4">
               Loyalty & Cashback Programs
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               We value our long-term clients with exclusive programs designed to save you money and provide additional benefits.
             </p>
           </div>
@@ -992,35 +992,35 @@ export default function Home() {
                 icon: <Icon name="money" className="w-5 h-5" />,
                 content: (
                   <div className="cashback-program">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
                       {/* Left Side - Main Content */}
                       <div className="space-y-8">
                         <div className="text-center lg:text-left">
-                          <h3 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
+                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-brand-ink mb-3 sm:mb-4">
                             Earn Cashback on Every Service
                           </h3>
-                          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
                             The more you use our services, the more you save. Our cashback program rewards loyal clients with real money back on every service call.
                           </p>
-            </div>
+                        </div>
             
                         {/* Cashback Tiers */}
-                        <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-brand-ink mb-4">Cashback Tiers</h4>
+                        <div className="space-y-3 sm:space-y-4">
+                          <h4 className="text-lg sm:text-xl font-semibold text-brand-ink mb-3 sm:mb-4">Cashback Tiers</h4>
                           {[
                             { tier: "Standard", rate: "2%", description: "All maintenance services and emergency repairs", color: "from-blue-500 to-blue-600" },
                             { tier: "Annual Contract", rate: "5%", description: "Yearly maintenance agreements", color: "from-purple-500 to-purple-600" },
                             { tier: "Multi-Property", rate: "10%", description: "Clients with 3+ properties", color: "from-emerald-500 to-emerald-600" }
                           ].map((tier, index) => (
-                            <div key={index} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                              <div className={`w-16 h-16 bg-gradient-to-br ${tier.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
+                            <div key={index} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                              <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${tier.color} rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-lg flex-shrink-0`}>
                                 {tier.rate}
-              </div>
-                              <div className="flex-1">
-                                <h5 className="font-semibold text-brand-ink mb-1">{tier.tier}</h5>
-                                <p className="text-sm text-gray-600">{tier.description}</p>
                               </div>
-                              <div className="text-right">
+                              <div className="flex-1 min-w-0">
+                                <h5 className="font-semibold text-brand-ink mb-1 text-sm sm:text-base">{tier.tier}</h5>
+                                <p className="text-xs sm:text-sm text-gray-600">{tier.description}</p>
+                              </div>
+                              <div className="text-right flex-shrink-0 hidden sm:block">
                                 <div className="text-2xl font-bold text-brand-primary">{tier.rate}</div>
                                 <div className="text-xs text-gray-500">cashback</div>
                               </div>
@@ -1029,24 +1029,24 @@ export default function Home() {
                         </div>
 
                         {/* Payment Schedule */}
-                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                              <Icon name="calendar" className="w-4 h-4 text-white" />
+                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-green-200">
+                          <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                              <Icon name="calendar" className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                             </div>
-                            <h4 className="text-lg font-semibold text-green-800">Quarterly Payments</h4>
+                            <h4 className="text-base sm:text-lg font-semibold text-green-800">Quarterly Payments</h4>
                           </div>
-                          <p className="text-green-700">
+                          <p className="text-sm sm:text-base text-green-700">
                             Cashback is automatically calculated and paid quarterly, so you see savings throughout the year.
                           </p>
                         </div>
                       </div>
 
                       {/* Right Side - Benefits & Stats */}
-                      <div className="space-y-6">
-                        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                          <h4 className="text-xl font-semibold text-brand-ink mb-6">Program Benefits</h4>
-                          <div className="space-y-4">
+                      <div className="space-y-4 sm:space-y-6">
+                        <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-lg border border-gray-100">
+                          <h4 className="text-lg sm:text-xl font-semibold text-brand-ink mb-4 sm:mb-6">Program Benefits</h4>
+                          <div className="space-y-3 sm:space-y-4">
                             {[
                               { benefit: "Automatic enrollment", icon: "check" },
                               { benefit: "No minimum spending required", icon: "credit-card" },
@@ -1055,29 +1055,29 @@ export default function Home() {
                               { benefit: "Annual bonus rewards", icon: "gift" },
                               { benefit: "Referral bonuses", icon: "users" }
                             ].map((item, index) => (
-                              <div key={index} className="flex items-center gap-3">
-                                <Icon name={item.icon as IconName} className="w-5 h-5" />
-                                <span className="text-gray-700 font-medium">{item.benefit}</span>
+                              <div key={index} className="flex items-center gap-2 sm:gap-3">
+                                <Icon name={item.icon as IconName} className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                                <span className="text-sm sm:text-base text-gray-700 font-medium">{item.benefit}</span>
                               </div>
                             ))}
                           </div>
                         </div>
 
                         {/* Stats Card */}
-                        <div className="bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-2xl p-8 text-white">
-                          <h4 className="text-xl font-semibold mb-6">Average Client Savings</h4>
-                          <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-xl sm:rounded-2xl p-5 sm:p-8 text-white">
+                          <h4 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Average Client Savings</h4>
+                          <div className="grid grid-cols-2 gap-3 sm:gap-4">
                             <div className="text-center">
-                              <div className="text-3xl font-bold mb-1">$2,400</div>
-                              <div className="text-sm opacity-90">Annual Savings</div>
+                              <div className="text-2xl sm:text-3xl font-bold mb-1">$2,400</div>
+                              <div className="text-xs sm:text-sm opacity-90">Annual Savings</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-3xl font-bold mb-1">15%</div>
-                              <div className="text-sm opacity-90">Average Cashback</div>
+                              <div className="text-2xl sm:text-3xl font-bold mb-1">15%</div>
+                              <div className="text-xs sm:text-sm opacity-90">Average Cashback</div>
                             </div>
                           </div>
-                          <div className="mt-6 text-center">
-                            <div className="text-sm opacity-90 mb-2">Based on multi-property clients</div>
+                          <div className="mt-4 sm:mt-6 text-center">
+                            <div className="text-xs sm:text-sm opacity-90 mb-1 sm:mb-2">Based on multi-property clients</div>
                             <div className="text-xs opacity-75">*Actual savings may vary based on service usage</div>
                           </div>
                         </div>
@@ -1092,42 +1092,42 @@ export default function Home() {
                 icon: <Icon name="star" className="w-5 h-5" />,
                 content: (
                   <div className="loyalty-rewards">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
                       {/* Left Side - Main Content */}
                       <div className="space-y-8">
                         <div className="text-center lg:text-left">
-                          <h3 className="text-3xl md:text-4xl font-display font-bold text-brand-ink mb-4">
+                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-brand-ink mb-3 sm:mb-4">
                             Exclusive Loyalty Benefits
                           </h3>
-                          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
                             Unlock premium benefits and priority service as a valued Oxford Mechanical client. 
                             Enjoy exclusive perks designed for long-term partnerships.
                           </p>
                         </div>
 
                         {/* Loyalty Levels */}
-                        <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-brand-ink mb-4">Loyalty Levels</h4>
+                        <div className="space-y-3 sm:space-y-4">
+                          <h4 className="text-lg sm:text-xl font-semibold text-brand-ink mb-3 sm:mb-4">Loyalty Levels</h4>
                           {[
                             { level: "Bronze", years: "1+ Years", benefits: ["Priority emergency response", "5% discount on maintenance"], color: "from-orange-400 to-orange-500" },
                             { level: "Silver", years: "2+ Years", benefits: ["All Bronze benefits", "10% discount on maintenance", "Free quarterly inspections"], color: "from-gray-400 to-gray-500" },
                             { level: "Gold", years: "3+ Years", benefits: ["All Silver benefits", "15% discount on maintenance", "Free annual comprehensive inspection", "Extended warranty"], color: "from-yellow-400 to-yellow-500" }
                           ].map((level, index) => (
                             <div key={index} className="relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden">
-                              <div className="p-6">
-                                <div className="flex items-center gap-4 mb-4">
-                                  <div className={`w-12 h-12 bg-gradient-to-br ${level.color} rounded-xl flex items-center justify-center text-white font-bold shadow-lg`}>
+                              <div className="p-4 sm:p-6">
+                                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                                  <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${level.color} rounded-lg sm:rounded-xl flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0`}>
                                     {index + 1}
                                   </div>
-                                  <div className="flex-1">
-                                    <h5 className="font-bold text-brand-ink text-lg">{level.level} Level</h5>
-                                    <p className="text-sm text-gray-600">{level.years} of partnership</p>
+                                  <div className="flex-1 min-w-0">
+                                    <h5 className="font-bold text-brand-ink text-base sm:text-lg">{level.level} Level</h5>
+                                    <p className="text-xs sm:text-sm text-gray-600">{level.years} of partnership</p>
                                   </div>
                                 </div>
-                                <div className="space-y-2">
+                                <div className="space-y-1.5 sm:space-y-2">
                                   {level.benefits.map((benefit, benefitIndex) => (
-                                    <div key={benefitIndex} className="flex items-center gap-2 text-sm">
-                                      <Icon name="check" className="w-4 h-4 text-green-500" />
+                                    <div key={benefitIndex} className="flex items-center gap-2 text-xs sm:text-sm">
+                                      <Icon name="check" className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
                                       <span className="text-gray-700">{benefit}</span>
                                     </div>
                                   ))}
@@ -1140,24 +1140,24 @@ export default function Home() {
                         </div>
 
                         {/* Special Programs */}
-                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-200">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                              <Icon name="star" className="w-4 h-4 text-white" solid />
+                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-purple-200">
+                          <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                              <Icon name="star" className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" solid />
                             </div>
-                            <h4 className="text-lg font-semibold text-purple-800">VIP Treatment</h4>
+                            <h4 className="text-base sm:text-lg font-semibold text-purple-800">VIP Treatment</h4>
                           </div>
-                          <p className="text-purple-700">
+                          <p className="text-sm sm:text-base text-purple-700">
                             Gold level clients receive VIP treatment including dedicated account manager and priority scheduling for all services.
                           </p>
                         </div>
                       </div>
 
                       {/* Right Side - Benefits & Rewards */}
-                      <div className="space-y-6">
-                        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                          <h4 className="text-xl font-semibold text-brand-ink mb-6">Premium Benefits</h4>
-                          <div className="grid gap-4">
+                      <div className="space-y-4 sm:space-y-6">
+                        <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-lg border border-gray-100">
+                          <h4 className="text-lg sm:text-xl font-semibold text-brand-ink mb-4 sm:mb-6">Premium Benefits</h4>
+                          <div className="grid gap-3 sm:gap-4">
                             {[
                               { benefit: "Priority Emergency Response", description: "Guaranteed 1-hour response time", icon: "emergency", highlight: true },
                               { benefit: "Extended Warranty", description: "Up to 3 years on all work", icon: "shield", highlight: false },
@@ -1166,14 +1166,14 @@ export default function Home() {
                               { benefit: "Special Pricing", description: "Exclusive rates on all services", icon: "money", highlight: false },
                               { benefit: "Flexible Payment Terms", description: "Extended payment options", icon: "calendar", highlight: false }
                             ].map((item, index) => (
-                              <div key={index} className={`flex items-start gap-3 p-3 rounded-lg ${item.highlight ? 'bg-brand-primary/5 border border-brand-primary/20' : 'bg-gray-50'}`}>
-                                <Icon name={item.icon as IconName} className="w-5 h-5 mt-1" />
-                                <div className="flex-1">
-                                  <h5 className="font-semibold text-brand-ink mb-1">{item.benefit}</h5>
-                                  <p className="text-sm text-gray-600">{item.description}</p>
+                              <div key={index} className={`flex items-start gap-2 sm:gap-3 p-3 rounded-lg ${item.highlight ? 'bg-brand-primary/5 border border-brand-primary/20' : 'bg-gray-50'}`}>
+                                <Icon name={item.icon as IconName} className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1 flex-shrink-0" />
+                                <div className="flex-1 min-w-0">
+                                  <h5 className="font-semibold text-brand-ink mb-1 text-sm sm:text-base">{item.benefit}</h5>
+                                  <p className="text-xs sm:text-sm text-gray-600">{item.description}</p>
                                 </div>
                                 {item.highlight && (
-                                  <span className="text-xs bg-brand-primary text-white px-2 py-1 rounded-full font-medium">VIP</span>
+                                  <span className="text-xs bg-brand-primary text-white px-2 py-1 rounded-full font-medium flex-shrink-0">VIP</span>
                                 )}
                               </div>
                             ))}
@@ -1181,25 +1181,25 @@ export default function Home() {
                         </div>
 
                         {/* Loyalty Rewards Card */}
-                        <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-8 text-white">
-                          <h4 className="text-xl font-semibold mb-6">Loyalty Rewards</h4>
-                          <div className="space-y-4">
-                            <div className="flex justify-between items-center">
+                        <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl sm:rounded-2xl p-5 sm:p-8 text-white">
+                          <h4 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Loyalty Rewards</h4>
+                          <div className="space-y-3 sm:space-y-4">
+                            <div className="flex justify-between items-center text-sm sm:text-base">
                               <span>Annual Service Value</span>
                               <span className="font-bold">$50,000+</span>
                             </div>
-                            <div className="flex justify-between items-center">
+                            <div className="flex justify-between items-center text-sm sm:text-base">
                               <span>Typical Savings</span>
                               <span className="font-bold">$7,500</span>
                             </div>
-                            <div className="flex justify-between items-center">
+                            <div className="flex justify-between items-center text-sm sm:text-base">
                               <span>VIP Benefits Value</span>
                               <span className="font-bold">$2,000</span>
                             </div>
                           </div>
-                          <div className="mt-6 p-3 bg-white/20 rounded-lg text-center">
-                            <div className="text-sm opacity-90 mb-1">Total Annual Value</div>
-                            <div className="text-2xl font-bold">$9,500+</div>
+                          <div className="mt-4 sm:mt-6 p-3 bg-white/20 rounded-lg text-center">
+                            <div className="text-xs sm:text-sm opacity-90 mb-1">Total Annual Value</div>
+                            <div className="text-xl sm:text-2xl font-bold">$9,500+</div>
                           </div>
                         </div>
                       </div>
@@ -1213,28 +1213,28 @@ export default function Home() {
           />
           
           {/* Bottom CTA */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
-              <div className="text-left">
-                <h3 className="text-xl font-bold text-brand-ink mb-2">Ready to start earning rewards?</h3>
-                <p className="text-gray-600">Contact us today to learn more about our loyalty and cashback programs.</p>
+          <div className="mt-12 sm:mt-16 text-center">
+            <div className="w-full sm:inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white rounded-2xl p-5 sm:p-8 shadow-xl border border-gray-100">
+              <div className="text-center sm:text-left mb-4 sm:mb-0">
+                <h3 className="text-lg sm:text-xl font-bold text-brand-ink mb-2">Ready to start earning rewards?</h3>
+                <p className="text-sm sm:text-base text-gray-600">Contact us today to learn more about our loyalty and cashback programs.</p>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <Link
                   href="/contact"
-                  className="bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                  className="bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl min-h-[44px] w-full sm:w-auto"
                 >
-                  <span>Get Started</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="whitespace-nowrap">Get Started</span>
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
                 <Link
                   href="tel:+1416-555-0123"
-                  className="bg-gray-100 hover:bg-gray-200 text-brand-ink inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                  className="bg-gray-100 hover:bg-gray-200 text-brand-ink inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl min-h-[44px] w-full sm:w-auto"
                 >
-                  <span>Call Now</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="whitespace-nowrap">Call Now</span>
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </Link>
