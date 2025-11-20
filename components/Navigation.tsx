@@ -7,6 +7,8 @@ import Icon, { type IconName } from '@/components/Icon'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false)
 
   const navigationItems = [
     { name: 'Home', href: '/' },
@@ -110,6 +112,13 @@ export default function Navigation() {
       }
     }
   }, [])
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setIsServicesOpen(false)
+      setIsIndustriesOpen(false)
+    }
+  }, [isMenuOpen])
 
   return (
     <nav className="bg-white/55 md:bg-white/95 backdrop-blur-1 border-b border-gray-200/80 sticky top-0 z-50 shadow-sm relative">
@@ -236,7 +245,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-gray-200 shadow-lg z-50">
+          <div className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-gray-200 shadow-lg z-50 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div className="px-4 pt-4 pb-6 space-y-2">
               <Link
                 href="/"
@@ -248,56 +257,86 @@ export default function Navigation() {
               
               {/* Mobile Services */}
               <div className="pt-2">
-                <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Services</div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4">
-                  {serviceItems.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                        <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
-                          {service.name}
-                        </h4>
-                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                          {service.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="w-full flex items-center justify-between text-gray-700 hover:text-brand-primary px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
+                >
+                  <span>Services</span>
+                  <svg 
+                    className={`h-5 w-5 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isServicesOpen && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4 mt-2">
+                    {serviceItems.map((service) => (
+                      <Link
+                        key={service.name}
+                        href={service.href}
+                        className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                          <Icon name={service.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                            {service.name}
+                          </h4>
+                          <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                            {service.description}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Mobile Industries */}
               <div className="pt-2">
-                <div className="text-gray-500 text-sm font-semibold px-4 py-2 uppercase tracking-wider">Industries</div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4">
-                  {industryItems.map((industry) => (
-                    <Link
-                      key={industry.name}
-                      href={industry.href}
-                      className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
-                        <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
-                          {industry.name}
-                        </h4>
-                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                          {industry.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+                <button
+                  onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
+                  className="w-full flex items-center justify-between text-gray-700 hover:text-brand-primary px-4 py-3 rounded-xl text-base font-semibold hover:bg-blue-50 transition-all duration-300"
+                >
+                  <span>Industries</span>
+                  <svg 
+                    className={`h-5 w-5 transition-transform duration-300 ${isIndustriesOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isIndustriesOpen && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4 mt-2">
+                    {industryItems.map((industry) => (
+                      <Link
+                        key={industry.name}
+                        href={industry.href}
+                        className="flex flex-col items-center text-center gap-2 p-3 rounded-xl hover:bg-blue-50 hover:text-brand-primary transition-all duration-300 group"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all duration-200">
+                          <Icon name={industry.icon} className="w-5 h-5 text-gray-700 group-hover:text-white" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-xs font-semibold text-gray-900 group-hover:text-brand-primary transition-colors">
+                            {industry.name}
+                          </h4>
+                          <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                            {industry.description}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <Link
