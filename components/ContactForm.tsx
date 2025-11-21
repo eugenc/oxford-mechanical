@@ -90,11 +90,27 @@ export default function ContactForm({
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-xl border border-gray-100 p-8 ${className}`}>
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">{title}</h2>
-        <p className="text-lg text-gray-600">{subtitle}</p>
+    <div className={`bg-white rounded-3xl shadow-2xl border border-gray-100 relative overflow-hidden ${className}`}>
+      {/* Form header with gradient */}
+      <div className="bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-t-3xl p-6 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+        <div className="absolute top-2 left-2 w-16 h-16 bg-white/5 rounded-full blur-lg"></div>
+        
+        <div className="relative z-10 flex items-center gap-4">
+          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-1">{title}</h2>
+            <p className="text-white/90 text-sm lg:text-base">{subtitle}</p>
+          </div>
+        </div>
       </div>
+      
+      {/* Form content */}
+      <div className="p-8 lg:p-10">
 
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -128,100 +144,111 @@ export default function ContactForm({
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-              Full Name *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
-              placeholder="Your full name"
-            />
-          </div>
+      <form onSubmit={handleSubmit} className="space-y-6" role="form" aria-label="Contact form">
+        {/* Contact Information Section */}
+        <div className="space-y-4">
+          <h4 className="text-lg font-semibold text-brand-ink border-b border-gray-200 pb-2">Contact Information</h4>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                Full Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
+                placeholder="Your full name"
+                autoComplete="name"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
-              placeholder="your.email@company.com"
-            />
-          </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
+                placeholder="your.email@company.com"
+                autoComplete="email"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-              Phone Number *
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
-              placeholder="(416) 555-0123"
-            />
-          </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                Phone Number <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
+                placeholder="(416) 555-0123"
+                autoComplete="tel"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-              Company/Property
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
-              placeholder="Your company or property name"
-            />
+            <div>
+              <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                Company/Property
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
+                placeholder="Your company or property name"
+                autoComplete="organization"
+              />
+            </div>
           </div>
         </div>
 
+        {/* Service Information Section */}
         {showServiceSelection && (
-          <div>
-            <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
-              Service Needed
-            </label>
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
-            >
-              <option value="">Select a service</option>
-              {services.map(service => (
-                <option key={service} value={service}>{service}</option>
-              ))}
-            </select>
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-brand-ink border-b border-gray-200 pb-2">Service Information</h4>
+            <div>
+              <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                Service Needed
+              </label>
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base"
+              >
+                <option value="">Select a service</option>
+                {services.map(service => (
+                  <option key={service} value={service}>{service}</option>
+                ))}
+              </select>
+            </div>
           </div>
         )}
 
         {showUrgencyLevel && (
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">
-              Urgency Level
-            </label>
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-brand-ink border-b border-gray-200 pb-2">Urgency Level</h4>
             <div className="space-y-3">
               {urgencyLevels.map(level => (
-                <label key={level.value} className="flex items-start">
+                <label key={level.value} className="flex items-start p-3 rounded-xl border border-gray-200 hover:border-brand-primary/30 hover:bg-brand-primary/5 transition-all duration-200 cursor-pointer">
                   <input
                     type="radio"
                     name="urgency"
@@ -230,7 +257,7 @@ export default function ContactForm({
                     onChange={handleChange}
                     className="mt-1 h-4 w-4 text-brand-primary focus:ring-brand-primary border-gray-300"
                   />
-                  <div className="ml-3">
+                  <div className="ml-3 flex-1">
                     <div className="text-sm font-medium text-gray-900">{level.label}</div>
                     <div className="text-sm text-gray-500">{level.description}</div>
                   </div>
@@ -240,28 +267,31 @@ export default function ContactForm({
           </div>
         )}
 
-        <div>
-          <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-            Message *
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
-            placeholder="Please describe your plumbing needs, location, and any specific requirements..."
-          />
+        {/* Message Section */}
+        <div className="space-y-4">
+          <h4 className="text-lg font-semibold text-brand-ink border-b border-gray-200 pb-2">Project Details</h4>
+          <div>
+            <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+              Message <span className="text-red-500">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={4}
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 hover:border-gray-400 text-base resize-none"
+              placeholder="Please describe your plumbing needs, location, and any specific requirements..."
+            />
+          </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-3">
-            Preferred Contact Method
-          </label>
-          <div className="flex space-x-6">
-            <label className="flex items-center">
+        {/* Preferred Contact Method */}
+        <div className="space-y-4">
+          <h4 className="text-lg font-semibold text-brand-ink border-b border-gray-200 pb-2">Contact Preferences</h4>
+          <div className="flex flex-wrap gap-4">
+            <label className="flex items-center p-3 rounded-xl border border-gray-200 hover:border-brand-primary/30 hover:bg-brand-primary/5 transition-all duration-200 cursor-pointer flex-1 min-w-[140px]">
               <input
                 type="radio"
                 name="preferredContact"
@@ -270,9 +300,9 @@ export default function ContactForm({
                 onChange={handleChange}
                 className="h-4 w-4 text-brand-primary focus:ring-brand-primary border-gray-300"
               />
-              <span className="ml-2 text-sm text-gray-700">Phone Call</span>
+              <span className="ml-2 text-sm font-medium text-gray-700">Phone Call</span>
             </label>
-            <label className="flex items-center">
+            <label className="flex items-center p-3 rounded-xl border border-gray-200 hover:border-brand-primary/30 hover:bg-brand-primary/5 transition-all duration-200 cursor-pointer flex-1 min-w-[140px]">
               <input
                 type="radio"
                 name="preferredContact"
@@ -281,42 +311,75 @@ export default function ContactForm({
                 onChange={handleChange}
                 className="h-4 w-4 text-brand-primary focus:ring-brand-primary border-gray-300"
               />
-              <span className="ml-2 text-sm text-gray-700">Email</span>
+              <span className="ml-2 text-sm font-medium text-gray-700">Email</span>
             </label>
           </div>
         </div>
 
+        {/* Enhanced CTA Button */}
         <div className="pt-4">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-brand-primary hover:bg-brand-primary/90 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-primary/30"
+            className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-600 hover:from-brand-primary-600 hover:to-brand-primary-700 disabled:from-gray-400 disabled:to-gray-500 text-white text-center py-4 text-lg font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-brand-primary/25 flex items-center justify-center gap-3 disabled:transform-none"
           >
             {isSubmitting ? (
-              <div className="flex items-center justify-center">
+              <>
                 <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
                 Sending Message...
-              </div>
+              </>
             ) : (
-              'Send Message'
+              <>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Send Message</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </>
             )}
           </button>
         </div>
       </form>
+      </div>
 
-      <div className="mt-6 pt-6 border-t border-gray-200">
-        <div className="text-center">
-          <p className="text-sm text-gray-600 mb-2">Need immediate assistance?</p>
-          <a 
-            href="tel:+14165550123" 
-            className="text-brand-primary hover:text-brand-primary/80 font-semibold text-lg"
-          >
-            Call (416) 555-0123
-          </a>
-          <p className="text-xs text-gray-500 mt-1">24/7 Emergency Service</p>
+      {/* Form footer */}
+      <div className="px-8 lg:px-10 pb-8 lg:pb-10">
+        <div className="pt-6 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-600 mb-4">
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span>100% Free Consultation</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span>No Obligation</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span>24hr Response</span>
+            </div>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-600 mb-2">Need immediate assistance?</p>
+            <a 
+              href="tel:+14165550123" 
+              className="text-brand-primary hover:text-brand-primary/80 font-semibold text-lg transition-colors duration-200"
+            >
+              Call (416) 555-0123
+            </a>
+            <p className="text-xs text-gray-500 mt-1">24/7 Emergency Service</p>
+          </div>
         </div>
       </div>
     </div>

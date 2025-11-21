@@ -222,16 +222,13 @@ export default function EmergencyServicesPage() {
                 <div 
                   key={index} 
                   className="relative group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Step Card */}
                   <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 lg:p-8 hover:shadow-2xl hover:border-brand-primary/30 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col items-center text-center">
                     {/* Numbered Circle with enhanced styling */}
                     <div className="relative mb-6">
-                      <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-full flex items-center justify-center text-white font-bold text-2xl lg:text-3xl shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 relative z-10">
+                      <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-full flex items-center justify-center text-white font-bold text-2xl lg:text-3xl shadow-lg group-hover:shadow-xl transition-all duration-300 relative z-10">
                         <span>{step.step}</span>
-                        {/* Pulse effect */}
-                        <div className="absolute inset-0 rounded-full bg-brand-primary animate-ping opacity-20"></div>
                       </div>
                       {/* Connecting line indicator for mobile/tablet */}
                       {index < emergencySteps.length - 1 && (
@@ -269,49 +266,179 @@ export default function EmergencyServicesPage() {
       </section>
 
       {/* Why Choose Our Emergency Service */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-accent rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
               Why Choose Our Emergency Service?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               When every minute counts, you need a reliable commercial emergency plumbing service you can trust. 
               We provide commercial emergency plumbing service 24/7 to keep your business running.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                ⚡
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {/* Rapid Response */}
+            <div className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 flex flex-col h-full will-change-transform">
+              {/* Image section - 40% height */}
+              <div className="image-section h-[40%] min-h-[200px] relative overflow-hidden">
+                <Image
+                  src="/assets/trust/emergency-response-bg.jpg"
+                  alt="Rapid Response"
+                  fill
+                  quality={95}
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+                {/* Brand blue gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
+                {/* Glass effect overlay */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Rapid Response</h3>
-              <p className="text-gray-600">Average response time of 30-60 minutes across the GTA</p>
+              
+              {/* Content section - 60% height */}
+              <div className="content-section h-[60%] p-6 lg:p-8 flex flex-col justify-center relative">
+                {/* Subtle background accent on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 text-center">
+                  <h3 className="text-xl lg:text-2xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
+                    Rapid Response
+                  </h3>
+                  <p className="text-sm lg:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    Average response time of 30-60 minutes across the GTA
+                  </p>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-primary/0 to-transparent group-hover:via-brand-primary/50 transition-all duration-500"></div>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                🛠️
+            {/* Fully Equipped */}
+            <div className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 flex flex-col h-full will-change-transform">
+              {/* Image section - 40% height */}
+              <div className="image-section h-[40%] min-h-[200px] relative overflow-hidden">
+                <Image
+                  src="/assets/services/emergency-plumbing-service.jpg"
+                  alt="Fully Equipped"
+                  fill
+                  quality={95}
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+                {/* Brand blue gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
+                {/* Glass effect overlay */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Fully Equipped</h3>
-              <p className="text-gray-600">Our trucks carry all necessary parts and equipment for most repairs</p>
+              
+              {/* Content section - 60% height */}
+              <div className="content-section h-[60%] p-6 lg:p-8 flex flex-col justify-center relative">
+                {/* Subtle background accent on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 text-center">
+                  <h3 className="text-xl lg:text-2xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
+                    Fully Equipped
+                  </h3>
+                  <p className="text-sm lg:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    Our trucks carry all necessary parts and equipment for most repairs
+                  </p>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-primary/0 to-transparent group-hover:via-brand-primary/50 transition-all duration-500"></div>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                🏆
+            {/* Certified Technicians */}
+            <div className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 flex flex-col h-full will-change-transform">
+              {/* Image section - 40% height */}
+              <div className="image-section h-[40%] min-h-[200px] relative overflow-hidden">
+                <Image
+                  src="/assets/trust/certified-excellence-bg.jpg"
+                  alt="Certified Technicians"
+                  fill
+                  quality={95}
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+                {/* Brand blue gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
+                {/* Glass effect overlay */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Certified Technicians</h3>
-              <p className="text-gray-600">Licensed, insured, and experienced professionals you can trust</p>
+              
+              {/* Content section - 60% height */}
+              <div className="content-section h-[60%] p-6 lg:p-8 flex flex-col justify-center relative">
+                {/* Subtle background accent on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 text-center">
+                  <h3 className="text-xl lg:text-2xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
+                    Certified Technicians
+                  </h3>
+                  <p className="text-sm lg:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    Licensed, insured, and experienced professionals you can trust
+                  </p>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-primary/0 to-transparent group-hover:via-brand-primary/50 transition-all duration-500"></div>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                💰
+            {/* Transparent Pricing */}
+            <div className="industry-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-brand-primary/20 flex flex-col h-full will-change-transform">
+              {/* Image section - 40% height */}
+              <div className="image-section h-[40%] min-h-[200px] relative overflow-hidden">
+                <Image
+                  src="/assets/trust/license-certificate-bg.jpg"
+                  alt="Transparent Pricing"
+                  fill
+                  quality={95}
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+                {/* Brand blue gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
+                {/* Glass effect overlay */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-1"></div>
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Transparent Pricing</h3>
-              <p className="text-gray-600">No hidden fees - you&apos;ll know the cost before we start work</p>
+              
+              {/* Content section - 60% height */}
+              <div className="content-section h-[60%] p-6 lg:p-8 flex flex-col justify-center relative">
+                {/* Subtle background accent on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 text-center">
+                  <h3 className="text-xl lg:text-2xl font-bold text-brand-ink mb-3 group-hover:text-brand-primary transition-colors duration-300">
+                    Transparent Pricing
+                  </h3>
+                  <p className="text-sm lg:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    No hidden fees - you&apos;ll know the cost before we start work
+                  </p>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-primary/0 to-transparent group-hover:via-brand-primary/50 transition-all duration-500"></div>
+              </div>
             </div>
           </div>
         </div>
