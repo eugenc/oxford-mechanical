@@ -196,26 +196,71 @@ export default function EmergencyServicesPage() {
       </section>
 
       {/* Emergency Process */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-accent rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
               What to Do in an Emergency
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Follow these steps to ensure your safety and minimize damage during a plumbing emergency.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative">
+              {/* Connecting line for desktop */}
+              <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-primary/20 via-brand-primary/40 to-brand-primary/20"></div>
+              
               {emergencySteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                    {step.step}
+                <div 
+                  key={index} 
+                  className="relative group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Step Card */}
+                  <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 lg:p-8 hover:shadow-2xl hover:border-brand-primary/30 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col items-center text-center">
+                    {/* Numbered Circle with enhanced styling */}
+                    <div className="relative mb-6">
+                      <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-brand-primary to-brand-primary-600 rounded-full flex items-center justify-center text-white font-bold text-2xl lg:text-3xl shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 relative z-10">
+                        <span>{step.step}</span>
+                        {/* Pulse effect */}
+                        <div className="absolute inset-0 rounded-full bg-brand-primary animate-ping opacity-20"></div>
+                      </div>
+                      {/* Connecting line indicator for mobile/tablet */}
+                      {index < emergencySteps.length - 1 && (
+                        <>
+                          <div className="hidden md:block lg:hidden absolute top-1/2 left-full w-full h-0.5 bg-gradient-to-r from-brand-primary/30 to-transparent transform translate-x-4"></div>
+                          <div className="md:hidden absolute top-full left-1/2 w-0.5 h-8 bg-gradient-to-b from-brand-primary/30 to-transparent transform -translate-x-1/2 mt-4"></div>
+                        </>
+                      )}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 flex flex-col">
+                      <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-brand-primary transition-colors duration-300">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm lg:text-base leading-relaxed flex-1">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  
+                  {/* Desktop connecting arrow */}
+                  {index < emergencySteps.length - 1 && (
+                    <div className="hidden lg:block absolute top-20 -right-4 w-8 h-8 z-20">
+                      <svg className="w-full h-full text-brand-primary/40" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                      </svg>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
