@@ -9,37 +9,6 @@ import { siteConfig } from '@/lib/seo'
 
 export const metadata = pageMetadata.about()
 
-const teamMembers = [
-  {
-    name: "John Smith",
-    position: "Founder & CEO",
-    experience: "15+ years",
-    specialties: ["Commercial Plumbing", "Project Management", "Team Leadership"],
-    image: "/assets/team/john-smith.jpg"
-  },
-  {
-    name: "Sarah Johnson",
-    position: "Lead Technician",
-    experience: "12+ years",
-    specialties: ["Emergency Services", "System Diagnostics", "Training"],
-    image: "/assets/team/sarah-johnson.jpg"
-  },
-  {
-    name: "Mike Chen",
-    position: "Senior Technician",
-    experience: "10+ years",
-    specialties: ["High-Rise Systems", "Preventive Maintenance", "Water Conservation"],
-    image: "/assets/team/mike-chen.jpg"
-  },
-  {
-    name: "Lisa Rodriguez",
-    position: "Customer Relations Manager",
-    experience: "8+ years",
-    specialties: ["Client Relations", "Project Coordination", "Quality Assurance"],
-    image: "/assets/team/lisa-rodriguez.jpg"
-  }
-]
-
 const values = [
   {
     title: "Quality First",
@@ -154,7 +123,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="/assets/team/company-overview.jpg"
+                src="/assets/city-background.jpeg"
                 alt="Oxford Mechanical Team"
                 width={600}
                 height={400}
@@ -185,48 +154,6 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Team */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Meet Our Team
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our experienced team of certified professionals brings decades of combined 
-              expertise to every project.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="relative h-48">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-brand-primary font-semibold mb-2">{member.position}</p>
-                  <p className="text-sm text-gray-600 mb-4">{member.experience} experience</p>
-                  <div className="space-y-1">
-                    {member.specialties.map((specialty, specIndex) => (
-                      <span key={specIndex} className="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full mr-1 mb-1">
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             ))}
           </div>

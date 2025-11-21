@@ -87,7 +87,7 @@ const services = [
       "Cost reduction",
       "Environmental benefits"
     ],
-    image: "/assets/services/water-saving.jpg"
+    image: "/assets/services/water-conservation-service.jpg"
   }
 ]
 

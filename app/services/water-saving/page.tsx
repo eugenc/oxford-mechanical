@@ -108,7 +108,7 @@ export default function WaterSavingPage() {
       <HeroSection
         title="Water Conservation Solutions"
         subtitle="Eco-friendly upgrades and water conservation solutions to reduce costs and environmental impact"
-        backgroundImage="/assets/services/water-saving.jpg"
+        backgroundImage="/assets/services/water-conservation-service.jpg"
         ctaText="Get Water Audit"
         ctaHref="/contact"
         secondaryCtaText="View Case Studies"
@@ -146,7 +146,7 @@ export default function WaterSavingPage() {
             </div>
             <div className="relative">
               <Image
-                src="/assets/services/water-saving.jpg"
+                src="/assets/services/water-conservation-service.jpg"
                 alt="Water conservation equipment"
                 width={600}
                 height={400}
