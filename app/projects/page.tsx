@@ -14,7 +14,7 @@ const projects = [
     title: "Downtown Condo Complex",
     category: "High-Rise Residential",
     description: "Complete plumbing system overhaul for a 500-unit high-rise condominium complex in downtown Toronto.",
-    image: "/assets/projects/condo-complex.jpg",
+    image: "/assets/industries/condos.jpg",
     results: [
       "40% reduction in maintenance costs",
       "Zero emergency calls in 6 months",
@@ -28,7 +28,7 @@ const projects = [
     title: "Regional Hospital Upgrade",
     category: "Healthcare",
     description: "Critical infrastructure upgrade for a major regional hospital, including emergency backup systems and water conservation measures.",
-    image: "/assets/projects/hospital-upgrade.jpg",
+    image: "/assets/industries/healthcare.jpg",
     results: [
       "25% reduction in water usage",
       "100% compliance with health regulations",
@@ -42,7 +42,7 @@ const projects = [
     title: "University Campus Renovation",
     category: "Education",
     description: "Comprehensive plumbing infrastructure upgrade across 15 buildings on a major university campus.",
-    image: "/assets/projects/university-campus.jpg",
+    image: "/assets/industries/education.jpg",
     results: [
       "60% reduction in emergency calls",
       "Modernized all student facilities",
@@ -56,7 +56,7 @@ const projects = [
     title: "Office Tower Modernization",
     category: "Commercial",
     description: "Smart plumbing system installation for a 40-story office tower in Toronto's financial district.",
-    image: "/assets/projects/office-tower.jpg",
+    image: "/assets/industries/office.jpg",
     results: [
       "30% reduction in water costs",
       "Real-time monitoring capabilities",
@@ -70,7 +70,7 @@ const projects = [
     title: "Shopping Center Renovation",
     category: "Retail",
     description: "Complete plumbing system upgrade for a major shopping center, including food court and retail spaces.",
-    image: "/assets/projects/shopping-center.jpg",
+    image: "/assets/industries/retail.jpg",
     results: [
       "Enhanced customer experience",
       "Reduced maintenance downtime",
@@ -84,7 +84,7 @@ const projects = [
     title: "Industrial Facility Upgrade",
     category: "Industrial",
     description: "Heavy-duty plumbing system installation for a manufacturing facility with specialized requirements.",
-    image: "/assets/projects/industrial-facility.jpg",
+    image: "/assets/industries/industrial.webp",
     results: [
       "Compliance with safety regulations",
       "Reduced production downtime",
