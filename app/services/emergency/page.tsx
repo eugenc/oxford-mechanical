@@ -157,6 +157,8 @@ export default function EmergencyServicesPage() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    quality={70}
+                    loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 hover:scale-110"
                   />
@@ -293,10 +295,10 @@ export default function EmergencyServicesPage() {
                   src="/assets/trust/emergency-response-bg.jpg"
                   alt="Rapid Response"
                   fill
-                  quality={75}
+                  quality={65}
                   loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, (max-width: 1280px) 25vw, 320px"
                 />
                 {/* Brand blue gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
@@ -333,10 +335,10 @@ export default function EmergencyServicesPage() {
                   src="/assets/services/emergency-plumbing-service.jpg"
                   alt="Fully Equipped"
                   fill
-                  quality={75}
+                  quality={70}
                   loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, (max-width: 1280px) 25vw, 320px"
                 />
                 {/* Brand blue gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
@@ -373,10 +375,10 @@ export default function EmergencyServicesPage() {
                   src="/assets/trust/certified-excellence-bg.jpg"
                   alt="Certified Technicians"
                   fill
-                  quality={75}
+                  quality={65}
                   loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, (max-width: 1280px) 25vw, 320px"
                 />
                 {/* Brand blue gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>
@@ -413,10 +415,10 @@ export default function EmergencyServicesPage() {
                   src="/assets/trust/license-certificate-bg.jpg"
                   alt="Transparent Pricing"
                   fill
-                  quality={75}
+                  quality={65}
                   loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, (max-width: 1280px) 25vw, 320px"
                 />
                 {/* Brand blue gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-brand-primary/40 to-brand-primary/30"></div>

@@ -41,7 +41,7 @@ export default function Home() {
             sizes="100vw"
             className="object-cover"
             priority
-            quality={75}
+            quality={70}
             fetchPriority="high"
           />
           {/* Optimized dark overlay with enhanced contrast */}
@@ -187,10 +187,10 @@ export default function Home() {
                     src={trust.bgImage}
                     alt=""
                     fill
-                    quality={75}
+                    quality={65}
                     loading="lazy"
                     className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 25vw, 320px"
                   />
                   {/* Fallback gradient background */}
                   <div className={`absolute inset-0 ${trust.fallbackBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
@@ -317,7 +317,7 @@ export default function Home() {
                     src={service.backgroundImage}
                     alt={`${service.title} service`}
                     fill
-                    quality={75}
+                    quality={70}
                     loading="lazy"
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -650,7 +650,7 @@ export default function Home() {
                     src={industry.image}
                     alt={`${industry.industry} industry`}
                     fill
-                    quality={75}
+                    quality={70}
                     loading="lazy"
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -776,7 +776,7 @@ export default function Home() {
                         alt={caseStudy.title}
                         width={400}
                         height={192}
-                        quality={75}
+                        quality={70}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -906,7 +906,7 @@ export default function Home() {
                   alt="Toronto skyline and surrounding areas"
                   width={600}
                   height={400}
-                  quality={75}
+                  quality={70}
                   loading="lazy"
                   className="w-full h-80 lg:h-96 object-cover"
                 />
