@@ -293,7 +293,8 @@ export default function EmergencyServicesPage() {
                   src="/assets/trust/emergency-response-bg.jpg"
                   alt="Rapid Response"
                   fill
-                  quality={95}
+                  quality={75}
+                  loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
@@ -332,7 +333,8 @@ export default function EmergencyServicesPage() {
                   src="/assets/services/emergency-plumbing-service.jpg"
                   alt="Fully Equipped"
                   fill
-                  quality={95}
+                  quality={75}
+                  loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
@@ -371,7 +373,8 @@ export default function EmergencyServicesPage() {
                   src="/assets/trust/certified-excellence-bg.jpg"
                   alt="Certified Technicians"
                   fill
-                  quality={95}
+                  quality={75}
+                  loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
@@ -410,7 +413,8 @@ export default function EmergencyServicesPage() {
                   src="/assets/trust/license-certificate-bg.jpg"
                   alt="Transparent Pricing"
                   fill
-                  quality={95}
+                  quality={75}
+                  loading="lazy"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />

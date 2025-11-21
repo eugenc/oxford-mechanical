@@ -41,7 +41,8 @@ export default function Home() {
             sizes="100vw"
             className="object-cover"
             priority
-            quality={95}
+            quality={75}
+            fetchPriority="high"
           />
           {/* Optimized dark overlay with enhanced contrast */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-800/75 to-gray-900/85"></div>
@@ -182,16 +183,17 @@ export default function Home() {
               >
                 {/* Background Image */}
                 <div className="absolute inset-0">
-                  {/* Background image with fallback */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{
-                      backgroundImage: `url(${trust.bgImage})`,
-                    }}
-                  >
-                    {/* Fallback gradient background */}
-                    <div className={`absolute inset-0 ${trust.fallbackBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                  </div>
+                  <Image
+                    src={trust.bgImage}
+                    alt=""
+                    fill
+                    quality={75}
+                    loading="lazy"
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  {/* Fallback gradient background */}
+                  <div className={`absolute inset-0 ${trust.fallbackBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                   {/* Overlay for better text readability - 45% transparency */}
                   <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-500"></div>
                   {/* Subtle pattern overlay */}
@@ -315,7 +317,8 @@ export default function Home() {
                     src={service.backgroundImage}
                     alt={`${service.title} service`}
                     fill
-                    quality={95}
+                    quality={75}
+                    loading="lazy"
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
@@ -647,7 +650,8 @@ export default function Home() {
                     src={industry.image}
                     alt={`${industry.industry} industry`}
                     fill
-                    quality={95}
+                    quality={75}
+                    loading="lazy"
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
@@ -772,7 +776,8 @@ export default function Home() {
                         alt={caseStudy.title}
                         width={400}
                         height={192}
-                        quality={95}
+                        quality={75}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       {/* Image Overlay */}
@@ -901,7 +906,8 @@ export default function Home() {
                   alt="Toronto skyline and surrounding areas"
                   width={600}
                   height={400}
-                  quality={95}
+                  quality={75}
+                  loading="lazy"
                   className="w-full h-80 lg:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/60 via-transparent to-transparent"></div>

@@ -6,7 +6,11 @@ import Footer from '@/components/Footer'
 import { generateMetadata as genMeta, siteConfig } from '@/lib/seo'
 import StructuredData from '@/components/StructuredData'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   ...genMeta({

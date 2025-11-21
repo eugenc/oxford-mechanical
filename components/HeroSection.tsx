@@ -40,7 +40,8 @@ export default function HeroSection({
             sizes="100vw"
             className="object-cover scale-105 transition-transform duration-700 ease-out"
             priority
-            quality={90}
+            quality={75}
+            fetchPriority="high"
           />
           {/* Additional blur layer for better text readability */}
           <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
