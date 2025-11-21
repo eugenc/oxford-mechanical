@@ -141,3 +141,5 @@ function getStructuredData(type: string, data: any, pathname: string) {
   }
 }
 
+
+
