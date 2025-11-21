@@ -200,7 +200,7 @@ export default function MaintenancePage() {
                 </ul>
                 
                 <a
-                  href="/contact"
+                  href="/contact#get-in-touch-form"
                   className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 text-center block"
                 >
                   Get Started

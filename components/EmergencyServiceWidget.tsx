@@ -61,7 +61,7 @@ export default function EmergencyServiceWidget() {
               Call Now: (416) 555-0123
             </Link>
             <Link
-              href="/contact"
+              href="/contact#get-in-touch-form"
               className="w-full bg-gradient-to-r from-brand-accent to-green-600 hover:from-green-600 hover:to-green-700 text-white text-center py-3 text-sm font-bold rounded-xl block transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@ export default function EmergencyServiceWidget() {
                   <span className="whitespace-nowrap">Call</span>
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact#get-in-touch-form"
                   className="bg-gradient-to-r from-brand-accent to-green-600 hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 text-white px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold rounded-lg transition-all duration-200 hover:shadow-lg active:scale-[0.98] flex items-center justify-center gap-1.5 sm:gap-2 min-h-[44px] shadow-md"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

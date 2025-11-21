@@ -85,7 +85,7 @@ export default function Home() {
             {/* CTA Buttons with enhanced styling */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
               <Link
-                href="/contact"
+                href="/contact#get-in-touch-form"
                 className="group bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg lg:text-xl font-bold rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-brand-primary/35 transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-brand-primary/50 active:scale-[0.98] hero-cta-primary"
                 aria-label="Get free plumbing inspection for your property"
               >
@@ -1227,7 +1227,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <Link
-                  href="/contact"
+                  href="/contact#get-in-touch-form"
                   className="bg-brand-primary hover:bg-brand-primary-600 text-white inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl min-h-[44px] w-full sm:w-auto"
                 >
                   <span className="whitespace-nowrap">Get Started</span>
@@ -1379,7 +1379,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/contact#get-in-touch-form"
               className="bg-white text-brand-primary hover:bg-gray-100 inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-200"
             >
               Get Free Quote
@@ -1411,7 +1411,7 @@ export default function Home() {
               <span className="whitespace-nowrap">Emergency Call</span>
             </Link>
             <Link
-              href="/contact"
+              href="/contact#get-in-touch-form"
               className="flex-1 bg-gradient-to-r from-brand-accent to-green-600 hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 text-white text-center py-3.5 sm:py-4 text-sm sm:text-base font-bold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md active:scale-[0.98] min-h-[48px]"
             >
               <svg className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
